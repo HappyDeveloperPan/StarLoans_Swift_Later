@@ -167,6 +167,15 @@ class MineTableViewController: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        // #暂时隐藏认证
+        if indexPath.section == 1, indexPath.row == 0 {
+            return 0
+        }else {
+            return super.tableView(tableView, heightForRowAt: indexPath)
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
