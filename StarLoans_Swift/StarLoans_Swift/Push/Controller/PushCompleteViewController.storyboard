@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Push Complete View Controller-->
+        <scene sceneID="dPa-xA-DxA">
+            <objects>
+                <viewController storyboardIdentifier="PushCompleteViewController" id="8uo-vE-ZCW" customClass="PushCompleteViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gd0-Q4-kog">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON-PAY" translatesAutoresizingMaskIntoConstraints="NO" id="tbQ-yC-Yhf">
+                                <rect key="frame" x="157.5" y="67" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="8e6-hB-y0y"/>
+                                    <constraint firstAttribute="width" constant="60" id="8e8-ah-kpF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提交成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6S-ve-uOA">
+                                <rect key="frame" x="151" y="139" width="73.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8vV-Ik-hr5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="认证时间为2个工作日，审核通过会自动上架" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dWq-iU-OyN">
+                                <rect key="frame" x="67.5" y="174" width="240.5" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="0gF-RL-F8w"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v28-lD-h2X" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="37.5" y="558" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Vve-4x-ivd"/>
+                                    <constraint firstAttribute="height" constant="45" id="a0r-8g-buv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="返回列表">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="commitBtnClick:" destination="8uo-vE-ZCW" eventType="touchUpInside" id="6zA-op-DQb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="T6S-ve-uOA" firstAttribute="top" secondItem="tbQ-yC-Yhf" secondAttribute="bottom" constant="12" id="IYm-gP-NpK"/>
+                            <constraint firstItem="tbQ-yC-Yhf" firstAttribute="top" secondItem="L29-Jq-B9B" secondAttribute="top" constant="47" id="KBh-ps-6WV"/>
+                            <constraint firstItem="v28-lD-h2X" firstAttribute="centerX" secondItem="gd0-Q4-kog" secondAttribute="centerX" id="MCq-He-ide"/>
+                            <constraint firstItem="dWq-iU-OyN" firstAttribute="centerX" secondItem="gd0-Q4-kog" secondAttribute="centerX" id="O31-Sg-PqY"/>
+                            <constraint firstItem="L29-Jq-B9B" firstAttribute="bottom" secondItem="v28-lD-h2X" secondAttribute="bottom" constant="64" id="PfU-Oi-xmk"/>
+                            <constraint firstItem="dWq-iU-OyN" firstAttribute="top" secondItem="T6S-ve-uOA" secondAttribute="bottom" constant="14" id="qFR-4e-OlX"/>
+                            <constraint firstItem="T6S-ve-uOA" firstAttribute="centerX" secondItem="gd0-Q4-kog" secondAttribute="centerX" id="tWG-BT-bcM"/>
+                            <constraint firstItem="tbQ-yC-Yhf" firstAttribute="centerX" secondItem="gd0-Q4-kog" secondAttribute="centerX" id="vYE-bS-QUT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="L29-Jq-B9B"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQ6-oo-eWQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-585" y="169"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ICON-PAY" width="60" height="60"/>
+    </resources>
+</document>

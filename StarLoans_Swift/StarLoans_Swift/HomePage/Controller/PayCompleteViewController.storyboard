@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pay Complete View Controller-->
+        <scene sceneID="20i-DI-Nt9">
+            <objects>
+                <viewController storyboardIdentifier="PayCompleteViewController" id="dvz-t2-4nz" customClass="PayCompleteViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v34-3w-exy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON-PAY" translatesAutoresizingMaskIntoConstraints="NO" id="Hmj-Ue-zrq">
+                                <rect key="frame" x="157" y="67" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1nE-Ob-9vR"/>
+                                    <constraint firstAttribute="height" constant="60" id="CpL-Bj-cnP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支付成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCz-mL-Q0K">
+                                <rect key="frame" x="148" y="142" width="80" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="XF9-oO-EJP"/>
+                                    <constraint firstAttribute="width" constant="80" id="hBd-GR-j6c"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-16-qha">
+                                <rect key="frame" x="37.5" y="502" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="NLB-Z3-V3T"/>
+                                    <constraint firstAttribute="height" constant="45" id="amN-EV-jyc"/>
+                                </constraints>
+                                <state key="normal" title="查看全文">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="lookTextClik:" destination="dvz-t2-4nz" eventType="touchUpInside" id="Det-aj-Tgh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hmj-Ue-zrq" firstAttribute="top" secondItem="kgQ-nx-bOB" secondAttribute="top" constant="47" id="Di7-We-kp3"/>
+                            <constraint firstItem="Kiu-16-qha" firstAttribute="centerX" secondItem="v34-3w-exy" secondAttribute="centerX" id="atc-hs-Ahj"/>
+                            <constraint firstItem="Hmj-Ue-zrq" firstAttribute="centerX" secondItem="v34-3w-exy" secondAttribute="centerX" id="kSL-Z6-Z0q"/>
+                            <constraint firstItem="NCz-mL-Q0K" firstAttribute="top" secondItem="Hmj-Ue-zrq" secondAttribute="bottom" constant="15" id="p7J-Tf-z3o"/>
+                            <constraint firstItem="NCz-mL-Q0K" firstAttribute="centerX" secondItem="v34-3w-exy" secondAttribute="centerX" id="wgK-7p-i6B"/>
+                            <constraint firstItem="kgQ-nx-bOB" firstAttribute="bottom" secondItem="Kiu-16-qha" secondAttribute="bottom" constant="120" id="yNq-gk-EJt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kgQ-nx-bOB"/>
+                    </view>
+                    <connections>
+                        <outlet property="lookTextBtn" destination="Kiu-16-qha" id="G29-mm-q3J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1JX-zu-z3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-212" y="163.26836581709148"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ICON-PAY" width="60" height="60"/>
+    </resources>
+</document>

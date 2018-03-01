@@ -1,0 +1,6 @@
+framework module Pods_StarLoans_SwiftTests {
+  umbrella header "Pods-StarLoans_SwiftTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

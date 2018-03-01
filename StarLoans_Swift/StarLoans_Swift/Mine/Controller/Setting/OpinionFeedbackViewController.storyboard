@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Opinion Feedback View Controller-->
+        <scene sceneID="oZF-qD-5aw">
+            <objects>
+                <viewController storyboardIdentifier="OpinionFeedbackViewController" id="21v-37-8Gb" customClass="OpinionFeedbackViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F6L-3d-e84">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="反馈意见及问题" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJN-qm-gMc">
+                                <rect key="frame" x="16" y="36" width="100" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="A1z-x7-Yhf"/>
+                                    <constraint firstAttribute="height" constant="12" id="SjZ-Yw-Q1y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ySh-bG-oI1" customClass="MyTextView" customModule="StarLoans_Swift" customModuleProvider="target">
+                                <rect key="frame" x="16" y="64" width="343" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Dui-UR-QFh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dda-cD-u9U">
+                                <rect key="frame" x="37.5" y="274" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Ud0-aZ-cpU"/>
+                                    <constraint firstAttribute="width" constant="300" id="r4E-qg-TdG"/>
+                                </constraints>
+                                <state key="normal" title="提交">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="commitBtnClick:" destination="21v-37-8Gb" eventType="touchUpInside" id="4Ha-to-lyX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cui-ZG-PvK" firstAttribute="trailing" secondItem="ySh-bG-oI1" secondAttribute="trailing" constant="16" id="6Rp-XS-jUQ"/>
+                            <constraint firstItem="ySh-bG-oI1" firstAttribute="leading" secondItem="cui-ZG-PvK" secondAttribute="leading" constant="16" id="S1o-Hm-s9i"/>
+                            <constraint firstItem="eJN-qm-gMc" firstAttribute="leading" secondItem="cui-ZG-PvK" secondAttribute="leading" constant="16" id="YaC-wj-xiM"/>
+                            <constraint firstItem="eJN-qm-gMc" firstAttribute="top" secondItem="cui-ZG-PvK" secondAttribute="top" constant="16" id="kH2-5J-jRH"/>
+                            <constraint firstItem="ySh-bG-oI1" firstAttribute="top" secondItem="eJN-qm-gMc" secondAttribute="bottom" constant="16" id="ms4-qI-KlT"/>
+                            <constraint firstItem="Dda-cD-u9U" firstAttribute="centerX" secondItem="F6L-3d-e84" secondAttribute="centerX" id="odT-f6-rSP"/>
+                            <constraint firstItem="Dda-cD-u9U" firstAttribute="top" secondItem="ySh-bG-oI1" secondAttribute="bottom" constant="60" id="zqf-Sz-YDE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cui-ZG-PvK"/>
+                    </view>
+                    <connections>
+                        <outlet property="commitBtn" destination="Dda-cD-u9U" id="P9Z-Ny-Qap"/>
+                        <outlet property="opinionTV" destination="ySh-bG-oI1" id="pEx-iO-6jH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dOK-h6-80a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-270" y="166"/>
+        </scene>
+    </scenes>
+</document>

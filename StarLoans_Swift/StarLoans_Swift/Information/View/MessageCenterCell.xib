@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MessageCenterCell" customModule="StarLoans_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="238" height="163"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="238" height="163"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IlD-2P-jwm">
+                        <rect key="frame" x="107" y="23" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="903-y1-ftq"/>
+                            <constraint firstAttribute="height" constant="24" id="yM7-YH-Ydk"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX5-dl-1F4">
+                        <rect key="frame" x="100.5" y="59" width="37.5" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="lZA-Im-17Z"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-oW-4CC" customClass="AnimatableView" customModule="IBAnimatable">
+                        <rect key="frame" x="25" y="16" width="7" height="7"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="7" id="Zb8-rt-IER"/>
+                            <constraint firstAttribute="height" constant="7" id="uyC-H3-xQI"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="3.5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="mX5-dl-1F4" firstAttribute="top" secondItem="IlD-2P-jwm" secondAttribute="bottom" constant="12" id="LsD-EF-AhS"/>
+                <constraint firstItem="B2D-oW-4CC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="Rba-a2-x0w"/>
+                <constraint firstItem="IlD-2P-jwm" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="cmg-83-aeo"/>
+                <constraint firstItem="mX5-dl-1F4" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="dqA-SY-zrD"/>
+                <constraint firstItem="IlD-2P-jwm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="23" id="nK4-v4-bNa"/>
+                <constraint firstItem="B2D-oW-4CC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="25" id="rxi-sQ-3bz"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="238" height="163"/>
+            <connections>
+                <outlet property="contentLB" destination="mX5-dl-1F4" id="lDL-UG-wQi"/>
+                <outlet property="img" destination="IlD-2P-jwm" id="d65-bY-aB2"/>
+                <outlet property="redPoint" destination="B2D-oW-4CC" id="Ocr-Fx-5TP"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="110.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

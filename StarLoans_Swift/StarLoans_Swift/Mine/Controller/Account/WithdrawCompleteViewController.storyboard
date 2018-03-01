@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Withdraw Complete View Controller-->
+        <scene sceneID="G8e-1X-JpS">
+            <objects>
+                <viewController storyboardIdentifier="WithdrawCompleteViewController" id="eFL-hp-VJX" customClass="WithdrawCompleteViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Onb-RF-iXH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON-PAY" translatesAutoresizingMaskIntoConstraints="NO" id="MrG-J2-q3w">
+                                <rect key="frame" x="157.5" y="67" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="8IQ-Hi-AJY"/>
+                                    <constraint firstAttribute="height" constant="60" id="Uxb-MX-dGF"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提交成功!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AUg-2E-XDd">
+                                <rect key="frame" x="148" y="142" width="79.5" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="R5l-2H-yUI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们会在2个工作日内给予反馈，请关注消息提醒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkb-ct-kjq">
+                                <rect key="frame" x="44.5" y="175" width="286.5" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="D2a-LB-lbv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fca-OC-Cot" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="37.5" y="499" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="aEm-KO-ai7"/>
+                                    <constraint firstAttribute="width" constant="300" id="iil-dO-hAY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="返回">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="commitBtnClick:" destination="eFL-hp-VJX" eventType="touchUpInside" id="xUP-Gw-8GI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tkb-ct-kjq" firstAttribute="centerX" secondItem="Onb-RF-iXH" secondAttribute="centerX" id="1HG-Yv-owQ"/>
+                            <constraint firstItem="m0F-BP-89J" firstAttribute="bottom" secondItem="fca-OC-Cot" secondAttribute="bottom" constant="123" id="7bO-Ch-JxI"/>
+                            <constraint firstItem="fca-OC-Cot" firstAttribute="centerX" secondItem="Onb-RF-iXH" secondAttribute="centerX" id="8xn-nz-Oi7"/>
+                            <constraint firstItem="AUg-2E-XDd" firstAttribute="centerX" secondItem="Onb-RF-iXH" secondAttribute="centerX" id="EsF-I7-BTh"/>
+                            <constraint firstItem="tkb-ct-kjq" firstAttribute="top" secondItem="AUg-2E-XDd" secondAttribute="bottom" constant="15" id="PaY-pt-jHo"/>
+                            <constraint firstItem="MrG-J2-q3w" firstAttribute="centerX" secondItem="Onb-RF-iXH" secondAttribute="centerX" id="TIr-QV-Cv1"/>
+                            <constraint firstItem="MrG-J2-q3w" firstAttribute="top" secondItem="m0F-BP-89J" secondAttribute="top" constant="47" id="U1b-ox-8WV"/>
+                            <constraint firstItem="AUg-2E-XDd" firstAttribute="top" secondItem="MrG-J2-q3w" secondAttribute="bottom" constant="15" id="bHw-UG-t2k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m0F-BP-89J"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h68-7q-HZg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-254" y="150"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ICON-PAY" width="60" height="60"/>
+    </resources>
+</document>

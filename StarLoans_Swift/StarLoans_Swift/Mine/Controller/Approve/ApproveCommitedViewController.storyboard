@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Approve Commited View Controller-->
+        <scene sceneID="pzK-5Y-hId">
+            <objects>
+                <viewController storyboardIdentifier="ApproveCommitedViewController" id="Cgl-PC-a2u" customClass="ApproveCommitedViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D50-tl-wJd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON-PAY" translatesAutoresizingMaskIntoConstraints="NO" id="cFX-jS-M9m">
+                                <rect key="frame" x="157.5" y="67" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="DPZ-NW-246"/>
+                                    <constraint firstAttribute="height" constant="60" id="moA-LT-dsl"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提交成功" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BbD-bV-buQ">
+                                <rect key="frame" x="150.5" y="139" width="73.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="I6x-ls-gMv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="认证时间为2个工作日，请关注短信或者端内推送" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3F9-Jt-jhd">
+                                <rect key="frame" x="55" y="175" width="265" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="bfO-dU-JZI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WXH-AS-ao4" customClass="AnimatableButton" customModule="IBAnimatable">
+                                <rect key="frame" x="37.5" y="499" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="oyS-Yx-frY"/>
+                                    <constraint firstAttribute="width" constant="300" id="zCq-k4-i05"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="返回主页">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="commitBtnClick:" destination="Cgl-PC-a2u" eventType="touchUpInside" id="xTT-mq-r5D"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MmW-aC-sjf" firstAttribute="bottom" secondItem="WXH-AS-ao4" secondAttribute="bottom" constant="123" id="0aU-0H-h0r"/>
+                            <constraint firstItem="BbD-bV-buQ" firstAttribute="centerX" secondItem="D50-tl-wJd" secondAttribute="centerX" id="4ti-ak-Uir"/>
+                            <constraint firstItem="BbD-bV-buQ" firstAttribute="top" secondItem="cFX-jS-M9m" secondAttribute="bottom" constant="12" id="6bo-73-iiD"/>
+                            <constraint firstItem="3F9-Jt-jhd" firstAttribute="centerX" secondItem="D50-tl-wJd" secondAttribute="centerX" id="Ipn-1H-s8l"/>
+                            <constraint firstItem="cFX-jS-M9m" firstAttribute="top" secondItem="MmW-aC-sjf" secondAttribute="top" constant="47" id="Zz7-Qb-aRp"/>
+                            <constraint firstItem="WXH-AS-ao4" firstAttribute="centerX" secondItem="D50-tl-wJd" secondAttribute="centerX" id="ahj-Gd-f14"/>
+                            <constraint firstItem="3F9-Jt-jhd" firstAttribute="top" secondItem="BbD-bV-buQ" secondAttribute="bottom" constant="15" id="ftM-Y0-24A"/>
+                            <constraint firstItem="cFX-jS-M9m" firstAttribute="centerX" secondItem="D50-tl-wJd" secondAttribute="centerX" id="mqA-8D-ajS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MmW-aC-sjf"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slU-rz-Kjk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-287" y="180"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ICON-PAY" width="60" height="60"/>
+    </resources>
+</document>

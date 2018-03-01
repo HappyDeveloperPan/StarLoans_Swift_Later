@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="VStoreFuncCollectionViewCell" customModule="StarLoans_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="200" height="127"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="200" height="127"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gut-Zo-ksi">
+                        <rect key="frame" x="16" y="24" width="168" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="cBy-aZ-xAr"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPa-FG-CP6">
+                        <rect key="frame" x="16" y="53" width="168" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="QeN-gB-98B"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ppf-az-Y81">
+                        <rect key="frame" x="16" y="16" width="7" height="7"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="7" id="YjB-2o-oDE"/>
+                            <constraint firstAttribute="width" constant="7" id="wjq-CD-bZe"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Gut-Zo-ksi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="29P-Yy-pJT"/>
+                <constraint firstAttribute="trailing" secondItem="mPa-FG-CP6" secondAttribute="trailing" constant="16" id="7B8-Dj-ACL"/>
+                <constraint firstItem="mPa-FG-CP6" firstAttribute="top" secondItem="Gut-Zo-ksi" secondAttribute="bottom" constant="8" id="EEA-bV-PcO"/>
+                <constraint firstItem="Ppf-az-Y81" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="Jjn-UO-P8t"/>
+                <constraint firstItem="Gut-Zo-ksi" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="24" id="K4n-9L-olv"/>
+                <constraint firstAttribute="trailing" secondItem="Gut-Zo-ksi" secondAttribute="trailing" constant="16" id="R6a-ZZ-klo"/>
+                <constraint firstItem="mPa-FG-CP6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="RP3-rd-5g2"/>
+                <constraint firstItem="mPa-FG-CP6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="ju1-k1-709"/>
+                <constraint firstItem="Ppf-az-Y81" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="sjl-3s-85w"/>
+                <constraint firstItem="Gut-Zo-ksi" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="zmU-X0-YTo"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="200" height="127"/>
+            <connections>
+                <outlet property="contentLB" destination="mPa-FG-CP6" id="3Nl-UI-H3E"/>
+                <outlet property="redPoint" destination="Ppf-az-Y81" id="4l6-rP-S1h"/>
+                <outlet property="titleLB" destination="Gut-Zo-ksi" id="s3b-Li-hx9"/>
+            </connections>
+            <point key="canvasLocation" x="109" y="92.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

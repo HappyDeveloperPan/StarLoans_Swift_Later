@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="BrokerProductCell" customModule="StarLoans_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="439" height="168"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="439" height="168"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZEG-Dk-U4K">
+                        <rect key="frame" x="0.0" y="0.0" width="439" height="35"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="企业信用" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLl-Zf-WUp" customClass="AnimatableLabel" customModule="IBAnimatable">
+                                <rect key="frame" x="16" y="7" width="60" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="IFf-YG-3Ty"/>
+                                    <constraint firstAttribute="width" constant="60" id="k27-6l-dHX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="宅e贷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZE0-Ff-eu3">
+                                <rect key="frame" x="200.5" y="9" width="39" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="待审核" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O1i-Bl-LPg">
+                                <rect key="frame" x="377" y="8.5" width="46" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="UAm-iM-aNG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="O1i-Bl-LPg" secondAttribute="trailing" constant="16" id="NzV-St-t99"/>
+                            <constraint firstItem="LLl-Zf-WUp" firstAttribute="centerY" secondItem="ZEG-Dk-U4K" secondAttribute="centerY" id="PZA-le-80Y"/>
+                            <constraint firstItem="ZE0-Ff-eu3" firstAttribute="centerY" secondItem="ZEG-Dk-U4K" secondAttribute="centerY" id="TAx-B9-83B"/>
+                            <constraint firstItem="O1i-Bl-LPg" firstAttribute="centerY" secondItem="ZEG-Dk-U4K" secondAttribute="centerY" id="Ury-VJ-4zs"/>
+                            <constraint firstAttribute="height" constant="35" id="ecf-fz-tC0"/>
+                            <constraint firstItem="ZE0-Ff-eu3" firstAttribute="centerX" secondItem="ZEG-Dk-U4K" secondAttribute="centerX" id="fRx-mL-ebW"/>
+                            <constraint firstItem="LLl-Zf-WUp" firstAttribute="leading" secondItem="ZEG-Dk-U4K" secondAttribute="leading" constant="16" id="rPa-0D-Fw3"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Eix-XA-Lbk">
+                        <rect key="frame" x="16" y="45" width="60" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="in0-qo-J8I"/>
+                            <constraint firstAttribute="width" constant="60" id="j8W-83-g8l"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Eix-XA-Lbk" firstAttribute="top" secondItem="ZEG-Dk-U4K" secondAttribute="bottom" constant="10" id="0wZ-cp-Srh"/>
+                <constraint firstItem="Eix-XA-Lbk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="6ci-mw-3Pd"/>
+                <constraint firstItem="ZEG-Dk-U4K" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8dZ-Gt-z8f"/>
+                <constraint firstItem="ZEG-Dk-U4K" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="G1p-fd-O5k"/>
+                <constraint firstAttribute="trailing" secondItem="ZEG-Dk-U4K" secondAttribute="trailing" id="lTs-1v-HE8"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="439" height="168"/>
+            <point key="canvasLocation" x="228.5" y="113"/>
+        </collectionViewCell>
+    </objects>
+</document>

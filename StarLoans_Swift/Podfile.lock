@@ -1,0 +1,64 @@
+PODS:
+  - Alamofire (4.5.1)
+  - BMPlayer (1.0.1):
+    - BMPlayer/Full (= 1.0.1)
+  - BMPlayer/Core (1.0.1)
+  - BMPlayer/Full (1.0.1):
+    - BMPlayer/Core
+    - NVActivityIndicatorView (~> 4.0.0)
+    - SnapKit (~> 4.0.0)
+  - ESTabBarController-swift (2.5)
+  - IBAnimatable (5.0.0)
+  - IQKeyboardManagerSwift (5.0.6)
+  - JCore (1.1.6)
+  - JPush (3.0.7):
+    - JCore (~> 1.1.6)
+  - Kingfisher (4.3.0)
+  - MJRefresh (3.1.15)
+  - NVActivityIndicatorView (4.0.0):
+    - NVActivityIndicatorView/Presenter (= 4.0.0)
+  - NVActivityIndicatorView/Presenter (4.0.0)
+  - pop (1.0.10)
+  - SnapKit (4.0.0)
+  - SVProgressHUD (2.2.2)
+  - SwiftTheme (0.4.0)
+  - SwiftyJSON (4.0.0)
+  - WechatOpenSDK (1.8.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - BMPlayer
+  - ESTabBarController-swift
+  - IBAnimatable
+  - IQKeyboardManagerSwift
+  - JPush
+  - Kingfisher
+  - MJRefresh
+  - pop
+  - SnapKit
+  - SVProgressHUD
+  - SwiftTheme
+  - SwiftyJSON
+  - WechatOpenSDK
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  BMPlayer: 44eebf06eb01450dd14ea74b27d07c5222f0eed1
+  ESTabBarController-swift: 8daa432f2a9be8ebd25101dc46c84472fd760512
+  IBAnimatable: aa2286a9cf8fb4ae2e1be85c5287ae56143b024f
+  IQKeyboardManagerSwift: 02bfbb0dff71c66d0ab77d80d25dfce0c3717735
+  JCore: 18fc8725124f26e55625eaf224659b3a999dcf63
+  JPush: 111b79b8a0169ab8fd4c486dac3ed166ed69293e
+  Kingfisher: 475df87bb7196e51a8e9a48b667a5388a4709241
+  MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
+  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SVProgressHUD: 59b2d3dabacbd051576d21d32293ca7228dc18b0
+  SwiftTheme: 548eff28a606d0975e04b2e708b879d7eea660f6
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
+  WechatOpenSDK: 0ee07a8d492299d3e47372a33da5af26524a7576
+
+PODFILE CHECKSUM: f374b35749dee2cd15e77dd339965a842cf40cc1
+
+COCOAPODS: 1.3.1

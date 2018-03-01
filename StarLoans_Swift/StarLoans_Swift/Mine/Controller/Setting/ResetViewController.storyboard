@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reset View Controller-->
+        <scene sceneID="GiW-fp-z0f">
+            <objects>
+                <viewController storyboardIdentifier="ResetViewController" id="RDs-yg-agZ" customClass="ResetViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="22k-bo-1WI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入原登录密码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iC3-6v-XYZ">
+                                <rect key="frame" x="36" y="100" width="329" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Bwt-vX-TWR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0j9-GS-a7k" customClass="LoginInputView" customModule="StarLoans_Swift" customModuleProvider="target">
+                                <rect key="frame" x="37" y="180" width="301" height="45"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Wmh-om-Vgw"/>
+                                </constraints>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="该交易密码将在交易、提现、支付等相关服务时使用，请妥善保管" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5BZ-HI-b71">
+                                <rect key="frame" x="37" y="250" width="301" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IS1-bj-qal">
+                                <rect key="frame" x="37.5" y="422" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fbB-aN-5Ki"/>
+                                    <constraint firstAttribute="height" constant="45" id="rIq-QR-BDO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="下一步">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextBtnClick:" destination="RDs-yg-agZ" eventType="touchUpInside" id="l7B-pp-akB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f91-fl-GD1" firstAttribute="trailing" secondItem="iC3-6v-XYZ" secondAttribute="trailing" constant="10" id="0H1-pT-6S3"/>
+                            <constraint firstItem="iC3-6v-XYZ" firstAttribute="top" secondItem="f91-fl-GD1" secondAttribute="top" constant="80" id="B8H-m5-iNh"/>
+                            <constraint firstItem="iC3-6v-XYZ" firstAttribute="leading" secondItem="f91-fl-GD1" secondAttribute="leading" constant="36" id="FU1-ax-ryS"/>
+                            <constraint firstItem="f91-fl-GD1" firstAttribute="bottom" secondItem="IS1-bj-qal" secondAttribute="bottom" constant="200" id="JWp-A5-bsp"/>
+                            <constraint firstItem="5BZ-HI-b71" firstAttribute="leading" secondItem="f91-fl-GD1" secondAttribute="leading" constant="37" id="LLw-p6-zEa"/>
+                            <constraint firstItem="IS1-bj-qal" firstAttribute="centerX" secondItem="22k-bo-1WI" secondAttribute="centerX" id="MpE-vu-UYb"/>
+                            <constraint firstItem="0j9-GS-a7k" firstAttribute="top" secondItem="iC3-6v-XYZ" secondAttribute="bottom" constant="50" id="Nlf-pf-ZSh"/>
+                            <constraint firstItem="f91-fl-GD1" firstAttribute="trailing" secondItem="0j9-GS-a7k" secondAttribute="trailing" constant="37" id="P60-56-KrH"/>
+                            <constraint firstItem="f91-fl-GD1" firstAttribute="trailing" secondItem="5BZ-HI-b71" secondAttribute="trailing" constant="37" id="Y9O-XA-vZV"/>
+                            <constraint firstItem="5BZ-HI-b71" firstAttribute="top" secondItem="0j9-GS-a7k" secondAttribute="bottom" constant="25" id="YO1-DN-v1A"/>
+                            <constraint firstItem="0j9-GS-a7k" firstAttribute="leading" secondItem="f91-fl-GD1" secondAttribute="leading" constant="37" id="ca1-xd-YuR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="f91-fl-GD1"/>
+                    </view>
+                    <connections>
+                        <outlet property="explainLB" destination="5BZ-HI-b71" id="miM-LO-MSh"/>
+                        <outlet property="importView" destination="0j9-GS-a7k" id="cLJ-4c-jR2"/>
+                        <outlet property="nextBtn" destination="IS1-bj-qal" id="deX-Qk-DGQ"/>
+                        <outlet property="titleLB" destination="iC3-6v-XYZ" id="O0w-QF-sa2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o07-Av-tkL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="72"/>
+        </scene>
+    </scenes>
+</document>

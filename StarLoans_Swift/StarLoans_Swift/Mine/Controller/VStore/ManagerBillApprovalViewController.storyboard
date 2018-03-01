@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Manager Bill Approval View Controller-->
+        <scene sceneID="OY4-tL-GLi">
+            <objects>
+                <viewController storyboardIdentifier="ManagerBillApprovalViewController" id="4Ct-q1-B61" customClass="ManagerBillApprovalViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="l0O-jJ-cGL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="McE-NP-LML">
+                                <rect key="frame" x="36" y="36" width="303" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Spj-da-Ca3">
+                                        <rect key="frame" x="0.0" y="0.0" width="141.5" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="审核不通过"/>
+                                        <connections>
+                                            <action selector="disposeBtnClick:" destination="4Ct-q1-B61" eventType="touchUpInside" id="o21-VT-Eb6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vlf-OW-gjO">
+                                        <rect key="frame" x="161.5" y="0.0" width="141.5" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="审核通过"/>
+                                        <connections>
+                                            <action selector="disposeBtnClick:" destination="4Ct-q1-B61" eventType="touchUpInside" id="fQg-4R-aaI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="h5v-ul-DXS"/>
+                                </constraints>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UNz-2q-6pQ" customClass="MyTextView" customModule="StarLoans_Swift" customModuleProvider="target">
+                                <rect key="frame" x="36" y="100" width="303" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="wMp-Sy-XV0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJ5-i6-Cm4">
+                                <rect key="frame" x="36" y="100" width="303" height="160"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON-tianjiazhaopian-" translatesAutoresizingMaskIntoConstraints="NO" id="ZxD-Is-fkq">
+                                        <rect key="frame" x="128.5" y="50" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ihs-km-NiI"/>
+                                            <constraint firstAttribute="width" constant="45" id="ume-jr-kmy"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请上传批复函" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AsQ-Ks-NH7">
+                                        <rect key="frame" x="102" y="101" width="98" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="18" id="Gih-My-JXw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="36I-zp-HQO"/>
+                                    <constraint firstItem="ZxD-Is-fkq" firstAttribute="centerX" secondItem="RJ5-i6-Cm4" secondAttribute="centerX" id="9d5-kb-P62"/>
+                                    <constraint firstItem="AsQ-Ks-NH7" firstAttribute="top" secondItem="ZxD-Is-fkq" secondAttribute="bottom" constant="6" id="fyN-XM-EcM"/>
+                                    <constraint firstItem="AsQ-Ks-NH7" firstAttribute="centerX" secondItem="RJ5-i6-Cm4" secondAttribute="centerX" id="pJH-8K-MJf"/>
+                                    <constraint firstItem="ZxD-Is-fkq" firstAttribute="top" secondItem="RJ5-i6-Cm4" secondAttribute="top" constant="50" id="v1r-hd-HuG"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="UNz-2q-6pQ" firstAttribute="leading" secondItem="zRS-xe-Xgx" secondAttribute="leading" constant="36" id="9Tn-v5-AZv"/>
+                            <constraint firstItem="McE-NP-LML" firstAttribute="leading" secondItem="zRS-xe-Xgx" secondAttribute="leading" constant="36" id="He8-fm-8YN"/>
+                            <constraint firstItem="McE-NP-LML" firstAttribute="top" secondItem="zRS-xe-Xgx" secondAttribute="top" constant="16" id="HzT-Xh-Nm7"/>
+                            <constraint firstItem="zRS-xe-Xgx" firstAttribute="trailing" secondItem="RJ5-i6-Cm4" secondAttribute="trailing" constant="36" id="Iyk-TP-JbP"/>
+                            <constraint firstItem="zRS-xe-Xgx" firstAttribute="trailing" secondItem="UNz-2q-6pQ" secondAttribute="trailing" constant="36" id="NgU-ZB-FPO"/>
+                            <constraint firstItem="UNz-2q-6pQ" firstAttribute="top" secondItem="McE-NP-LML" secondAttribute="bottom" constant="24" id="ZCo-Up-03E"/>
+                            <constraint firstItem="RJ5-i6-Cm4" firstAttribute="leading" secondItem="zRS-xe-Xgx" secondAttribute="leading" constant="36" id="ak0-4M-lUl"/>
+                            <constraint firstItem="zRS-xe-Xgx" firstAttribute="trailing" secondItem="McE-NP-LML" secondAttribute="trailing" constant="36" id="dai-1B-G5y"/>
+                            <constraint firstItem="RJ5-i6-Cm4" firstAttribute="top" secondItem="McE-NP-LML" secondAttribute="bottom" constant="24" id="fcP-mR-2oY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zRS-xe-Xgx"/>
+                    </view>
+                    <connections>
+                        <outlet property="leftDisposeBtn" destination="Spj-da-Ca3" id="Lg5-fr-aNa"/>
+                        <outlet property="rightDisposeBtn" destination="Vlf-OW-gjO" id="mQY-7d-Ccg"/>
+                        <outlet property="textView" destination="UNz-2q-6pQ" id="n0E-mE-FQ1"/>
+                        <outlet property="uploadView" destination="RJ5-i6-Cm4" id="KqL-9J-AgY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EXU-QV-Ajg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218.40000000000001" y="154.27286356821591"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ICON-tianjiazhaopian-" width="29" height="29"/>
+    </resources>
+</document>

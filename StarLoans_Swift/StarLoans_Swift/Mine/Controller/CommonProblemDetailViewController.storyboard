@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Common Problem Detail View Controller-->
+        <scene sceneID="ldo-fd-HF0">
+            <objects>
+                <viewController storyboardIdentifier="CommonProblemDetailViewController" id="l3w-Di-XtH" customClass="CommonProblemDetailViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0fB-I0-3w3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CpQ-IC-hUe">
+                                <rect key="frame" x="16" y="36" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwy-kl-JTh">
+                                <rect key="frame" x="16" y="52" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CpQ-IC-hUe" firstAttribute="leading" secondItem="ez8-8C-f9K" secondAttribute="leading" constant="16" id="3vB-sy-OJL"/>
+                            <constraint firstItem="Rwy-kl-JTh" firstAttribute="leading" secondItem="ez8-8C-f9K" secondAttribute="leading" constant="16" id="6V0-7z-3qe"/>
+                            <constraint firstItem="ez8-8C-f9K" firstAttribute="trailing" secondItem="Rwy-kl-JTh" secondAttribute="trailing" constant="16" id="6gx-78-cxl"/>
+                            <constraint firstItem="ez8-8C-f9K" firstAttribute="trailing" secondItem="CpQ-IC-hUe" secondAttribute="trailing" constant="16" id="9MT-Eo-1gS"/>
+                            <constraint firstItem="Rwy-kl-JTh" firstAttribute="top" secondItem="CpQ-IC-hUe" secondAttribute="bottom" constant="16" id="9XN-aL-9my"/>
+                            <constraint firstItem="CpQ-IC-hUe" firstAttribute="top" secondItem="ez8-8C-f9K" secondAttribute="top" constant="16" id="vU7-Ob-Yer"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ez8-8C-f9K"/>
+                    </view>
+                    <connections>
+                        <outlet property="contentLB" destination="Rwy-kl-JTh" id="bJc-yd-ufg"/>
+                        <outlet property="titleLB" destination="CpQ-IC-hUe" id="mQN-u9-ClQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xpT-wL-dV7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-257" y="156"/>
+        </scene>
+    </scenes>
+</document>

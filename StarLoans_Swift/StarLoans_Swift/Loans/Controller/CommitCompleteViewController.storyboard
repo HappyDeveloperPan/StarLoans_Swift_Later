@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Commit Complete View Controller-->
+        <scene sceneID="MFD-Bd-x7M">
+            <objects>
+                <viewController storyboardIdentifier="CommitCompleteViewController" id="t1g-kk-8Ie" customClass="CommitCompleteViewController" customModule="StarLoans_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WL9-yr-VyN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ICON-PAY" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-uv-rdq">
+                                <rect key="frame" x="157.5" y="67" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1vV-yc-wx8"/>
+                                    <constraint firstAttribute="width" constant="60" id="RQw-i9-eym"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提交成功!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAi-hb-y5e">
+                                <rect key="frame" x="16" y="142" width="343" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="18" id="T2N-Dw-lYE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我们会在2个工作日内给予反馈，请关注消息提醒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXU-JG-buf">
+                                <rect key="frame" x="16" y="175" width="343" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="9fe-bP-574"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8rm-1x-7Wl">
+                                <rect key="frame" x="37.5" y="558" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.21960784310000001" blue="0.23921568630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="hRe-Ri-Zpe"/>
+                                    <constraint firstAttribute="height" constant="45" id="zee-cT-OCj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="返回列表">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="returnBtnClick:" destination="t1g-kk-8Ie" eventType="touchUpInside" id="siN-RH-IrV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="vXU-JG-buf" firstAttribute="centerX" secondItem="WL9-yr-VyN" secondAttribute="centerX" id="0FL-N7-gaJ"/>
+                            <constraint firstItem="Ylx-uv-rdq" firstAttribute="centerX" secondItem="WL9-yr-VyN" secondAttribute="centerX" id="Bgf-AZ-oM9"/>
+                            <constraint firstItem="Ylx-uv-rdq" firstAttribute="top" secondItem="y8q-PB-DFK" secondAttribute="top" constant="47" id="Maa-MZ-h8W"/>
+                            <constraint firstItem="iAi-hb-y5e" firstAttribute="centerX" secondItem="WL9-yr-VyN" secondAttribute="centerX" id="Q5I-dn-P0S"/>
+                            <constraint firstItem="iAi-hb-y5e" firstAttribute="leading" secondItem="y8q-PB-DFK" secondAttribute="leading" constant="16" id="Su1-r9-Iq4"/>
+                            <constraint firstItem="y8q-PB-DFK" firstAttribute="trailing" secondItem="vXU-JG-buf" secondAttribute="trailing" constant="16" id="TtU-jB-2aN"/>
+                            <constraint firstItem="y8q-PB-DFK" firstAttribute="bottom" secondItem="8rm-1x-7Wl" secondAttribute="bottom" constant="64" id="Tw4-Wt-G4v"/>
+                            <constraint firstItem="y8q-PB-DFK" firstAttribute="trailing" secondItem="iAi-hb-y5e" secondAttribute="trailing" constant="16" id="U7y-Lh-pqW"/>
+                            <constraint firstItem="vXU-JG-buf" firstAttribute="top" secondItem="iAi-hb-y5e" secondAttribute="bottom" constant="15" id="aHL-Ec-y1y"/>
+                            <constraint firstItem="8rm-1x-7Wl" firstAttribute="centerX" secondItem="WL9-yr-VyN" secondAttribute="centerX" id="eZI-TY-rBR"/>
+                            <constraint firstItem="vXU-JG-buf" firstAttribute="leading" secondItem="y8q-PB-DFK" secondAttribute="leading" constant="16" id="rbc-Yr-K3j"/>
+                            <constraint firstItem="iAi-hb-y5e" firstAttribute="top" secondItem="Ylx-uv-rdq" secondAttribute="bottom" constant="15" id="uqQ-gM-Z6K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="y8q-PB-DFK"/>
+                    </view>
+                    <connections>
+                        <outlet property="completeImg" destination="Ylx-uv-rdq" id="E6p-y0-Xvu"/>
+                        <outlet property="returnBtn" destination="8rm-1x-7Wl" id="y8F-Wv-li7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JLz-B9-UAv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263" y="57"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ICON-PAY" width="60" height="60"/>
+    </resources>
+</document>
