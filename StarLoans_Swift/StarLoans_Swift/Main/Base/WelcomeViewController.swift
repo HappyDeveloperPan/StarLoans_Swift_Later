@@ -103,7 +103,9 @@ class WelcomeViewController: UIViewController {
     }
     
     @objc func startButtonClick(_ sender: UIButton) {
-        self.view.window?.rootViewController = AXDTabBarViewController()
+//        self.view.window?.rootViewController = AXDTabBarViewController()
+        let navVC = AXDNavigationController(rootViewController: LoginViewController())
+        self.view.window?.rootViewController = navVC
     }
 
 }

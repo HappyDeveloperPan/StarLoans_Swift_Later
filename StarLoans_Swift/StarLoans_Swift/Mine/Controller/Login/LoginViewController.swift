@@ -210,7 +210,22 @@ extension LoginViewController {
 //                    Utils.setAsynchronous(userDic, withKey: kSavedUser)
 //                }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
-                self?.navigationController?.dismiss(animated: true, completion: nil)
+//                self?.navigationController?.dismiss(animated: true, completion: nil)
+                if ((self?.presentingViewController) != nil) {
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                }else {
+                    switch UserManager.shareManager.userModel.type {
+                    case 1:
+                        self?.view.window?.rootViewController = AXDTabBarViewController()
+                    case 2,3:
+                        let navVC = AXDNavigationController(rootViewController: VStoreViewController.loadStoryboard())
+                        self?.view.window?.rootViewController = navVC
+//                        self?.view.window?.rootViewController = AXDTabBarViewController()
+                    default:
+                        JSProgress.showFailStatus(with: "还未认证成功")
+                    }
+                    print("不可以跳转")
+                }
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {
