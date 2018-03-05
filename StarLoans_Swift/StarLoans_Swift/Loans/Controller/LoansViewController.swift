@@ -16,7 +16,7 @@ class LoansViewController: BaseViewController {
     //MARK: - 懒加载
     lazy var titleBtn: UIButton = { [unowned self] in
         let titleBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 65, height: 30))
-        titleBtn.setTitle("贷款", for: .normal)
+        titleBtn.setTitle("产品", for: .normal)
         titleBtn.setTitleColor(kTitleColor, for: .normal)
 //        titleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         titleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .bold)

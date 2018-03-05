@@ -15,7 +15,6 @@ class JSTabBarViewController: UITabBarController {
         super.viewDidLoad()
 //        delegate = self
         addChildViewControllers()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,7 +25,7 @@ class JSTabBarViewController: UITabBarController {
         
         addChildViewController(childViewController: HomePageViewController(), title: "首页", imageName: "ICON-homepage",
             selectedImageName: "ICON-homepage-select")
-        addChildViewController(childViewController: LoansViewController(), title: "贷款", imageName: "ICON-homepage",
+        addChildViewController(childViewController: LoansViewController(), title: "产品", imageName: "ICON-homepage",
             selectedImageName: "ICON-homepage-select")
         addChildViewController(childViewController: PushViewController(), title: "推单", imageName: "ICON-homepage", selectedImageName: "ICON-homepage-select")
         addChildViewController(childViewController: InformationViewController(), title: "消息", imageName: "ICON-homepage", selectedImageName: "ICON-homepage-select")

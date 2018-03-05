@@ -204,6 +204,7 @@ extension AppDelegate {
             guard let userDic = Utils.getAsynchronousWithKey(kSavedUser) as? Dictionary<String, Any> else {
                 let navVC = AXDNavigationController(rootViewController: LoginViewController())
                 window?.rootViewController = navVC
+                window?.makeKeyAndVisible()
                 return
             }
             UserManager.shareManager.userModel = UserModel(with: JSON(userDic))
@@ -211,9 +212,13 @@ extension AppDelegate {
             case 1:
                 window?.rootViewController = AXDTabBarViewController()
             case 2,3:
-                let navVC = AXDNavigationController(rootViewController: VStoreViewController.loadStoryboard())
+                let vc = VStoreViewController.loadStoryboard()
+                vc.storeType = .manager
+                let navVC = AXDNavigationController(rootViewController: vc)
                 window?.rootViewController = navVC
-            default:break
+            default:
+                let navVC = AXDNavigationController(rootViewController: LoginViewController())
+                window?.rootViewController = navVC
             }
         }
         window?.makeKeyAndVisible()

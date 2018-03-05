@@ -174,11 +174,11 @@ extension InputUserInfoWebViewController {
     func pictureDataSendToJs(_ image: UIImage) {
         let pictureData = UIImageJPEGRepresentation(image, 0.5)?.base64EncodedString()
         if let pictureStr = pictureData {
-            let baseStr = "sendPictureDataToJS('\(String(describing: pictureStr))')"
+            var parameters = [String: Any]()
+            parameters["name"] = pictureStr
+            let baseStr = "imgsDataSendToJS('\(String(describing: parameters))')"
             webView.evaluateJavaScript(baseStr, completionHandler: nil)
         }
-//        let baseStr = "sendPictureDataToJS('\(String(describing: pictureData!))')"
-//        webView.evaluateJavaScript(baseStr, completionHandler: nil)
     }
     
     ///返回上一级网页
@@ -225,6 +225,8 @@ extension InputUserInfoWebViewController: WKUIDelegate, WKNavigationDelegate, WK
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         progressView.setProgress(0.0, animated: false)
+        /****/
+        portDataSendToJs()
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
