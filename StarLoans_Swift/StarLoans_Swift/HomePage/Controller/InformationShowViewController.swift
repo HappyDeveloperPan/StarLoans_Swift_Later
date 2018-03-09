@@ -46,6 +46,7 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
             webView.load(URLRequest(url: URL(string: resourceModel.url)!))
         }
 //        webView.load(URLRequest(url: URL(string: "https://www.baidu.com")!))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ICON-comback"), style: .plain, target: self, action: #selector(backItemPressed))
     }
     
     func setBasicData() {
@@ -91,6 +92,14 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
         if keyPath == "estimatedProgress" {
             progressView.isHidden = webView.estimatedProgress == 1
             progressView.setProgress(Float(webView.estimatedProgress), animated: true)
+        }
+    }
+    
+    @objc func backItemPressed() {
+        if webView.canGoBack {
+            webView.goBack()
+        }else {
+            navigationController?.popViewController(animated: true)
         }
     }
 }

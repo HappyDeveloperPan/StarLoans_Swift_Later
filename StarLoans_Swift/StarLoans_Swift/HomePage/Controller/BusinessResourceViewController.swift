@@ -54,7 +54,7 @@ class BusinessResourceViewController: BaseViewController {
     
     lazy var collectionView: UICollectionView = { [unowned self] in
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 200 - 45)
+        layout.itemSize = CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 45)
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -77,7 +77,7 @@ class BusinessResourceViewController: BaseViewController {
         super.viewDidLoad()
         title = "行业资源"
         view.backgroundColor = UIColor.white
-        topAdBannerView.localImgArray = adverList
+//        topAdBannerView.localImgArray = adverList
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,16 +87,16 @@ class BusinessResourceViewController: BaseViewController {
     override func viewWillLayoutSubviews() {
         super .viewWillLayoutSubviews()
         ///广告栏
-        topAdBannerView.snp.makeConstraints { (make) in
-            make.top.left.equalToSuperview()
-            make.width.equalTo(kScreenWidth)
-            make.height.equalTo(200)
-        }
-        topAdBannerView.layoutIfNeeded()
+//        topAdBannerView.snp.makeConstraints { (make) in
+//            make.top.left.equalToSuperview()
+//            make.width.equalTo(kScreenWidth)
+//            make.height.equalTo(200)
+//        }
+//        topAdBannerView.layoutIfNeeded()
         
         segmentView.snp.makeConstraints { (make) in
-            make.top.equalTo(topAdBannerView.snp.bottom)
-            make.left.equalToSuperview()
+//            make.top.equalTo(topAdBannerView.snp.bottom)
+            make.top.left.equalToSuperview()
             make.size.equalTo(CGSize(width: kScreenWidth, height: 45))
         }
         segmentView.layoutIfNeeded()
@@ -104,7 +104,7 @@ class BusinessResourceViewController: BaseViewController {
         collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(segmentView.snp.bottom)
             make.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 200 - 45))
+            make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight  - 45))
         }
         collectionView.layoutIfNeeded()
     }

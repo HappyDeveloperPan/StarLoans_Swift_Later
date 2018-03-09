@@ -82,7 +82,7 @@ class BankCardViewController: BaseViewController {
         }
         administrationBtn.isSelected = !administrationBtn.isSelected
         for index in 0...bankCardArr.count-1 {
-            let cell = collectionView.cellForItem(at: [index, 0]) as! BankCardCell
+            let cell = collectionView.cellForItem(at: [0, index]) as! BankCardCell
             cell.deleteBtn.isHidden = !administrationBtn.isSelected
         }
     }
@@ -135,7 +135,7 @@ extension BankCardViewController {
             
             if jsonData?["status"] == 200 {
                 self?.bankCardArr.remove(at: index)
-                self?.collectionView.deleteItems(at: [[index, 0]])
+                self?.collectionView.deleteItems(at: [[0, index]])
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {

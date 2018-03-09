@@ -73,7 +73,7 @@ class PayTableViewController: UITableViewController {
     @IBAction func payBtnClick(_ sender: AnimatableButton) {
         switch payType {
         case .balance:
-            break
+            balancePay()
         case .Wechat:
             WechatPay()
         }
@@ -112,6 +112,35 @@ extension PayTableViewController {
                     req.sign = payModel.sign
                     WXApi.send(req)
                 }
+            }else {
+                if error == nil {
+                    if let msg = jsonData?["msg_zhcn"].stringValue {
+                        JSProgress.showFailStatus(with: msg)
+                    }
+                }else {
+                    JSProgress.showFailStatus(with: "请求失败")
+                }
+            }
+        }
+    }
+    
+    ///余额支付
+    func balancePay() {
+        JSProgress.showBusy()
+        
+        var paramaters = [String: Any]()
+        paramaters["total_fee"] = price
+        paramaters["goods_id"] = goodsId
+        paramaters["goods_type"] = 1
+        paramaters["token"] = UserManager.shareManager.userModel.token
+        paramaters["id"] = UserManager.shareManager.userModel.id
+        
+        NetWorksManager.requst(with: kUrl_BalancePay, type: .post, parameters: paramaters) { (jsonData, error) in
+            
+            JSProgress.hidden()
+            
+            if jsonData?["status"] == 200 {
+                
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {

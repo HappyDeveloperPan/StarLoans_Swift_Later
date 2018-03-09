@@ -204,11 +204,13 @@ class PasswordViewController: UIViewController {
                         Utils.setAsynchronous(userDic, withKey: kSavedUser)
                     }
                     NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
-                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                    let vc = ApproveSelectViewController()
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                    //暂时注释掉
+//                    self?.navigationController?.dismiss(animated: true, completion: nil)
                 }else { //  修改密码
                     self?.navigationController?.popToRootViewController(animated: true)
                 }
-                
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {
@@ -224,6 +226,7 @@ class PasswordViewController: UIViewController {
 
 }
 
+///数据处理
 extension PasswordViewController {
     
 }

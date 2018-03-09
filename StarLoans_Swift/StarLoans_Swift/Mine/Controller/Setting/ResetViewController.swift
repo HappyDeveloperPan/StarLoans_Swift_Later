@@ -304,6 +304,7 @@ extension ResetViewController {
         parameters["token"] = UserManager.shareManager.userModel.token
         parameters["old_pwd"] = oldLoginPass.md5
         parameters["pwd"] = importView.textField.text?.md5
+        parameters["repwd"] = importView.textField.text?.md5
         
         JSProgress.hidden()
         

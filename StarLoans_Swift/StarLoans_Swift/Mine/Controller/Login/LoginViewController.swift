@@ -211,23 +211,24 @@ extension LoginViewController {
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
 //                self?.navigationController?.dismiss(animated: true, completion: nil)
                 //根据用户的身份和状态进行相应界面的跳转
+                
                 switch UserManager.shareManager.userModel.type {
                 case 1:
                     self?.navigationController?.dismiss(animated: true, completion: nil)
                     self?.view.window?.rootViewController = AXDTabBarViewController()
                 case 2,3:
-//                    let rootVc = self?.presentingViewController
-//                    rootVc?.willMove(toParentViewController: nil)
-//                    rootVc?.removeFromParentViewController()
                     self?.navigationController?.dismiss(animated: true, completion: nil)
                     let vc = VStoreViewController.loadStoryboard()
                     vc.storeType = .manager
                     let navVC = AXDNavigationController(rootViewController: vc)
                     self?.view.window?.rootViewController = navVC
                 default:
-                    JSProgress.showFailStatus(with: "还未认证成功")
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                    let vc = ApproveSelectViewController()
+                    self?.navigationController?.pushViewController(vc, animated: true)
+//                    JSProgress.showFailStatus(with: "未知用户")
                 }
-                print("不可以跳转")
+    
 //                if ((self?.presentingViewController) != nil) {
 //                    self?.navigationController?.dismiss(animated: true, completion: nil)
 //                }else {

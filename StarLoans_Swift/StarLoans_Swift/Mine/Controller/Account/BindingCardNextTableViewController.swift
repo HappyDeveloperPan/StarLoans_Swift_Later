@@ -120,6 +120,9 @@ extension BindingCardNextTableViewController {
     
     ///提交数据
     func commitCardbankData() {
+        
+        JSProgress.showBusy()
+        
         var parameters = [String: Any]()
         parameters["token"] = UserManager.shareManager.userModel.token
         parameters["name"] = userName
@@ -127,12 +130,17 @@ extension BindingCardNextTableViewController {
         parameters["code"] = verCodeTF.text
         parameters["phone"] = phoneNumber
         NetWorksManager.requst(with: kUrl_BankCardAdd, type: .post, parameters: parameters) { [weak self] (jsonData, error) in
+
+            JSProgress.hidden()
+            
             if jsonData?["status"] == 200 {
                 //跳转回银行卡界面并且刷新
-                for controller: UIViewController in (self?.navigationController?.viewControllers)! {
-                    if (controller is BankCardViewController) {
-                        let revise = controller as? BankCardViewController
-                        self?.navigationController?.popToViewController(revise ?? UIViewController(), animated: true)
+                if let viewControllers = self?.navigationController?.viewControllers {
+                    for controller: UIViewController in viewControllers {
+                        if (controller is BankCardViewController) {
+                            let revise = controller as? BankCardViewController
+                            self?.navigationController?.popToViewController(revise ?? UIViewController(), animated: true)
+                        }
                     }
                 }
             }else {
@@ -145,7 +153,9 @@ extension BindingCardNextTableViewController {
                 }
             }
         }
+        
     }
+    
 }
 
 extension BindingCardNextTableViewController: VerCodeButtonDelegate {
@@ -153,5 +163,4 @@ extension BindingCardNextTableViewController: VerCodeButtonDelegate {
         clickHandler(true)
         getVerCode()
     }
-
 }

@@ -102,6 +102,7 @@ class LoansProductView: UIView {
         rtTitle1.layer.cornerRadius = rtTitle1.height/2
         rtTitle2.layer.backgroundColor = UIColor.RGB(with: 248, green: 225, blue: 225).cgColor
         rtTitle2.layer.cornerRadius = rtTitle1.height/2
+        logoImg.contentMode = .scaleAspectFit
     }
     
     required init?(coder aDecoder: NSCoder) {

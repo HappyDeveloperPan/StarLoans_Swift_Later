@@ -55,7 +55,7 @@
                         <constraint firstAttribute="height" constant="90" id="v4K-jg-DFk"/>
                         <constraint firstAttribute="width" constant="90" id="xi2-Rl-0Ib"/>
                     </constraints>
-                    <state key="normal" title="贷款产品">
+                    <state key="normal" title="产品资源">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>

@@ -171,6 +171,8 @@ public let kUrl_BrokerOrderList = hostAdress + "/Home/MobileOrder/orderList"
 public let kUrl_WeChatPay = hostAdress + "/Home/MobileWxPreorder/index"
 ///完成支付回调
 public let kUrl_PayCallback = hostAdress + "/Home/MobileWxPayResult/index"
+///余额支付
+public let kUrl_BalancePay = hostAdress + "/Home/MobileBalancePayment/index"
 
 //MARK: - 聚合数据
 ///银行卡真伪
