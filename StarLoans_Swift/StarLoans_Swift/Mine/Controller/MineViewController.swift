@@ -13,6 +13,7 @@ class MineViewController: BaseViewController, StoryboardLoadable {
     @IBOutlet weak var containerView: UIView!
     
     weak var navController: UINavigationController?
+    var popDelegate: UIGestureRecognizerDelegate?
     
     //MARK: - 生命周期
     override func viewDidLoad() {
@@ -54,6 +55,15 @@ extension MineViewController: UINavigationControllerDelegate {
                 //如果delegate是自己才设置为nil，因为viewWillAppear调用的比此方法较早，其他controller如果设置了delegate就可能会被误伤
                 navController?.delegate = nil
             }
+        }
+    }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        //实现滑动返回功能
+        if viewController == self.navigationController?.viewControllers[0] {
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = self.popDelegate
+        }else {
+            self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         }
     }
 }

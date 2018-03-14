@@ -124,14 +124,15 @@ extension PushProductSelectViewController {
         parameters["page"] = 1
         NetWorksManager.requst(with: kUrl_PublishProductList, type: .post, parameters: parameters) { [weak self] (jsonData, error) in
             if jsonData?["status"] == 200 {
+                self?.productDataArr.removeAll()
                 if let data = jsonData?["data"].array {
                     var dataArr = [ProductModel]()
                     for dict in data {
                         dataArr.append(ProductModel(with: dict))
                     }
                     self?.productDataArr = dataArr
-                    self?.collectionView.reloadData()
                 }
+                self?.collectionView.reloadData()
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {
