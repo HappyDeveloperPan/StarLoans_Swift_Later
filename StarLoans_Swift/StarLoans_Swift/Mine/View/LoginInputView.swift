@@ -207,7 +207,6 @@ class VerCodeButton: UIButton {
         addTarget(self, action: #selector(VerCodeButton.sendButtonClick(_:)), for: .touchUpInside)
     }
     
-    
     required init?(coder aDecoder: NSCoder) {
         super .init(coder: aDecoder)
 //        fatalError("init(coder:) has not been implemented")

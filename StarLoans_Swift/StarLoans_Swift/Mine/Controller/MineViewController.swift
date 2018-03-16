@@ -45,8 +45,7 @@ extension MineViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if viewController == self {
             navController?.setNavigationBarHidden(true, animated: animated)
-        }
-        else {
+        }else {
             //不在本页时，显示真正的nav bar
             navController?.setNavigationBarHidden(false, animated: animated)
             //当不显示本页时，要么就push到下一页，要么就被pop了，那么就将delegate设置为nil，防止出现BAD ACCESS
