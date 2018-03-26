@@ -70,11 +70,16 @@ class VStoreViewController: BaseViewController, StoryboardLoadable {
         title = "微店订单"
         NotificationCenter.default.addObserver(self, selector: #selector(notifPresentLogin(notif:)), name: NSNotification.Name(rawValue: kPresentLogin), object: nil)
         setupBasic()
-        setupBasicData()
+//        setupBasicData()
         getVStoreData()
         if storeType == .manager {
             navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        setupBasicData()
     }
     
     func setupBasic() {
@@ -83,6 +88,14 @@ class VStoreViewController: BaseViewController, StoryboardLoadable {
     }
     
     func setupBasicData() {
+        userNameLB.text = UserManager.shareManager.userModel.name
+        if !(UserManager.shareManager.userModel.tx.isEmpty) {
+            headIMg.setImage((UserManager.shareManager.userModel.tx), placeholder: nil, completionHandler: { [weak self] (image, error, cacheType, url) in
+                self?.headIMg.circleImage()
+            })
+        }else {
+            headIMg.image = #imageLiteral(resourceName: "ICON-MORENTOUXIANG")
+        }
         if UserManager.shareManager.userModel.type == 1 {
             storeType = .broker
             userTypeLB.text = "经纪人"
