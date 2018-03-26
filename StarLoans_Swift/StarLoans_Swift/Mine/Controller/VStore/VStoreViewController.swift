@@ -57,13 +57,24 @@ class VStoreViewController: BaseViewController, StoryboardLoadable {
         return collectionView
         }()
     
+    lazy var settingBtn: UIButton = { [unowned self] in
+        let settingBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        settingBtn.setImage(#imageLiteral(resourceName: "ICON-xiaoxishezh"), for: .normal)
+        settingBtn.addTarget(self, action: #selector(settingBtnClick(_:)), for: .touchUpInside)
+        return settingBtn
+        }()
+    
     //MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "微店订单"
+        NotificationCenter.default.addObserver(self, selector: #selector(notifPresentLogin(notif:)), name: NSNotification.Name(rawValue: kPresentLogin), object: nil)
         setupBasic()
         setupBasicData()
         getVStoreData()
+        if storeType == .manager {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
+        }
     }
     
     func setupBasic() {
@@ -97,12 +108,36 @@ class VStoreViewController: BaseViewController, StoryboardLoadable {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
 
     @IBAction func moreBtnClick(_ sender: UIButton) {
+        guard UserManager.shareManager.isLogin else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kPresentLogin), object: nil)
+            return
+        }
         let vc = VStoreSegmentViewController()
         vc.storeType = storeType
         vc.selectedSegmentIndex = 0
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func settingBtnClick(_ sender: UIButton) {
+        guard UserManager.shareManager.isLogin else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kPresentLogin), object: nil)
+            return
+        }
+        let vc = SettingViewController.loadStoryboard()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    ///跳转到登录界面
+    @objc func notifPresentLogin(notif:NSNotification?) {
+        let loginVC = LoginViewController()
+        let navVC = AXDNavigationController(rootViewController: loginVC)
+        self.present(navVC, animated: true, completion: nil)
     }
 }
 
@@ -161,6 +196,10 @@ extension VStoreViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard UserManager.shareManager.isLogin else {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kPresentLogin), object: nil)
+            return
+        }
         let vc = VStoreSegmentViewController()
         vc.storeType = storeType
         vc.segmentIndex = indexPath.row + 1

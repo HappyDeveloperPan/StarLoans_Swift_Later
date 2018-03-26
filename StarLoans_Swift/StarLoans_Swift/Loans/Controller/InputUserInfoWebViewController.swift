@@ -20,6 +20,7 @@ class InputUserInfoWebViewController: BaseViewController {
     //MARK: - 内部属性
     ///nav栏
     fileprivate weak var navController: UINavigationController?
+    fileprivate var picName: String = ""
     
     //MARK: - 懒加载
     fileprivate lazy var webView: WKWebView = { [unowned self] in
@@ -174,11 +175,37 @@ extension InputUserInfoWebViewController {
     func pictureDataSendToJs(_ image: UIImage) {
         let pictureData = UIImageJPEGRepresentation(image, 0.5)?.base64EncodedString()
         if let pictureStr = pictureData {
-            let baseStr = "sendPictureDataToJS('\(String(describing: pictureStr))')"
+            var parameters = [String: Any]()
+            parameters["name"] = picName
+            parameters["suffix"] = "jpg"
+            parameters["value"] = pictureStr
+            let baseStr = "uploadPicturesToJS('\(String(describing: parameters))')"
             webView.evaluateJavaScript(baseStr, completionHandler: nil)
         }
-//        let baseStr = "sendPictureDataToJS('\(String(describing: pictureData!))')"
-//        webView.evaluateJavaScript(baseStr, completionHandler: nil)
+    }
+    
+    func pictureDataSendToJS(_ info: Dictionary<String, Any>) {
+        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        var type: String = ""
+        if #available(iOS 11.0, *) {
+            if let url = info[UIImagePickerControllerImageURL] as? URL {
+                type = url.lastPathComponent.components(separatedBy: ".").last!
+            }else {
+                type = "jpeg"
+            }
+        } else {
+            type = "jpeg"
+        }
+        let pictureData = UIImageJPEGRepresentation(image, 0.5)?.base64EncodedString()
+        
+        if let pictureStr = pictureData {
+            var parameters = [String: Any]()
+            parameters["name"] = picName
+            parameters["suffix"] = type
+            parameters["value"] = pictureStr
+            let baseStr = "uploadPicturesToJS('\(String(describing: parameters))')"
+            webView.evaluateJavaScript(baseStr, completionHandler: nil)
+        }
     }
     
     ///返回上一级网页
@@ -186,7 +213,6 @@ extension InputUserInfoWebViewController {
         let baseStr = "goBackOnePage()"
         webView.evaluateJavaScript(baseStr, completionHandler: nil)
     }
-    
     
     //MARK: - 原生方法
     ///根据网页是否有上一级页面跳转
@@ -212,7 +238,8 @@ extension InputUserInfoWebViewController: UIImagePickerControllerDelegate, UINav
         //显示的图片
         let image:UIImage!
         image = info[UIImagePickerControllerEditedImage] as! UIImage
-        pictureDataSendToJs(image)
+//        pictureDataSendToJs(image)
+        pictureDataSendToJS(info)
         //图片控制器退出
         picker.dismiss(animated: true, completion: {
             () -> Void in
@@ -225,6 +252,8 @@ extension InputUserInfoWebViewController: WKUIDelegate, WKNavigationDelegate, WK
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         progressView.setProgress(0.0, animated: false)
+        /****/
+        portDataSendToJs()
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -240,6 +269,9 @@ extension InputUserInfoWebViewController: WKUIDelegate, WKNavigationDelegate, WK
             backVC()
         }
         if message.name == "uploadPictures" {
+            if let selectPicName = message.body as? String {
+                picName = selectPicName
+            }
             uploadPictures()
         }
     }

@@ -8,12 +8,18 @@
 
 import UIKit
 
-class AXDNavigationController: UINavigationController {
+class AXDNavigationController: UINavigationController, UINavigationControllerDelegate {
 
+    //MARK: - 外部属性
     var navBarHairlineImageView: UIImageView?
+    var popDelegate: UIGestureRecognizerDelegate?
     
+    //MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.popDelegate = self.interactivePopGestureRecognizer?.delegate
+        self.delegate = self
         
         navBarHairlineImageView = findHairlineImageViewUnder(navigationBar)
         
@@ -57,7 +63,6 @@ class AXDNavigationController: UINavigationController {
             
 //            UINavigationBar.appearance().backItem?.hidesBackButton = false
             viewController.hidesBottomBarWhenPushed = true
-//            viewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ICON-comback"), style: .plain, target: self, action: #selector(backVC))
             viewController.hidesBottomBarWhenPushed = true
         }
@@ -65,8 +70,17 @@ class AXDNavigationController: UINavigationController {
         super.pushViewController(viewController, animated: animated)
     }
     
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        //实现滑动返回功能
+        if viewController == self.viewControllers[0] {
+            self.interactivePopGestureRecognizer?.delegate = self.popDelegate
+        }else {
+            self.interactivePopGestureRecognizer?.delegate = nil
+        }
+    }
 }
 
+//MARK: - AXDNavigationController扩展
 extension AXDNavigationController {
     ///JS调用原生返回上一级界面
     @objc func backVC() {
@@ -74,4 +88,18 @@ extension AXDNavigationController {
         popViewController(animated: true)
     }
 }
+
+//MARK: - UINavigationControllerDelegate代理
+//extension AXDNavigationController: UINavigationControllerDelegate {
+//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+//        //实现滑动返回功能
+//        if viewController == self.viewControllers[0] {
+//            self.interactivePopGestureRecognizer?.delegate = self.popDelegate
+//        }else {
+//            self.interactivePopGestureRecognizer?.delegate = nil
+//        }
+//    }
+//}
+
+
 

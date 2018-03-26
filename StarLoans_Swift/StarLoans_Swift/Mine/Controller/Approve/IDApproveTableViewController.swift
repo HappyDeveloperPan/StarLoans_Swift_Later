@@ -262,6 +262,11 @@ extension IDApproveTableViewController {
     }
     
     func postDataToServicer() {
+        //FIXME: - 等下删除
+//        UserManager.shareManager.userModel.is_audit = 2
+//        let vc = ApproveCommitedViewController.loadStoryboard()
+//        navigationController?.pushViewController(vc, animated: true)
+        
         var parameters = [String: Any]()
         parameters["token"] = UserManager.shareManager.userModel.token
         parameters["type"] = approveModel.type

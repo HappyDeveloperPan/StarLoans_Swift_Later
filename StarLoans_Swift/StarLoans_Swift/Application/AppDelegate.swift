@@ -18,67 +18,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK: - 生命周期
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        ///     微信注册
-        WXApi.registerApp(WXAppID, enableMTA: true)
-        ///     极光注册
-        //注册通知实体
-        let entity = JPUSHRegisterEntity()
-        entity.types = Int(JPAuthorizationOptions.alert.rawValue) |  Int(JPAuthorizationOptions.sound.rawValue) |  Int(JPAuthorizationOptions.badge.rawValue)
-        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
-        //注册极光推送
-        JPUSHService.setup(withOption: launchOptions, appKey: JPushAppKey, channel: "YinHao channel", apsForProduction: false)
-        JPUSHService.registrationIDCompletionHandler { (resCode, registrationID) in
-            if resCode == 0{
-                print("registrationID获取成功：\(String(describing: registrationID))")
-                if let registrationID = registrationID {
-                    Utils.setAsynchronous(registrationID, withKey: kRegistrationID)
-                }
-//                Utils.setAsynchronous(String(describing: registrationID), withKey: kRegistrationID)
-            }else {
-                print("registrationID获取失败：\(resCode)")
-            }
-        }
-        ///     自动登录
-        if let userDic = Utils.getAsynchronousWithKey(kSavedUser) as? Dictionary<String, Any>{
-            
-            UserManager.shareManager.userModel = UserModel(with: JSON(userDic))
-            
-            let parameters = ["token": UserManager.shareManager.userModel.token] as [String : AnyObject]
-            
-            NetWorksManager.requst(with: kUrl_AutoLogin, type: .post, parameters: parameters, completionHandler: { (jsonData, error) in
-                if jsonData?["status"] == 200 {
-                    UserManager.shareManager.isLogin = true
-                    if let data = jsonData?["data"] {
-                        UserManager.shareManager.userModel = UserModel(with: data)
-                    }
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
-                }else {
-                    if error == nil {
-                        if let msg = jsonData?["msg_zhcn"].stringValue {
-                            JSProgress.showFailStatus(with: msg)
-                        }
-                    }else {
-                        JSProgress.showFailStatus(with: "请求失败")
-                    }
-                }
-            })
-        }
+        //  微信注册
+        WXRegister()
+        //  极光注册
+        JPushRegister(launchOptions)
+        //  自动登录
+        automaticLogin()
+        //  显示控制器
+        showController()
+//        window = UIWindow.init(frame: UIScreen.main.bounds)
+//        //得到当前应用的版本号
+//        let infoDictionary = Bundle.main.infoDictionary
+//        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+//        print("当前版本号: \(currentAppVersion)")
+//        //取出之前保存的版本号
+//        let oldAppVersion = Utils.getAsynchronousWithKey(kRunVersion) as? String
+//        print("老版本号: \(String(describing: oldAppVersion))")
+//        if oldAppVersion == nil || oldAppVersion != currentAppVersion {
+//            Utils.setAsynchronous(currentAppVersion, withKey: kRunVersion)
+//            window?.rootViewController = WelcomeViewController()
+//        }else {
+//            window?.rootViewController = AXDTabBarViewController()
+//        }
+//        window?.makeKeyAndVisible()
         
-        window = UIWindow.init(frame: UIScreen.main.bounds)
-        //得到当前应用的版本号
-        let infoDictionary = Bundle.main.infoDictionary
-        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
-        print("当前版本号: \(currentAppVersion)")
-        //取出之前保存的版本号
-        let oldAppVersion = Utils.getAsynchronousWithKey(kRunVersion) as? String
-        print("老版本号: \(String(describing: oldAppVersion))")
-        if oldAppVersion == nil || oldAppVersion != currentAppVersion {
-            Utils.setAsynchronous(currentAppVersion, withKey: kRunVersion)
-            window?.rootViewController = WelcomeViewController()
-        }else {
-            window?.rootViewController = AXDTabBarViewController()
-        }
-        window?.makeKeyAndVisible()
+        //  全局配置
         setupGlobalConfig()
         
         return true
@@ -135,6 +99,130 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("did Fail To Register For Remote Notifications With Error: \(error)")
     }
 
+}
+
+//MARK: - 数据处理
+extension AppDelegate {
+    
+    /// 微信注册
+    func WXRegister() {
+        WXApi.registerApp(WXAppID, enableMTA: true)
+    }
+    
+    
+    /// 极光注册
+    ///
+    /// - Parameter launchOptions: Dictionary<UIApplicationLaunchOptionsKey, Any>字典类型
+    func JPushRegister(_ launchOptions: Dictionary<UIApplicationLaunchOptionsKey, Any>?) {
+        //注册通知实体
+        let entity = JPUSHRegisterEntity()
+        entity.types = Int(JPAuthorizationOptions.alert.rawValue) |  Int(JPAuthorizationOptions.sound.rawValue) |  Int(JPAuthorizationOptions.badge.rawValue)
+        JPUSHService.register(forRemoteNotificationConfig: entity, delegate: self)
+        //注册极光推送
+        JPUSHService.setup(withOption: launchOptions, appKey: JPushAppKey, channel: "YinHao channel", apsForProduction: false)
+        JPUSHService.registrationIDCompletionHandler { (resCode, registrationID) in
+            if resCode == 0{
+                print("registrationID获取成功：\(String(describing: registrationID))")
+                if let registrationID = registrationID {
+                    Utils.setAsynchronous(registrationID, withKey: kRegistrationID)
+                }
+                //  Utils.setAsynchronous(String(describing: registrationID), withKey: kRegistrationID)
+            }else {
+                print("registrationID获取失败：\(resCode)")
+            }
+        }
+    }
+    
+    /// 自动登录
+    func automaticLogin() {
+        guard let userDic = Utils.getAsynchronousWithKey(kSavedUser) as? Dictionary<String, Any> else {
+            return
+        }
+        
+        UserManager.shareManager.userModel = UserModel(with: JSON(userDic))
+        
+        let parameters = ["token": UserManager.shareManager.userModel.token] as [String : AnyObject]
+        
+        NetWorksManager.requst(with: kUrl_AutoLogin, type: .post, parameters: parameters, completionHandler: { (jsonData, error) in
+            if jsonData?["status"] == 200 {
+                UserManager.shareManager.isLogin = true
+                if let data = jsonData?["data"] {
+                    UserManager.shareManager.userModel = UserModel(with: data)
+                }
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
+            }else {
+                if error == nil {
+                    if let msg = jsonData?["msg_zhcn"].stringValue {
+                        JSProgress.showFailStatus(with: msg)
+                    }
+                }else {
+                    JSProgress.showFailStatus(with: "请求失败")
+                }
+            }
+        })
+        //        if let userDic = Utils.getAsynchronousWithKey(kSavedUser) as? Dictionary<String, Any>{
+        //
+        //            UserManager.shareManager.userModel = UserModel(with: JSON(userDic))
+        //
+        //            let parameters = ["token": UserManager.shareManager.userModel.token] as [String : AnyObject]
+        //
+        //            NetWorksManager.requst(with: kUrl_AutoLogin, type: .post, parameters: parameters, completionHandler: { (jsonData, error) in
+        //                if jsonData?["status"] == 200 {
+        //                    UserManager.shareManager.isLogin = true
+        //                    if let data = jsonData?["data"] {
+        //                        UserManager.shareManager.userModel = UserModel(with: data)
+        //                    }
+        //                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
+        //                }else {
+        //                    if error == nil {
+        //                        if let msg = jsonData?["msg_zhcn"].stringValue {
+        //                            JSProgress.showFailStatus(with: msg)
+        //                        }
+        //                    }else {
+        //                        JSProgress.showFailStatus(with: "请求失败")
+        //                    }
+        //                }
+        //            })
+        //        }
+    }
+    
+    /// 显示控制器
+    func showController() {
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        //得到当前应用的版本号
+        let infoDictionary = Bundle.main.infoDictionary
+        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+        print("当前版本号: \(currentAppVersion)")
+        //取出之前保存的版本号
+        let oldAppVersion = Utils.getAsynchronousWithKey(kRunVersion) as? String
+        print("老版本号: \(String(describing: oldAppVersion))")
+        if oldAppVersion == nil || oldAppVersion != currentAppVersion {
+            Utils.setAsynchronous(currentAppVersion, withKey: kRunVersion)
+            window?.rootViewController = WelcomeViewController()
+        }else {
+//            window?.rootViewController = AXDTabBarViewController()
+            guard let userDic = Utils.getAsynchronousWithKey(kSavedUser) as? Dictionary<String, Any> else {
+                let navVC = AXDNavigationController(rootViewController: LoginViewController())
+                window?.rootViewController = navVC
+                window?.makeKeyAndVisible()
+                return
+            }
+            UserManager.shareManager.userModel = UserModel(with: JSON(userDic))
+            switch UserManager.shareManager.userModel.type {
+            case 1:
+                window?.rootViewController = AXDTabBarViewController()
+            case 2,3:
+                let vc = VStoreViewController.loadStoryboard()
+                vc.storeType = .manager
+                let navVC = AXDNavigationController(rootViewController: vc)
+                window?.rootViewController = navVC
+            default:
+                let navVC = AXDNavigationController(rootViewController: LoginViewController())
+                window?.rootViewController = navVC
+            }
+        }
+        window?.makeKeyAndVisible()
+    }
 }
 
 //MARK: - WXApiDelegate代理

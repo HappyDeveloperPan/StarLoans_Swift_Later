@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Foundation
+import CoreFoundation
 
 public class Utils {
     ///获取当前页面
@@ -67,6 +69,17 @@ public class Utils {
         } catch _ {
             print("转换失败")
             return nil
+        }
+    }
+    
+    class func typeForImageData(for data: NSData) -> String? {
+        var c: UInt8 = 0
+        data.getBytes(&c, length: 1)
+        switch c {
+        case 0xff:
+            return "jpeg"
+        default:
+            return "png"
         }
     }
 

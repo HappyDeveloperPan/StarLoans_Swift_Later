@@ -64,14 +64,13 @@ class AXDTabBarViewController: ESTabBarController{
         
         let contro2 = LoansViewController()
         contro2.title = ""
-        contro2.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "贷款", image: #imageLiteral(resourceName: "ICON-loans"), selectedImage: #imageLiteral(resourceName: "ICON-loans-select"))
+        contro2.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "产品", image: #imageLiteral(resourceName: "ICON-loans"), selectedImage: #imageLiteral(resourceName: "ICON-loans-select"))
         let nav2 = AXDNavigationController(rootViewController: contro2)
         
         let contro3 = PushViewController()
         contro3.tabBarItem = ESTabBarItem(AXDIrregularityTabBarItemContentView(), title: nil, image: #imageLiteral(resourceName: "ICON-tuidan"), selectedImage: #imageLiteral(resourceName: "ICON-tuidan"))
         let nav3 = AXDNavigationController(rootViewController: contro3)
         
-//        let contro4 = InformationViewController()
         let contro4 = MessageCenterViewController()
         contro4.title = ""
         contro4.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "消息", image: #imageLiteral(resourceName: "ICON-xiaoxi"), selectedImage: #imageLiteral(resourceName: "ICON-xiaoxi-select"))

@@ -87,6 +87,7 @@ class ProductDetailCollectionViewCell: UICollectionViewCell, RegisterCellOrNib {
         let vc = AuthorizationViewController.loadStoryboard()
         vc.loansProductType = loansProductType
         vc.url = productModel.url
+        vc.productId = productModel.product_id
         let topViewController = Utils.currentTopViewController()
         if topViewController?.navigationController != nil{
             topViewController?.navigationController?.pushViewController(vc, animated: true)

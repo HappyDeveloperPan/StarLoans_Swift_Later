@@ -29,10 +29,17 @@ class PayTableViewController: UITableViewController {
     }
     fileprivate var payType: PayType = .balance
     fileprivate var selectImgArr = [UIImageView]()
+    fileprivate var timer: DispatchSourceTimer?
     
     //MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        basicConfig()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(WechatPayResult(notif:)), name: NSNotification.Name(rawValue: kWechatPayResult), object: nil)
+    }
+    
+    func basicConfig() {
         view.backgroundColor = kHomeBackColor
         selectImgArr.append(selectImgOne)
         selectImgArr.append(selectImgTwo)
@@ -40,7 +47,55 @@ class PayTableViewController: UITableViewController {
         moneyLB.adjustsFontSizeToFitWidth = true
         moneyLB.text = String(price)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(WechatPayResult(notif:)), name: NSNotification.Name(rawValue: kWechatPayResult), object: nil)
+        countDown()
+    }
+    
+    
+    /// 支付倒计时
+    func countDown() {
+        var timeOut = 15 * 60
+        //创建去全局队列
+        let queue = DispatchQueue.global()
+        //在全局队列下创建一个时间源
+        timer = DispatchSource.makeTimerSource(flags: [], queue: queue)
+        //设定循环时间间隔一秒, 并且立即开始
+        timer?.schedule(wallDeadline: DispatchWallTime.now(), repeating: .seconds(1))
+        //时间源触发事件
+        timer?.setEventHandler(handler: { [weak self] in
+            if timeOut <= 0 {
+                self?.timer?.cancel()
+                self?.timer = nil
+                DispatchQueue.main.async(execute: {
+                    self?.countDownLB.text = "00:00"
+                })
+            }else {
+                //计算剩余时间
+                timeOut -= 1
+                //主队列中刷新UI
+                DispatchQueue.main.async(execute: {
+                    var min:String = "00"
+                    var sec:String = "00"
+                    if timeOut/60 < 10 {
+                        min = "0" + String(timeOut/60)
+                    }else {
+                        min = String(timeOut/60)
+                    }
+                    if timeOut%60 < 10 {
+                        sec = "0" + String(timeOut%60)
+                    }else {
+                        sec = String(timeOut%60)
+                    }
+                    self?.countDownLB.text = min + ":" + sec
+                })
+            }
+        })
+        //启动时间源
+        timer?.resume()
+    }
+    
+    deinit {
+        timer?.cancel()
+        timer = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,7 +128,7 @@ class PayTableViewController: UITableViewController {
     @IBAction func payBtnClick(_ sender: AnimatableButton) {
         switch payType {
         case .balance:
-            break
+            balancePay()
         case .Wechat:
             WechatPay()
         }
@@ -112,6 +167,35 @@ extension PayTableViewController {
                     req.sign = payModel.sign
                     WXApi.send(req)
                 }
+            }else {
+                if error == nil {
+                    if let msg = jsonData?["msg_zhcn"].stringValue {
+                        JSProgress.showFailStatus(with: msg)
+                    }
+                }else {
+                    JSProgress.showFailStatus(with: "请求失败")
+                }
+            }
+        }
+    }
+    
+    ///余额支付
+    func balancePay() {
+        JSProgress.showBusy()
+        
+        var paramaters = [String: Any]()
+        paramaters["total_fee"] = price
+        paramaters["goods_id"] = goodsId
+        paramaters["goods_type"] = 1
+        paramaters["token"] = UserManager.shareManager.userModel.token
+        paramaters["id"] = UserManager.shareManager.userModel.id
+        
+        NetWorksManager.requst(with: kUrl_BalancePay, type: .post, parameters: paramaters) { (jsonData, error) in
+            
+            JSProgress.hidden()
+            
+            if jsonData?["status"] == 200 {
+                
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {

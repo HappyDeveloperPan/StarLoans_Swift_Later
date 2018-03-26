@@ -32,12 +32,14 @@ class ApproveCommitedViewController: BaseViewController, StoryboardLoadable {
     }
     
     @IBAction func commitBtnClick(_ sender: AnimatableButton) {
-        for controller: UIViewController in (navigationController?.viewControllers)! {
-            if (controller is ApproveSelectViewController) {
-                let vc = controller as? ApproveSelectViewController
-                navigationController?.popToViewController(vc ?? UIViewController(), animated: true)
-            }
-        }
+        navigationController?.popToRootViewController(animated: true)
+//  暂时注释掉
+//        for controller: UIViewController in (navigationController?.viewControllers)! {
+//            if (controller is ApproveSelectViewController) {
+//                let vc = controller as? ApproveSelectViewController
+//                navigationController?.popToViewController(vc ?? UIViewController(), animated: true)
+//            }
+//        }
     }
     /*
     // MARK: - Navigation

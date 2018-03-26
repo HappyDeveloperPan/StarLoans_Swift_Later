@@ -43,6 +43,10 @@ class LoginViewController: BaseViewController {
         super.didReceiveMemoryWarning()
     }
     
+//    deinit {
+//        print("这个控制器销毁了")
+//    }
+    
     //MARK: - 顶部标题
     lazy var logoImg: UIImageView = { [unowned self] in
         let logoImg = UIImageView()
@@ -169,6 +173,8 @@ extension LoginViewController {
     ///用户登录
     @objc func login() {
         
+        view.endEditing(true)
+        
         guard phoneView.textField.text?.lengthOfBytes(using: .utf8) != 0 else {
             JSProgress.showFailStatus(with: "请输入手机号")
             return
@@ -177,8 +183,6 @@ extension LoginViewController {
             JSProgress.showFailStatus(with: "请输入密码")
             return
         }
-//        let parameters = ["user": phoneView.textField.text!,
-//                          "pass": pwdView.textField.text!.md5,] as [String : Any]
         var parameters = [String: Any]()
         parameters["user"] = phoneView.textField.text
         parameters["pass"] = pwdView.textField.text?.md5
@@ -204,13 +208,43 @@ extension LoginViewController {
                     userDic["user"] = userModel.user
                     Utils.setAsynchronous(userDic, withKey: kSavedUser)
                 }
-//                UserManager.shareManager.userModel = UserModel(with: (jsonData?["data"])!)
-//                UserManager.shareManager.isLogin = true
-//                if let userDic = jsonData?["data"].dictionaryObject {
-//                    Utils.setAsynchronous(userDic, withKey: kSavedUser)
-//                }
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: kReloadUserData), object: nil)
-                self?.navigationController?.dismiss(animated: true, completion: nil)
+//                self?.navigationController?.dismiss(animated: true, completion: nil)
+                //根据用户的身份和状态进行相应界面的跳转
+                
+                switch UserManager.shareManager.userModel.type {
+                case 1:
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                    self?.view.window?.rootViewController = AXDTabBarViewController()
+                case 2,3:
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                    let vc = VStoreViewController.loadStoryboard()
+                    vc.storeType = .manager
+                    let navVC = AXDNavigationController(rootViewController: vc)
+                    self?.view.window?.rootViewController = navVC
+                default:
+                    self?.navigationController?.dismiss(animated: true, completion: nil)
+                    let vc = ApproveSelectViewController()
+                    self?.navigationController?.pushViewController(vc, animated: true)
+//                    JSProgress.showFailStatus(with: "未知用户")
+                }
+    
+//                if ((self?.presentingViewController) != nil) {
+//                    self?.navigationController?.dismiss(animated: true, completion: nil)
+//                }else {
+//                    switch UserManager.shareManager.userModel.type {
+//                    case 1:
+//                        self?.view.window?.rootViewController = AXDTabBarViewController()
+//                    case 2,3:
+//                        let vc = VStoreViewController.loadStoryboard()
+//                        vc.storeType = .manager
+//                        let navVC = AXDNavigationController(rootViewController: vc)
+//                        self?.view.window?.rootViewController = navVC
+//                    default:
+//                        JSProgress.showFailStatus(with: "还未认证成功")
+//                    }
+//                    print("不可以跳转")
+//                }
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {
