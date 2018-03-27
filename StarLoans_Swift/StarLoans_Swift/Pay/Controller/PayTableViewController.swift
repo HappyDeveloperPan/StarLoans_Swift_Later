@@ -211,6 +211,5 @@ extension PayTableViewController {
     ///微信支付成功回调服务器
     @objc func WechatPayResult(notif:NSNotification?) {
 //        let notiInfo = notif?.object
-        
     }
 }

@@ -61,19 +61,23 @@ class JSProgress: NSObject {
     ///显示文字提示
     class func showInfoWithStatus(with status: String) {
         SVProgressHUD.showInfo(withStatus: status)
+        SVProgressHUD.setBackgroundColor(UIColor.RGB(with: 136, green: 136, blue: 136))
         SVProgressHUD.dismiss(withDelay: 2)
     }
     
     ///显示成功提示
     class func showSucessStatus(with status: String) {
         SVProgressHUD.showSuccess(withStatus: status)
+        SVProgressHUD.setBackgroundColor(UIColor.RGB(with: 136, green: 136, blue: 136))
         SVProgressHUD.dismiss(withDelay: 2)
     }
     
     ///显示失败提示
     class func showFailStatus(with status: String) {
         SVProgressHUD.showError(withStatus: status)
+        SVProgressHUD.setBackgroundColor(UIColor.RGB(with: 136, green: 136, blue: 136))
         SVProgressHUD.dismiss(withDelay: 2)
+        
     }
     
     ///改变正在显示的文字
