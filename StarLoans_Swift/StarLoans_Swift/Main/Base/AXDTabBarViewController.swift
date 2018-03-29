@@ -28,10 +28,6 @@ class AXDTabBarViewController: ESTabBarController{
             return false
         }
         didHijackHandler = { [weak self] tabbarController, viewController, index in
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-//                let pushNav = AXDNavigationController(rootViewController: PushViewController())
-//                self?.present(pushNav, animated: true, completion: nil)
-//            }
             if index == 2 {
 //                let pushNav = AXDNavigationController(rootViewController: PushViewController())
 //                self?.present(pushNav, animated: true, completion: nil)
