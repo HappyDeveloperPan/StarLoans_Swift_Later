@@ -26,6 +26,7 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
         webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
         webView.uiDelegate = self
         webView.navigationDelegate = self
+//        webView.scrollView.delegate = self
         return webView
     }()
     
@@ -36,6 +37,15 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
 //        self.navigationController?.navigationBar.addSubview(progressView)
         self.view.addSubview(progressView)
         return progressView
+    }()
+    
+    lazy var bottomLb: UILabel = { [unowned self] in
+        let bottomLb = UILabel()
+        bottomLb.text = "成功吧"
+        bottomLb.textColor = UIColor.white
+        bottomLb.backgroundColor = kMainColor
+        self.view.addSubview(bottomLb)
+        return bottomLb
     }()
     
     //MARK: - 生命周期
@@ -111,3 +121,11 @@ extension InformationShowViewController: WKUIDelegate, WKNavigationDelegate, UIN
         progressView.setProgress(0.0, animated: false)
     }
 }
+
+//MARK: - WKWebView滑动代理
+//extension InformationShowViewController: UIScrollViewDelegate {
+//    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+//        print("contentY=\(scrollView.contentOffset.y),contentH=\(scrollView.contentSize.height)")
+//    }
+//}
+
