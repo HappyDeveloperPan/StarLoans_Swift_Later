@@ -76,7 +76,7 @@ extension String {
         return String(format: hash as String)
     }
     
-    // 判断输入的字符串是否为数字，不含其它字符
+    /// 判断输入的字符串是否为数字，不含其它字符
     
     func isPurnInt() -> Bool {
         

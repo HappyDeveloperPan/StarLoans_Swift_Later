@@ -118,7 +118,6 @@ extension VerifyViewController {
             JSProgress.showFailStatus(with: "请输入验证码")
             return
         }
-        
         guard judgeVerCode() else {
             JSProgress.showFailStatus(with: "验证码错误")
             return

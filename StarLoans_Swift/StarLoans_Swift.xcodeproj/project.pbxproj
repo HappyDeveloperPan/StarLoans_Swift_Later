@@ -772,7 +772,6 @@
 		1C0892151FC3F3DA00E2320E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1C8442531FC91B0D005BE65C /* LoginInputView.swift */,
 				1CF9FCD51FE3B9BD003AE228 /* MineHeaderView.swift */,
 				1CF9FCD71FE3B9C8003AE228 /* MineHeaderView.xib */,
 				1CA5D0FC201820F6009218C9 /* BankCardCell.swift */,
@@ -812,7 +811,6 @@
 				1CF9FCD91FE3BD7C003AE228 /* MineViewController.swift */,
 				1CBFFBAD1FE4EE4700E89B7E /* MineTableViewController.swift */,
 				1CBFFBAB1FE4EDB500E89B7E /* MineViewController.storyboard */,
-				1C609DA21FE7AA24004D4E54 /* Login */,
 				1C609D9F1FE7A329004D4E54 /* Account */,
 				1C857C8C1FFE07DB009F45EE /* VStore */,
 				1C33C3EB1FFF0A3F0081996A /* Purchased */,
@@ -905,12 +903,12 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		1C17492C202980D80082EF50 /* New Group */ = {
+		1C17492C202980D80082EF50 /* HotNews */ = {
 			isa = PBXGroup;
 			children = (
 				1C17492D202980F80082EF50 /* HotNewsListViewController.swift */,
 			);
-			path = "New Group";
+			path = HotNews;
 			sourceTree = "<group>";
 		};
 		1C1D94611FE277D700F65049 /* VideoCenterView */ = {
@@ -921,6 +919,26 @@
 				1C1D94691FE2798C00F65049 /* VideoCenterDetailCollectionViewCell.xib */,
 			);
 			path = VideoCenterView;
+			sourceTree = "<group>";
+		};
+		1C21B7D7206CC0B6000A496F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1C8442531FC91B0D005BE65C /* LoginInputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1C21B7D8206CC0D6000A496F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1C4066361FB1B0ED009A59FD /* LoginViewController.swift */,
+				1C08921F1FC43D2500E2320E /* ForgetViewController.swift */,
+				1C0892211FC43E3B00E2320E /* RegisterViewController.swift */,
+				1C8442551FC96BB6005BE65C /* VerifyViewController.swift */,
+				1C8442571FC96FAB005BE65C /* PasswordViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		1C2E2ADD1FCEB852005E48C3 /* Model */ = {
@@ -977,7 +995,7 @@
 				1C6AD3A62017119E0022696A /* SearchViewController.swift */,
 				1CE3BF161FFCF553003D6629 /* QuickBill */,
 				1C4388522014664100E73C85 /* ActivityCenter */,
-				1C17492C202980D80082EF50 /* New Group */,
+				1C17492C202980D80082EF50 /* HotNews */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1044,6 +1062,7 @@
 				1C08920C1FC3D33B00E2320E /* Push */,
 				1CF12A9F1FCD627C00474AFB /* Information */,
 				1C08920D1FC3D34500E2320E /* Mine */,
+				1C609DA21FE7AA24004D4E54 /* Login */,
 				1CA1D8552005F8B700F51337 /* Pay */,
 				1C0892101FC3D60C00E2320E /* Main */,
 				1C08920E1FC3D36400E2320E /* Resource */,
@@ -1172,11 +1191,8 @@
 		1C609DA21FE7AA24004D4E54 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				1C4066361FB1B0ED009A59FD /* LoginViewController.swift */,
-				1C08921F1FC43D2500E2320E /* ForgetViewController.swift */,
-				1C0892211FC43E3B00E2320E /* RegisterViewController.swift */,
-				1C8442551FC96BB6005BE65C /* VerifyViewController.swift */,
-				1C8442571FC96FAB005BE65C /* PasswordViewController.swift */,
+				1C21B7D8206CC0D6000A496F /* Controller */,
+				1C21B7D7206CC0B6000A496F /* View */,
 			);
 			path = Login;
 			sourceTree = "<group>";

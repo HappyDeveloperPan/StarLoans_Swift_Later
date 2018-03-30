@@ -8,10 +8,13 @@
 
 import UIKit
 
+//fileprivate let approveSelectArr: [Dictionary<String, Any>] = [
+//                                                               ["title": "经纪人", "content": "海量资源和一站式贷款服务",      "image": #imageLiteral(resourceName: "ICON-jinjiren")],
+//                                                               ["title": "平台信贷经理", "content": "更多的资源、更便捷的交单", "image": #imageLiteral(resourceName: "ICON-pingtaixindaijingli")],
+//                                                               ["title": "银行机构经理", "content": "审批标准化、透明化", "image": #imageLiteral(resourceName: "ICON-yinhangjigoujingli")]]
 fileprivate let approveSelectArr: [Dictionary<String, Any>] = [
-                                                               ["title": "经纪人", "content": "海量资源和一站式贷款服务",      "image": #imageLiteral(resourceName: "ICON-jinjiren")],
-                                                               ["title": "平台信贷经理", "content": "更多的资源、更便捷的交单", "image": #imageLiteral(resourceName: "ICON-pingtaixindaijingli")],
-                                                               ["title": "银行机构经理", "content": "审批标准化、透明化", "image": #imageLiteral(resourceName: "ICON-yinhangjigoujingli")]]
+    ["title": "经纪人", "content": "海量资源和一站式贷款服务", "image": #imageLiteral(resourceName: "ICON-jinjiren")],
+    ["title": "银行机构经理", "content": "审批标准化、透明化", "image": #imageLiteral(resourceName: "ICON-yinhangjigoujingli")]]
 
 class ApproveSelectViewController: BaseViewController, StoryboardLoadable {
     //MARK: - 懒加载
@@ -109,9 +112,6 @@ extension ApproveSelectViewController: UICollectionViewDelegate, UICollectionVie
                     vc.approveType = .brokerIdentity
                     self?.navigationController?.pushViewController(vc, animated: true)
                 case 1:
-                    let vc = LoanManagerApproveViewController.loadStoryboard()
-                    self?.navigationController?.pushViewController(vc, animated: true)
-                case 2:
                     let vc = IDApproveViewController.loadStoryboard()
                     vc.approveType = .managerIdentity
                     self?.navigationController?.pushViewController(vc, animated: true)

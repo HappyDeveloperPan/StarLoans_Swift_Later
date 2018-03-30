@@ -158,11 +158,6 @@ class PasswordViewController: UIViewController {
             JSProgress.showFailStatus(with: "请填写密码")
             return
         }
-        
-//        let parameters = ["user": user,
-//                          "pass": pwdView.textField.text!.md5,
-//                          "token": userModel.token,
-//                          "yzm": userModel.yzm] as [String : Any]
         var parameters = [String: Any]()
         parameters["user"] = user
         parameters["pass"] = pwdView.textField.text?.md5
@@ -186,11 +181,6 @@ class PasswordViewController: UIViewController {
             
             if jsonData?["status"] == 200 {
                 if self?.vcType == .register {  //  登录
-//                    UserManager.shareManager.userModel = UserModel(with: (jsonData?["data"])!)
-//                    UserManager.shareManager.isLogin = true
-//                    if let userDic = jsonData?["data"].dictionaryObject {
-//                        Utils.setAsynchronous(userDic, withKey: kSavedUser)
-//                    }
                     if let data = jsonData?["data"] {
                         let userModel = UserModel(with: data)
                         UserManager.shareManager.userModel = userModel

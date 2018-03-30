@@ -44,6 +44,7 @@ class LoginInputView: UIView {
         textField.delegate = self
         textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         textField.tintColor = kMainColor
+        textField.font = UIFont.systemFont(ofSize: 15)
         return textField
     }()
     
@@ -130,15 +131,17 @@ class LoginInputView: UIView {
     
     //监听textField值的变化
     @objc func textFieldDidChange(_ textField: UITextField) {
-//        if textField == textField && textLength > 0{
-//            if (textField.text?.lengthOfBytes(using: .utf8))! > textLength {
-//                textField.text = (textField.text as NSString?)?.substring(to: textLength)
-//            }
+//        if textField == textField && textLength > 0 && (textField.text?.lengthOfBytes(using: .utf8))! > textLength {
+//            textField.text = (textField.text as NSString?)?.substring(to: textLength)
 //        }
-        
-        if textField == textField && textLength > 0 && (textField.text?.lengthOfBytes(using: .utf8))! > textLength {
+        if textField == textField && textLength > 0 && (textField.text?.count)! > textLength && textField.markedTextRange == nil{
             textField.text = (textField.text as NSString?)?.substring(to: textLength)
         }
+//        if textField.markedTextRange == nil {
+//            print(textField.text)
+//        }else {
+//            print(textField.text)
+//        }
     }
     
     //隐藏显示密码
@@ -155,10 +158,6 @@ extension LoginInputView: VerCodeButtonDelegate {
             clickHandler(isPhone)
         })
     }
-    
-//    func verCodeBtnClick() {
-//        delegate?.verCodeBtnClick()
-//    }
 }
 
 //MARK: - textfield代理
@@ -178,7 +177,10 @@ extension LoginInputView: UITextFieldDelegate {
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (textField.text?.lengthOfBytes(using: .utf8))! > textLength && textLength > 0{
+//        if (textField.text?.lengthOfBytes(using: .utf8))! > textLength && textLength > 0{
+//            return false
+//        }
+        if (textField.text?.count)! > textLength && textLength > 0 &&  textField.markedTextRange == nil{
             return false
         }
         return true
@@ -200,22 +202,15 @@ class VerCodeButton: UIButton {
         setTitle("获取验证码", for: .normal)
         setTitleColor(kMainColor, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        layer.cornerRadius = 15
-        layer.borderWidth = 0.5
-        layer.borderColor = kMainColor.cgColor
+//        layer.cornerRadius = 15
+//        layer.borderWidth = 0.5
+//        layer.borderColor = kMainColor.cgColor
         titleLabel?.adjustsFontSizeToFitWidth = true
         addTarget(self, action: #selector(VerCodeButton.sendButtonClick(_:)), for: .touchUpInside)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super .init(coder: aDecoder)
-//        fatalError("init(coder:) has not been implemented")
-//        setTitle("获取验证码", for: .normal)
-//        setTitleColor(kTextColor, for: .normal)
-//        titleLabel?.font = UIFont.systemFont(ofSize: 14)
-//        layer.cornerRadius = 15
-//        layer.borderWidth = 0.5
-//        layer.borderColor = kMainColor.cgColor
         titleLabel?.adjustsFontSizeToFitWidth = true
         addTarget(self, action: #selector(VerCodeButton.sendButtonClick(_:)), for: .touchUpInside)
     }
@@ -243,12 +238,12 @@ class VerCodeButton: UIButton {
                 countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime(_:)), userInfo: nil, repeats: true)
                 remainingSeconds = 5
                 setTitleColor(kTextColor, for: .normal)
-                layer.borderColor = kTextColor.cgColor
+//                layer.borderColor = kTextColor.cgColor
             } else {
                 countdownTimer?.invalidate()
                 countdownTimer = nil
                 setTitleColor(kMainColor, for: .normal)
-                layer.borderColor = kMainColor.cgColor
+//                layer.borderColor = kMainColor.cgColor
             }
             isEnabled = !newValue
         }
