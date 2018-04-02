@@ -83,9 +83,14 @@ class AuthorizationViewController: BaseViewController, StoryboardLoadable {
             navigationController?.pushViewController(vc, animated: true)
         }else {
             //自营产品需要跳转网页
-            let vc = InputUserInfoWebViewController()
-            vc.productId = productId
-            vc.url = url
+//            let vc = InputUserInfoWebViewController()
+//            vc.productId = productId
+//            vc.url = url
+//            navigationController?.pushViewController(vc, animated: true)
+            
+            //自营产品改为原生
+            //新一贷
+            let vc = XinyidaiInfoOneViewController.loadStoryboard()
             navigationController?.pushViewController(vc, animated: true)
         }
         

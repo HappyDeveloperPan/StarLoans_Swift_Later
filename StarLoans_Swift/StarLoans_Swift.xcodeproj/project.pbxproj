@@ -163,6 +163,18 @@
 		1C6D2BE8200C90D9003E4501 /* LoanManagerApproveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D2BE7200C90D9003E4501 /* LoanManagerApproveViewController.swift */; };
 		1C6D2BEA200C90E2003E4501 /* LoanManagerApproveViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C6D2BE9200C90E2003E4501 /* LoanManagerApproveViewController.storyboard */; };
 		1C6D2BEC200C9233003E4501 /* LoanManagerApproveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C6D2BEB200C9233003E4501 /* LoanManagerApproveTableViewController.swift */; };
+		1C7C4F302071D30100D5A021 /* XinyidaiInfoOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F2F2071D30100D5A021 /* XinyidaiInfoOneViewController.swift */; };
+		1C7C4F322071D31700D5A021 /* XinyidaiInfoOneViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C4F312071D31600D5A021 /* XinyidaiInfoOneViewController.storyboard */; };
+		1C7C4F342071D47000D5A021 /* XinyidaiInfoOneTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F332071D47000D5A021 /* XinyidaiInfoOneTableViewController.swift */; };
+		1C7C4F362072085800D5A021 /* XinyidaiInfoTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F352072085800D5A021 /* XinyidaiInfoTwoViewController.swift */; };
+		1C7C4F382072086B00D5A021 /* XinyidaiInfoTwoViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C4F372072086B00D5A021 /* XinyidaiInfoTwoViewController.storyboard */; };
+		1C7C4F3A2072088200D5A021 /* XinyidaiInfoTwoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F392072088200D5A021 /* XinyidaiInfoTwoTableViewController.swift */; };
+		1C7C4F3C2072125700D5A021 /* XinyidaiInfoThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F3B2072125700D5A021 /* XinyidaiInfoThreeViewController.swift */; };
+		1C7C4F422072204B00D5A021 /* XinyidaiInfoThreeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C4F412072204B00D5A021 /* XinyidaiInfoThreeViewController.storyboard */; };
+		1C7C4F442072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F432072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift */; };
+		1C7C4F462072302700D5A021 /* XinyidaiEntrepreneurTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F452072302700D5A021 /* XinyidaiEntrepreneurTableViewController.swift */; };
+		1C7C4F4A20725CF000D5A021 /* XinyidaiInfoFourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7C4F4920725CF000D5A021 /* XinyidaiInfoFourViewController.swift */; };
+		1C7C4F4C20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C7C4F4B20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard */; };
 		1C81E4C21FD1389A006F7D00 /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C81E4C11FD1389A006F7D00 /* VideoCollectionViewCell.swift */; };
 		1C8442541FC91B0D005BE65C /* LoginInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8442531FC91B0D005BE65C /* LoginInputView.swift */; };
 		1C8442561FC96BB6005BE65C /* VerifyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8442551FC96BB6005BE65C /* VerifyViewController.swift */; };
@@ -489,6 +501,18 @@
 		1C6D2BE7200C90D9003E4501 /* LoanManagerApproveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanManagerApproveViewController.swift; sourceTree = "<group>"; };
 		1C6D2BE9200C90E2003E4501 /* LoanManagerApproveViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoanManagerApproveViewController.storyboard; sourceTree = "<group>"; };
 		1C6D2BEB200C9233003E4501 /* LoanManagerApproveTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanManagerApproveTableViewController.swift; sourceTree = "<group>"; };
+		1C7C4F2F2071D30100D5A021 /* XinyidaiInfoOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiInfoOneViewController.swift; sourceTree = "<group>"; };
+		1C7C4F312071D31600D5A021 /* XinyidaiInfoOneViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XinyidaiInfoOneViewController.storyboard; sourceTree = "<group>"; };
+		1C7C4F332071D47000D5A021 /* XinyidaiInfoOneTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiInfoOneTableViewController.swift; sourceTree = "<group>"; };
+		1C7C4F352072085800D5A021 /* XinyidaiInfoTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiInfoTwoViewController.swift; sourceTree = "<group>"; };
+		1C7C4F372072086B00D5A021 /* XinyidaiInfoTwoViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XinyidaiInfoTwoViewController.storyboard; sourceTree = "<group>"; };
+		1C7C4F392072088200D5A021 /* XinyidaiInfoTwoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiInfoTwoTableViewController.swift; sourceTree = "<group>"; };
+		1C7C4F3B2072125700D5A021 /* XinyidaiInfoThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiInfoThreeViewController.swift; sourceTree = "<group>"; };
+		1C7C4F412072204B00D5A021 /* XinyidaiInfoThreeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XinyidaiInfoThreeViewController.storyboard; sourceTree = "<group>"; };
+		1C7C4F432072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiOfficeWorkerTableViewController.swift; sourceTree = "<group>"; };
+		1C7C4F452072302700D5A021 /* XinyidaiEntrepreneurTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiEntrepreneurTableViewController.swift; sourceTree = "<group>"; };
+		1C7C4F4920725CF000D5A021 /* XinyidaiInfoFourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XinyidaiInfoFourViewController.swift; sourceTree = "<group>"; };
+		1C7C4F4B20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = XinyidaiInfoFourViewController.storyboard; sourceTree = "<group>"; };
 		1C81E4C11FD1389A006F7D00 /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C8442531FC91B0D005BE65C /* LoginInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInputView.swift; sourceTree = "<group>"; };
 		1C8442551FC96BB6005BE65C /* VerifyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyViewController.swift; sourceTree = "<group>"; };
@@ -899,6 +923,7 @@
 				1C041418201AD9DF00C8C217 /* InputUserInfoWebViewController.swift */,
 				1C5AFD3A1FF78788009E65FC /* CommitCompleteViewController.swift */,
 				1C5AFD3C1FF7879B009E65FC /* CommitCompleteViewController.storyboard */,
+				1C7C4F2E2071CEFF00D5A021 /* Xinyidai */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1195,6 +1220,25 @@
 				1C21B7D7206CC0B6000A496F /* View */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		1C7C4F2E2071CEFF00D5A021 /* Xinyidai */ = {
+			isa = PBXGroup;
+			children = (
+				1C7C4F2F2071D30100D5A021 /* XinyidaiInfoOneViewController.swift */,
+				1C7C4F332071D47000D5A021 /* XinyidaiInfoOneTableViewController.swift */,
+				1C7C4F312071D31600D5A021 /* XinyidaiInfoOneViewController.storyboard */,
+				1C7C4F352072085800D5A021 /* XinyidaiInfoTwoViewController.swift */,
+				1C7C4F392072088200D5A021 /* XinyidaiInfoTwoTableViewController.swift */,
+				1C7C4F372072086B00D5A021 /* XinyidaiInfoTwoViewController.storyboard */,
+				1C7C4F3B2072125700D5A021 /* XinyidaiInfoThreeViewController.swift */,
+				1C7C4F432072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift */,
+				1C7C4F452072302700D5A021 /* XinyidaiEntrepreneurTableViewController.swift */,
+				1C7C4F412072204B00D5A021 /* XinyidaiInfoThreeViewController.storyboard */,
+				1C7C4F4920725CF000D5A021 /* XinyidaiInfoFourViewController.swift */,
+				1C7C4F4B20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard */,
+			);
+			path = Xinyidai;
 			sourceTree = "<group>";
 		};
 		1C857C851FFDD687009F45EE /* UserData */ = {
@@ -1664,6 +1708,7 @@
 				1CA5D0FF201820F6009218C9 /* BankCardCell.xib in Resources */,
 				1CD0B4191FE8B08B00A4A796 /* BindingCardFirstViewController.storyboard in Resources */,
 				1C014A102019BAB200AD3FB6 /* ManagerBillApprovalFiveViewController.storyboard in Resources */,
+				1C7C4F382072086B00D5A021 /* XinyidaiInfoTwoViewController.storyboard in Resources */,
 				1C4066041FB190C8009A59FD /* Main.storyboard in Resources */,
 				1CA4FCF01FD7DE5A009ECD30 /* RobbingTableViewCell.xib in Resources */,
 				1C363A3E1FE0D53C00D87014 /* PayCompleteViewController.storyboard in Resources */,
@@ -1672,13 +1717,16 @@
 				1C06E4221FFB6BC500B46A10 /* PushClientResourceViewController.storyboard in Resources */,
 				1C10A9C72004C1DD0042C0EB /* PushBillProductCell.xib in Resources */,
 				1CE3BF131FFCE104003D6629 /* QBSettingViewController.storyboard in Resources */,
+				1C7C4F322071D31700D5A021 /* XinyidaiInfoOneViewController.storyboard in Resources */,
 				1C9961A51FF4EDE700E4990C /* AuthorizationViewController.storyboard in Resources */,
+				1C7C4F4C20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard in Resources */,
 				1C363A421FE0FA4A00D87014 /* SignInViewController.storyboard in Resources */,
 				1C23934A2001FFE8006F58A6 /* ManagerBillCell.xib in Resources */,
 				1C36D78820196EAE002FC688 /* ManagerBillApprovalOneViewController.storyboard in Resources */,
 				1C857C7E1FFDBD3E009F45EE /* OpinionFeedbackViewController.storyboard in Resources */,
 				1C3BD82F1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.xib in Resources */,
 				1C609DBA1FE7EA24004D4E54 /* MoneyDetailTableViewCell.xib in Resources */,
+				1C7C4F422072204B00D5A021 /* XinyidaiInfoThreeViewController.storyboard in Resources */,
 				1C5AFD3D1FF7879B009E65FC /* CommitCompleteViewController.storyboard in Resources */,
 				1C041417201AC60800C8C217 /* BrokerProductCell.xib in Resources */,
 				1C9EBBB1200DD7320022259A /* PushCompleteViewController.storyboard in Resources */,
@@ -1918,16 +1966,19 @@
 				1C10F6A71FED0CA800C3A62A /* MessageDetailViewController.swift in Sources */,
 				1C2E2AED1FCECDBB005E48C3 /* WRCycleCell.swift in Sources */,
 				1C857C871FFDD6C6009F45EE /* UserDataViewController.swift in Sources */,
+				1C7C4F342071D47000D5A021 /* XinyidaiInfoOneTableViewController.swift in Sources */,
 				1C4066371FB1B0ED009A59FD /* LoginViewController.swift in Sources */,
 				1C6AD3A32016D1080022696A /* WelcomeViewController.swift in Sources */,
 				1CECDD46202AB18A000247B6 /* InformationShowViewController.swift in Sources */,
 				1CE3BF181FFCF637003D6629 /* AboutViewController.swift in Sources */,
 				1C9961A31FF4EB4600E4990C /* AuthorizationViewController.swift in Sources */,
+				1C7C4F442072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift in Sources */,
 				1C06E4141FFB359C00B46A10 /* InfoDetailViewController.swift in Sources */,
 				1C468B8C1FFA4387004DD9DA /* InfoModel.swift in Sources */,
 				1C5AFD421FF79F70009E65FC /* InfoSegmentCell.swift in Sources */,
 				1C1D946A1FE2798C00F65049 /* VideoCenterDetailCollectionViewCell.swift in Sources */,
 				1C4065FF1FB190C8009A59FD /* AppDelegate.swift in Sources */,
+				1C7C4F462072302700D5A021 /* XinyidaiEntrepreneurTableViewController.swift in Sources */,
 				1C36D78A20198002002FC688 /* ManagerBillApprovalTwoViewController.swift in Sources */,
 				1C40663C1FB2B569009A59FD /* Const.swift in Sources */,
 				1CA5D0FE201820F6009218C9 /* BankCardCell.swift in Sources */,
@@ -1950,6 +2001,7 @@
 				1CC2F5752006165800801181 /* PayTableViewController.swift in Sources */,
 				1C10F69E1FECB1A300C3A62A /* UIScrollView+Extension.swift in Sources */,
 				1CED7B5E1FDEB19400AABDDE /* ClientListCollectionViewCell.swift in Sources */,
+				1C7C4F4A20725CF000D5A021 /* XinyidaiInfoFourViewController.swift in Sources */,
 				1C857C951FFE1421009F45EE /* VStoreFuncCollectionViewCell.swift in Sources */,
 				1C06660D1FFF796F002FA501 /* IDApproveTableViewController.swift in Sources */,
 				1CC9C0E81FCC3B2D00750C5E /* NetWorksManager.swift in Sources */,
@@ -1967,8 +2019,10 @@
 				1C9EBBBC200E04F60022259A /* SystemMessageCell.swift in Sources */,
 				1CE3BF1E1FFCFA38003D6629 /* CommonProblemViewController.swift in Sources */,
 				1C1C1FA51FDFFCB000C71D73 /* Utils.swift in Sources */,
+				1C7C4F302071D30100D5A021 /* XinyidaiInfoOneViewController.swift in Sources */,
 				1C609DAB1FE7BE38004D4E54 /* BankCardCollectionViewCell.swift in Sources */,
 				1C91ED921FD6762500DB3FA4 /* HotAgencyView.swift in Sources */,
+				1C7C4F362072085800D5A021 /* XinyidaiInfoTwoViewController.swift in Sources */,
 				1C06E4201FFB6B1900B46A10 /* PushClientResourceViewController.swift in Sources */,
 				1C9961A91FF51C4900E4990C /* InputUserInfoTableViewController.swift in Sources */,
 				1C0665FD1FFF2EF1002FA501 /* PurchasedSegmentCell.swift in Sources */,
@@ -2005,10 +2059,12 @@
 				1C2393492001FFE8006F58A6 /* ManagerBillCell.swift in Sources */,
 				1C10A9C32004BCA90042C0EB /* PushProductSelectViewController.swift in Sources */,
 				1CBAC415200084AA002FB1C9 /* PurchasedCourseDetailViewController.swift in Sources */,
+				1C7C4F3A2072088200D5A021 /* XinyidaiInfoTwoTableViewController.swift in Sources */,
 				1C10F6A51FED04B700C3A62A /* MessageReadModel.swift in Sources */,
 				1C40E2A81FE2707D00A01D2D /* AppDelegate+System.swift in Sources */,
 				1C1C1F9B1FDFD41A00C71D73 /* LoansCollegeViewController.swift in Sources */,
 				1CD0B41D1FE8B88900A4A796 /* BindingCardNextTableViewController.swift in Sources */,
+				1C7C4F3C2072125700D5A021 /* XinyidaiInfoThreeViewController.swift in Sources */,
 				1CBFFBAA1FE4ED2900E89B7E /* UITableView+Extension.swift in Sources */,
 				1C40662D1FB1A7EB009A59FD /* JSTabBarViewController.swift in Sources */,
 				1C1376081FF22025003EC987 /* SignInModel.swift in Sources */,

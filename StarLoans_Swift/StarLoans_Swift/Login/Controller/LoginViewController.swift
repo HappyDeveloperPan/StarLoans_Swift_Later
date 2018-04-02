@@ -269,9 +269,9 @@ extension LoginViewController {
     }
     
     @objc func registerVc() {
-//        let registerVc = VerifyViewController()
-//        registerVc.vcType = .register
-        let registerVc = RegisterViewController()
+        let registerVc = VerifyViewController()
+        registerVc.vcType = .register
+//        let registerVc = RegisterViewController()
         navigationController?.pushViewController(registerVc, animated: true)
     }
 }
