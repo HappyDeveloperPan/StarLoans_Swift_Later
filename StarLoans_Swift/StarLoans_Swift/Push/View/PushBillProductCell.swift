@@ -42,6 +42,7 @@ class PushBillProductCell: UICollectionViewCell, RegisterCellOrNib {
         let vc = AuthorizationViewController.loadStoryboard()
         vc.productId = productModel.product_id
         vc.url = productModel.url
+        vc.productModel = productModel
         let topViewController = Utils.currentTopViewController()
         if topViewController?.navigationController != nil{
             topViewController?.navigationController?.pushViewController(vc, animated: true)

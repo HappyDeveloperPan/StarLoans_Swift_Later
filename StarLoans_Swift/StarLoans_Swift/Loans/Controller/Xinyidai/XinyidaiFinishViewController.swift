@@ -1,22 +1,22 @@
 //
-//  XinyidaiInfoFourViewController.swift
+//  XinyidaiFinishViewController.swift
 //  StarLoans_Swift
 //
-//  Created by iOS Pan on 2018/4/2.
+//  Created by iOS Pan on 2018/4/3.
 //  Copyright © 2018年 iOS Pan. All rights reserved.
 //
 
 import UIKit
 import IBAnimatable
 
-class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
-    // MARK: - StoryBoard连线
-    @IBOutlet weak var nextBtn: AnimatableButton!
+class XinyidaiFinishViewController: BaseViewController, StoryboardLoadable {
+    @IBOutlet weak var finishBtn: AnimatableButton!
     
-    // MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "录入客户信息"
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,9 +26,6 @@ class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
     
     override func viewWillLayoutSubviews() {
         super .viewWillLayoutSubviews()
-        nextBtn.snp.makeConstraints { (make) in
-            make.width.equalTo(kScreenWidth - 32)
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -41,8 +38,9 @@ class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
     }
     
     // MARK: - 控件点击事件
-    @IBAction func nextBtnClick(_ sender: AnimatableButton) {
-        let vc = XinyidaiFinishViewController.loadStoryboard()
-        navigationController?.pushViewController(vc, animated: true)
+    @IBAction func finishBtnClick(_ sender: AnimatableButton) {
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+        navigationController?.popToRootViewController(animated: true)
     }
+    
 }

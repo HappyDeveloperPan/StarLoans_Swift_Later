@@ -28,6 +28,7 @@ class AuthorizationViewController: BaseViewController, StoryboardLoadable {
     var loansProductType: LoansProductType = .selfSupport //产品类别
     var loanClientType: LoanClientType = .personage //用户类别
     var url: String = ""
+    var productModel = ProductModel()
     
     //MARK: - 生命周期
     override func viewDidLoad() {
@@ -90,8 +91,16 @@ class AuthorizationViewController: BaseViewController, StoryboardLoadable {
             
             //自营产品改为原生
             //新一贷
-            let vc = XinyidaiInfoOneViewController.loadStoryboard()
-            navigationController?.pushViewController(vc, animated: true)
+            switch productModel.product_type {
+                case 1:
+                    let vc = XinyidaiInfoOneViewController.loadStoryboard()
+                    navigationController?.pushViewController(vc, animated: true)
+                case 2:
+                    let vc = BaoyidaiInfoOneViewController.loadStoryboard()
+                    navigationController?.pushViewController(vc, animated: true)
+                default:break
+            }
+            
         }
         
     }

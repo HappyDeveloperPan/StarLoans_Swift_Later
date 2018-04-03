@@ -1,19 +1,15 @@
 //
-//  XinyidaiInfoFourViewController.swift
+//  BaoyidaiInfoTwoViewController.swift
 //  StarLoans_Swift
 //
-//  Created by iOS Pan on 2018/4/2.
+//  Created by iOS Pan on 2018/4/3.
 //  Copyright © 2018年 iOS Pan. All rights reserved.
 //
 
 import UIKit
-import IBAnimatable
 
-class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
-    // MARK: - StoryBoard连线
-    @IBOutlet weak var nextBtn: AnimatableButton!
-    
-    // MARK: - 生命周期
+class BaoyidaiInfoTwoViewController: BaseViewController, StoryboardLoadable {
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "录入客户信息"
@@ -26,9 +22,6 @@ class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
     
     override func viewWillLayoutSubviews() {
         super .viewWillLayoutSubviews()
-        nextBtn.snp.makeConstraints { (make) in
-            make.width.equalTo(kScreenWidth - 32)
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -38,11 +31,18 @@ class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - 控件点击事件
-    @IBAction func nextBtnClick(_ sender: AnimatableButton) {
-        let vc = XinyidaiFinishViewController.loadStoryboard()
-        navigationController?.pushViewController(vc, animated: true)
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
+
 }

@@ -48,7 +48,6 @@ class AXDNavigationController: UINavigationController, UINavigationControllerDel
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     deinit {
@@ -84,22 +83,10 @@ class AXDNavigationController: UINavigationController, UINavigationControllerDel
 extension AXDNavigationController {
     ///JS调用原生返回上一级界面
     @objc func backVC() {
-//        navigationController?.popViewController(animated: true)
         popViewController(animated: true)
     }
 }
 
-//MARK: - UINavigationControllerDelegate代理
-//extension AXDNavigationController: UINavigationControllerDelegate {
-//    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-//        //实现滑动返回功能
-//        if viewController == self.viewControllers[0] {
-//            self.interactivePopGestureRecognizer?.delegate = self.popDelegate
-//        }else {
-//            self.interactivePopGestureRecognizer?.delegate = nil
-//        }
-//    }
-//}
 
 
 

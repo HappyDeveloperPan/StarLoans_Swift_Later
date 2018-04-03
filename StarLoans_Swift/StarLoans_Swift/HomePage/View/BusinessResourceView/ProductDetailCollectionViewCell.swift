@@ -88,6 +88,7 @@ class ProductDetailCollectionViewCell: UICollectionViewCell, RegisterCellOrNib {
         vc.loansProductType = loansProductType
         vc.url = productModel.url
         vc.productId = productModel.product_id
+        vc.productModel = productModel
         let topViewController = Utils.currentTopViewController()
         if topViewController?.navigationController != nil{
             topViewController?.navigationController?.pushViewController(vc, animated: true)

@@ -25,7 +25,8 @@ import SwiftyJSON
 class ProductModel: NSObject {
     struct Keys {
         static let id = "id"
-        static let product = "product"
+        static let product = "product"                      //产品名称
+        static let product_type = "product_type"            //产品类型
         static let product_id = "product_id"
         static let quota = "quota"                          //贷款金额
         static let type = "type"
@@ -66,6 +67,7 @@ class ProductModel: NSObject {
     
     public var id: Int = 0
     public var product: String = ""
+    public var product_type: Int = 0
     public var product_id: Int = 0
     public var quota: String = ""
     public var type: String = ""
@@ -108,6 +110,7 @@ class ProductModel: NSObject {
         let appInfo = json
         self.id = appInfo[Keys.id].intValue
         self.product = appInfo[Keys.product].stringValue
+        self.product_type = appInfo[Keys.product_type].intValue
         self.product_id = appInfo[Keys.product_id].intValue
         self.quota = appInfo[Keys.quota].stringValue
         self.type = appInfo[Keys.type].stringValue
