@@ -297,6 +297,19 @@
 		1CE3BF251FFCFC09003D6629 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3BF241FFCFC09003D6629 /* SettingTableViewController.swift */; };
 		1CE3BF271FFD02EC003D6629 /* ResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE3BF261FFD02EC003D6629 /* ResetViewController.swift */; };
 		1CE3BF291FFD02FD003D6629 /* ResetViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CE3BF281FFD02FD003D6629 /* ResetViewController.storyboard */; };
+		1CE893F52074C3BC002242A0 /* SinglePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE893EF2074C3BB002242A0 /* SinglePickerView.m */; };
+		1CE893F62074C3BC002242A0 /* JWAddress.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CE893F02074C3BB002242A0 /* JWAddress.plist */; };
+		1CE893F72074C3BC002242A0 /* BasePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE893F22074C3BB002242A0 /* BasePickerView.m */; };
+		1CE893F82074C3BC002242A0 /* JWAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE893F42074C3BB002242A0 /* JWAddressPickerView.m */; };
+		1CE8940B2074DB60002242A0 /* CGXPickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE893FC2074DB60002242A0 /* CGXPickerViewManager.m */; };
+		1CE8940C2074DB60002242A0 /* NSDate+CGXPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE894012074DB60002242A0 /* NSDate+CGXPicker.m */; };
+		1CE8940D2074DB60002242A0 /* CGXAddressPcikerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE894022074DB60002242A0 /* CGXAddressPcikerView.m */; };
+		1CE8940E2074DB60002242A0 /* CGXPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1CE894032074DB60002242A0 /* CGXPickerView.bundle */; };
+		1CE8940F2074DB60002242A0 /* CGXDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE894052074DB60002242A0 /* CGXDatePickerView.m */; };
+		1CE894102074DB60002242A0 /* CGXPickerUIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE894062074DB60002242A0 /* CGXPickerUIBaseView.m */; };
+		1CE894112074DB60002242A0 /* CGXAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE894072074DB60002242A0 /* CGXAddressModel.m */; };
+		1CE894122074DB60002242A0 /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE894092074DB60002242A0 /* CGXStringPickerView.m */; };
+		1CE894132074DB60002242A0 /* CGXPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CE8940A2074DB60002242A0 /* CGXPickerView.m */; };
 		1CECDD46202AB18A000247B6 /* InformationShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CECDD45202AB18A000247B6 /* InformationShowViewController.swift */; };
 		1CECDD48202ACBDD000247B6 /* InformationShowViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CECDD47202ACBDD000247B6 /* InformationShowViewController.storyboard */; };
 		1CED7B551FDE798300AABDDE /* BusinessResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CED7B541FDE798300AABDDE /* BusinessResourceViewController.swift */; };
@@ -652,6 +665,30 @@
 		1CE3BF241FFCFC09003D6629 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		1CE3BF261FFD02EC003D6629 /* ResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetViewController.swift; sourceTree = "<group>"; };
 		1CE3BF281FFD02FD003D6629 /* ResetViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResetViewController.storyboard; sourceTree = "<group>"; };
+		1CE893EE2074C3BB002242A0 /* BasePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePickerView.h; sourceTree = "<group>"; };
+		1CE893EF2074C3BB002242A0 /* SinglePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SinglePickerView.m; sourceTree = "<group>"; };
+		1CE893F02074C3BB002242A0 /* JWAddress.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = JWAddress.plist; sourceTree = "<group>"; };
+		1CE893F12074C3BB002242A0 /* JWAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWAddressPickerView.h; sourceTree = "<group>"; };
+		1CE893F22074C3BB002242A0 /* BasePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePickerView.m; sourceTree = "<group>"; };
+		1CE893F32074C3BB002242A0 /* SinglePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SinglePickerView.h; sourceTree = "<group>"; };
+		1CE893F42074C3BB002242A0 /* JWAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWAddressPickerView.m; sourceTree = "<group>"; };
+		1CE893FA2074DB60002242A0 /* CGXAddressPcikerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXAddressPcikerView.h; sourceTree = "<group>"; };
+		1CE893FB2074DB60002242A0 /* CGXDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXDatePickerView.h; sourceTree = "<group>"; };
+		1CE893FC2074DB60002242A0 /* CGXPickerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerViewManager.m; sourceTree = "<group>"; };
+		1CE893FD2074DB60002242A0 /* CGXAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXAddressModel.h; sourceTree = "<group>"; };
+		1CE893FE2074DB60002242A0 /* CGXPickerUIBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerUIBaseView.h; sourceTree = "<group>"; };
+		1CE893FF2074DB60002242A0 /* CGXPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerView.h; sourceTree = "<group>"; };
+		1CE894002074DB60002242A0 /* CGXStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXStringPickerView.h; sourceTree = "<group>"; };
+		1CE894012074DB60002242A0 /* NSDate+CGXPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+CGXPicker.m"; sourceTree = "<group>"; };
+		1CE894022074DB60002242A0 /* CGXAddressPcikerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXAddressPcikerView.m; sourceTree = "<group>"; };
+		1CE894032074DB60002242A0 /* CGXPickerView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerView.bundle; sourceTree = "<group>"; };
+		1CE894042074DB60002242A0 /* CGXPickerViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerViewManager.h; sourceTree = "<group>"; };
+		1CE894052074DB60002242A0 /* CGXDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXDatePickerView.m; sourceTree = "<group>"; };
+		1CE894062074DB60002242A0 /* CGXPickerUIBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerUIBaseView.m; sourceTree = "<group>"; };
+		1CE894072074DB60002242A0 /* CGXAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXAddressModel.m; sourceTree = "<group>"; };
+		1CE894082074DB60002242A0 /* NSDate+CGXPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+CGXPicker.h"; sourceTree = "<group>"; };
+		1CE894092074DB60002242A0 /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
+		1CE8940A2074DB60002242A0 /* CGXPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerView.m; sourceTree = "<group>"; };
 		1CECDD45202AB18A000247B6 /* InformationShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationShowViewController.swift; sourceTree = "<group>"; };
 		1CECDD47202ACBDD000247B6 /* InformationShowViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationShowViewController.storyboard; sourceTree = "<group>"; };
 		1CED7B541FDE798300AABDDE /* BusinessResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessResourceViewController.swift; sourceTree = "<group>"; };
@@ -934,6 +971,8 @@
 				1C4B28781FF3CD3B00FC32CA /* ProblemCell.xib */,
 				1C99619E1FF4D78100E4990C /* MyTextView.swift */,
 				1C0F850B1FF620100062D1B8 /* PickerView.swift */,
+				1CE893F92074DB60002242A0 /* CGXPickerView */,
+				1CE893ED2074C3BB002242A0 /* AdressPickerView */,
 				1C0F850F1FF63C6B0062D1B8 /* RadioBtnView.swift */,
 			);
 			path = View;
@@ -1503,6 +1542,44 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		1CE893ED2074C3BB002242A0 /* AdressPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				1CE893EE2074C3BB002242A0 /* BasePickerView.h */,
+				1CE893EF2074C3BB002242A0 /* SinglePickerView.m */,
+				1CE893F02074C3BB002242A0 /* JWAddress.plist */,
+				1CE893F12074C3BB002242A0 /* JWAddressPickerView.h */,
+				1CE893F22074C3BB002242A0 /* BasePickerView.m */,
+				1CE893F32074C3BB002242A0 /* SinglePickerView.h */,
+				1CE893F42074C3BB002242A0 /* JWAddressPickerView.m */,
+			);
+			path = AdressPickerView;
+			sourceTree = "<group>";
+		};
+		1CE893F92074DB60002242A0 /* CGXPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				1CE893FD2074DB60002242A0 /* CGXAddressModel.h */,
+				1CE894072074DB60002242A0 /* CGXAddressModel.m */,
+				1CE893FA2074DB60002242A0 /* CGXAddressPcikerView.h */,
+				1CE894022074DB60002242A0 /* CGXAddressPcikerView.m */,
+				1CE894002074DB60002242A0 /* CGXStringPickerView.h */,
+				1CE894092074DB60002242A0 /* CGXStringPickerView.m */,
+				1CE893FB2074DB60002242A0 /* CGXDatePickerView.h */,
+				1CE894052074DB60002242A0 /* CGXDatePickerView.m */,
+				1CE893FE2074DB60002242A0 /* CGXPickerUIBaseView.h */,
+				1CE894062074DB60002242A0 /* CGXPickerUIBaseView.m */,
+				1CE893FF2074DB60002242A0 /* CGXPickerView.h */,
+				1CE8940A2074DB60002242A0 /* CGXPickerView.m */,
+				1CE894042074DB60002242A0 /* CGXPickerViewManager.h */,
+				1CE893FC2074DB60002242A0 /* CGXPickerViewManager.m */,
+				1CE894082074DB60002242A0 /* NSDate+CGXPicker.h */,
+				1CE894012074DB60002242A0 /* NSDate+CGXPicker.m */,
+				1CE894032074DB60002242A0 /* CGXPickerView.bundle */,
+			);
+			path = CGXPickerView;
+			sourceTree = "<group>";
+		};
 		1CED7B531FDE786500AABDDE /* HomepageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1730,6 +1807,7 @@
 				1C10F6A91FED0CBA00C3A62A /* MessageDetailViewController.storyboard in Resources */,
 				1C609DB01FE7E677004D4E54 /* WithdrawViewController.storyboard in Resources */,
 				1C06660B1FFF78FB002FA501 /* IDApproveViewController.storyboard in Resources */,
+				1CE893F62074C3BC002242A0 /* JWAddress.plist in Resources */,
 				1C9EBBC3200E148F0022259A /* CommentMessageCell.xib in Resources */,
 				1CDC915F1FF0DCFC0040434B /* HotResourceCell.xib in Resources */,
 				1C1C1FA31FDFF61400C71D73 /* LoansCollegeDetailViewController.storyboard in Resources */,
@@ -1781,6 +1859,7 @@
 				1CE3BF131FFCE104003D6629 /* QBSettingViewController.storyboard in Resources */,
 				1C7C4F322071D31700D5A021 /* XinyidaiInfoOneViewController.storyboard in Resources */,
 				1C9961A51FF4EDE700E4990C /* AuthorizationViewController.storyboard in Resources */,
+				1CE8940E2074DB60002242A0 /* CGXPickerView.bundle in Resources */,
 				1C7C4F4C20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard in Resources */,
 				1C363A421FE0FA4A00D87014 /* SignInViewController.storyboard in Resources */,
 				1C23934A2001FFE8006F58A6 /* ManagerBillCell.xib in Resources */,
@@ -2000,12 +2079,15 @@
 				1C57AAF51FD636D600A7626A /* CustomLayout.swift in Sources */,
 				1CF12AA31FCD62B500474AFB /* InformationViewController.swift in Sources */,
 				1CE3BF151FFCE142003D6629 /* QBSettingTableViewController.swift in Sources */,
+				1CE8940F2074DB60002242A0 /* CGXDatePickerView.m in Sources */,
 				1C5AFD3B1FF78788009E65FC /* CommitCompleteViewController.swift in Sources */,
 				1C0F85101FF63C6B0062D1B8 /* RadioBtnView.swift in Sources */,
 				1C91ED971FD688E700DB3FA4 /* HotAgencyCollectionViewCell.swift in Sources */,
+				1CE8940D2074DB60002242A0 /* CGXAddressPcikerView.m in Sources */,
 				1C36D78620196EA3002FC688 /* ManagerBillApprovalOneViewController.swift in Sources */,
 				1C1C1F931FDFBBFF00C71D73 /* ProductCollectionViewCell.swift in Sources */,
 				1C8442581FC96FAB005BE65C /* PasswordViewController.swift in Sources */,
+				1CE8940B2074DB60002242A0 /* CGXPickerViewManager.m in Sources */,
 				1C06E41C1FFB5AB800B46A10 /* InfoSettingTableViewController.swift in Sources */,
 				1C9961A11FF4E7D400E4990C /* InputUserInfoViewController.swift in Sources */,
 				1C468B891FFA4011004DD9DA /* InfoListCell.swift in Sources */,
@@ -2032,6 +2114,7 @@
 				1C4066371FB1B0ED009A59FD /* LoginViewController.swift in Sources */,
 				1C6AD3A32016D1080022696A /* WelcomeViewController.swift in Sources */,
 				1CECDD46202AB18A000247B6 /* InformationShowViewController.swift in Sources */,
+				1CE894102074DB60002242A0 /* CGXPickerUIBaseView.m in Sources */,
 				1CE3BF181FFCF637003D6629 /* AboutViewController.swift in Sources */,
 				1C9961A31FF4EB4600E4990C /* AuthorizationViewController.swift in Sources */,
 				1C7C4F442072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift in Sources */,
@@ -2048,6 +2131,7 @@
 				1CA4FCEF1FD7DE5A009ECD30 /* RobbingTableViewCell.swift in Sources */,
 				1CA5D109201880A3009218C9 /* WithdrawCompleteViewController.swift in Sources */,
 				1CF4B6A520736FC1000336D9 /* BaoyidaiInfoOneViewController.swift in Sources */,
+				1CE894132074DB60002242A0 /* CGXPickerView.m in Sources */,
 				1C10F6A31FECF50200C3A62A /* MessageReadCell.swift in Sources */,
 				1C4B28721FF39A2600FC32CA /* UICollectionGridViewLayout.swift in Sources */,
 				1CF12AA11FCD62A400474AFB /* LoansViewController.swift in Sources */,
@@ -2058,11 +2142,13 @@
 				1CB728D81FDA2C5A006C1D2E /* String+Extension.swift in Sources */,
 				1CF12AAB1FCD7C8F00474AFB /* AXDTabBarViewController.swift in Sources */,
 				1CE3BF251FFCFC09003D6629 /* SettingTableViewController.swift in Sources */,
+				1CE893F72074C3BC002242A0 /* BasePickerView.m in Sources */,
 				1CDE80DC1FC7C021005A69DB /* LoginViewModel.swift in Sources */,
 				1C4388542014688000E73C85 /* ActivityCenterViewController.swift in Sources */,
 				1C0665F91FFF18EA002FA501 /* SelectScrollview.swift in Sources */,
 				1C13760F1FF26443003EC987 /* LoansModel.swift in Sources */,
 				1CC2F5752006165800801181 /* PayTableViewController.swift in Sources */,
+				1CE894122074DB60002242A0 /* CGXStringPickerView.m in Sources */,
 				1CF4B6AD20737EA9000336D9 /* BaoyidaiInfoTwoViewController.swift in Sources */,
 				1C10F69E1FECB1A300C3A62A /* UIScrollView+Extension.swift in Sources */,
 				1CF4B6BD2073A2B8000336D9 /* BaoyidaiFinishViewController.swift in Sources */,
@@ -2115,6 +2201,8 @@
 				1C17492E202980F80082EF50 /* HotNewsListViewController.swift in Sources */,
 				1CED7B551FDE798300AABDDE /* BusinessResourceViewController.swift in Sources */,
 				1CA5D10120186282009218C9 /* ChoiceBankCardViewController.swift in Sources */,
+				1CE894112074DB60002242A0 /* CGXAddressModel.m in Sources */,
+				1CE893F52074C3BC002242A0 /* SinglePickerView.m in Sources */,
 				1CD0B4171FE8AF9C00A4A796 /* BindingCardFirstViewController.swift in Sources */,
 				1C2E2AD61FCE5F4E005E48C3 /* AXDTabBarItemContentView.swift in Sources */,
 				1C2E2AEF1FCECDBB005E48C3 /* WRPageControl.swift in Sources */,
@@ -2123,6 +2211,7 @@
 				1CF4B6B920738A78000336D9 /* BaoyidaiInfoFourViewController.swift in Sources */,
 				1CB08E0E1FDA9B0B007FCC31 /* SMSegmentViewConstants.swift in Sources */,
 				1C857C801FFDBFAE009F45EE /* SettingInformAdminViewController.swift in Sources */,
+				1CE893F82074C3BC002242A0 /* JWAddressPickerView.m in Sources */,
 				1C06E4261FFB83B500B46A10 /* PushProductResourceViewController.swift in Sources */,
 				1CE3BF111FFCDEEA003D6629 /* QBSettingViewController.swift in Sources */,
 				1C363A3A1FE0BD8D00D87014 /* AXDNavigationController.swift in Sources */,
@@ -2206,6 +2295,7 @@
 				1C6716BE1FEE50520029E6DE /* ClientInfoModel.swift in Sources */,
 				1C91ED941FD67FE700DB3FA4 /* UIColor+Extension.swift in Sources */,
 				1CB08E0B1FDA9B0B007FCC31 /* SMSegmentView.swift in Sources */,
+				1CE8940C2074DB60002242A0 /* NSDate+CGXPicker.m in Sources */,
 				1CB08E0D1FDA9B0B007FCC31 /* SMSegment.swift in Sources */,
 				1CB728DC1FDA7889006C1D2E /* InformationView.swift in Sources */,
 				1CBFFBA81FE4ED1B00E89B7E /* UICollectionView+Extension.swift in Sources */,

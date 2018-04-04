@@ -183,6 +183,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="houseInfoBtnClick:" destination="MIa-aY-nHp" eventType="touchUpInside" id="8vh-Jy-mIj"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxk-Ku-7aJ">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -327,6 +330,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="liveConditionBtnClick:" destination="MIa-aY-nHp" eventType="touchUpInside" id="iOP-7u-YeQ"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-eP-ukm">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -375,6 +381,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="liveAdressBtnClick:" destination="MIa-aY-nHp" eventType="touchUpInside" id="9hq-hJ-Jih"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgD-2O-xfZ">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -509,6 +518,19 @@
                             <outlet property="delegate" destination="MIa-aY-nHp" id="sVU-R0-dUd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="censusRegisterSortView" destination="nBs-f8-Fr5" id="e7J-VM-VDo"/>
+                        <outlet property="censusRegisterView" destination="fcK-6h-1ZP" id="50i-OU-Nqg"/>
+                        <outlet property="houseAppraisement" destination="YyJ-8K-Il5" id="I5D-tI-dXu"/>
+                        <outlet property="houseAreaTF" destination="0ar-8S-yeC" id="6lK-F8-Wpy"/>
+                        <outlet property="houseInfoBtn" destination="eBr-kW-3h1" id="bPs-DV-uAD"/>
+                        <outlet property="houseInfoLB" destination="yxk-Ku-7aJ" id="9l3-ZC-1Di"/>
+                        <outlet property="liveAdressBtn" destination="fch-wx-Adx" id="OhS-aa-UqF"/>
+                        <outlet property="liveAdressDetailTF" destination="Wna-f9-4to" id="tl5-zA-o8B"/>
+                        <outlet property="liveAdressLB" destination="BgD-2O-xfZ" id="8hx-DD-O50"/>
+                        <outlet property="liveConditionBtn" destination="j8V-hU-6nT" id="AFo-aL-9vi"/>
+                        <outlet property="liveConditionLB" destination="Uue-eP-ukm" id="tng-0v-raw"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olv-pL-FDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

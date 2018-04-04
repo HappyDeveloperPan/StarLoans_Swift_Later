@@ -774,7 +774,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys0-ET-TRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="79" y="833"/>
+            <point key="canvasLocation" x="49" y="833"/>
         </scene>
         <!--Xinyidai Office Worker Table View Controller-->
         <scene sceneID="xkf-Mo-MLm">
@@ -892,6 +892,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="salaryShapeBtnClick:" destination="IrB-BV-tY4" eventType="touchUpInside" id="qDI-j2-hdm"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYi-H2-dVN">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -1270,6 +1273,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="organizationNatureBtnClick:" destination="IrB-BV-tY4" eventType="touchUpInside" id="wiW-hc-HC4"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-77-vR1">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -1318,6 +1324,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="organizationAdressBtnClick:" destination="IrB-BV-tY4" eventType="touchUpInside" id="tAa-jC-wj8"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZG-Hx-mc6">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -1421,6 +1430,22 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="insuranceTF" destination="G6m-ur-bUZ" id="JpE-ha-Ne8"/>
+                        <outlet property="insuranceView" destination="ACu-RU-cdQ" id="t3w-QN-cV7"/>
+                        <outlet property="monthIncomeTF" destination="wbM-y3-6Sc" id="8sO-cP-1tG"/>
+                        <outlet property="organizaDetailAdressTF" destination="ba2-ez-wvi" id="tih-1I-ZkU"/>
+                        <outlet property="organizaPhoneTF" destination="cSg-7A-ARB" id="CvL-IR-HwY"/>
+                        <outlet property="organizationAdressLB" destination="BZG-Hx-mc6" id="SYX-qO-x44"/>
+                        <outlet property="organizationNatureLB" destination="eaV-77-vR1" id="QTH-Fp-jUY"/>
+                        <outlet property="organizationTF" destination="lvG-fq-VWK" id="egh-2F-SGp"/>
+                        <outlet property="providentFundTF" destination="C98-jn-CyE" id="XLK-kE-E66"/>
+                        <outlet property="providentFundView" destination="W4f-6l-cBv" id="flw-U8-OfO"/>
+                        <outlet property="salaryShapeLB" destination="nYi-H2-dVN" id="jmG-5B-q1Z"/>
+                        <outlet property="seniorityTF" destination="7YC-as-BaN" id="40a-Nz-Zrq"/>
+                        <outlet property="socialSecurityTF" destination="y6e-Cj-q8Z" id="vt2-yT-JcT"/>
+                        <outlet property="socialSecurityView" destination="9is-Od-Yt3" id="PTB-DG-Bb8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n31-XF-dJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

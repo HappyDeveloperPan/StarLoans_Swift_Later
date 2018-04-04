@@ -10,7 +10,23 @@ import UIKit
 import IBAnimatable
 
 class XinyidaiInfoTwoTableViewController: UITableViewController {
-
+    // MARK: - Storyboard控件连线
+    @IBOutlet weak var houseInfoLB: UILabel!    //房产信息
+    @IBOutlet weak var houseInfoBtn: UIButton!
+    @IBOutlet weak var houseAreaTF: UITextField!    //房产面积
+    @IBOutlet weak var houseAppraisement: UITextField!  //房产估值
+    @IBOutlet weak var liveConditionLB: UILabel!    //居住状况
+    @IBOutlet weak var liveConditionBtn: UIButton!
+    @IBOutlet weak var liveAdressLB: UILabel!   //居住地址
+    @IBOutlet weak var liveAdressBtn: UIButton!
+    @IBOutlet weak var liveAdressDetailTF:   UITextField!   //详细地址
+    @IBOutlet weak var censusRegisterView: RadioBtnView!    //户籍类型
+    @IBOutlet weak var censusRegisterSortView: RadioBtnView!    //户籍类别
+    
+    // MARK: - 外部属性
+    var comboBoxModel = ComboBoxModel() //下拉框数据
+    
+    // MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -33,12 +49,10 @@ class XinyidaiInfoTwoTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 8
     }
     
@@ -56,59 +70,34 @@ class XinyidaiInfoTwoTableViewController: UITableViewController {
         return view
     }
 
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    // MARK: - 控件点击事件
+    
+    /// 选择房产信息
+    ///
+    /// - Parameter sender: 按钮
+    @IBAction func houseInfoBtnClick(_ sender: UIButton) {
+        CGXPickerView.showStringPicker(withTitle: "", dataSource: comboBoxModel.credit, defaultSelValue: nil, isAutoSelect: false, manager: nil) { [weak self] (selectValue, selectRow) in
+            self?.houseInfoLB.text = selectValue as? String
+        }
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    /// 选择居住状况
+    ///
+    /// - Parameter sender: 按钮
+    @IBAction func liveConditionBtnClick(_ sender: UIButton) {
+        CGXPickerView.showStringPicker(withTitle: "", dataSource: comboBoxModel.credit, defaultSelValue: nil, isAutoSelect: false, manager: nil) { [weak self] (selectValue, selectRow) in
+            self?.liveConditionLB.text = selectValue as? String
+        }
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    /// 选择居住地址
+    ///
+    /// - Parameter sender: 按钮
+    @IBAction func liveAdressBtnClick(_ sender: UIButton) {
+        CGXPickerView.showAddressPicker(withTitle: "", defaultSelected: [0,0,0], isAutoSelect: false, manager: nil) { [weak self] (selectAddressArr, selectAddressRow) in
+            let arr = selectAddressArr as? Array<String>
+            self?.liveAdressLB.text = arr![0] + arr![1] + arr![2]
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
