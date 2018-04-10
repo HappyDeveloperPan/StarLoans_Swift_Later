@@ -67,9 +67,14 @@ class AXDTabBarViewController: ESTabBarController{
         contro3.tabBarItem = ESTabBarItem(AXDIrregularityTabBarItemContentView(), title: nil, image: #imageLiteral(resourceName: "ICON-tuidan"), selectedImage: #imageLiteral(resourceName: "ICON-tuidan"))
         let nav3 = AXDNavigationController(rootViewController: contro3)
         
-        let contro4 = MessageCenterViewController()
+//        let contro4 = MessageCenterViewController()
+//        contro4.title = ""
+//        contro4.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "消息", image: #imageLiteral(resourceName: "ICON-xiaoxi"), selectedImage: #imageLiteral(resourceName: "ICON-xiaoxi-select"))
+//        let nav4 = AXDNavigationController(rootViewController: contro4)
+        let contro4 = QuickRobbingViewController()
         contro4.title = ""
-        contro4.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "消息", image: #imageLiteral(resourceName: "ICON-xiaoxi"), selectedImage: #imageLiteral(resourceName: "ICON-xiaoxi-select"))
+        contro4.isHomepage = true
+        contro4.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "抢单", image: #imageLiteral(resourceName: "ICON-xiaoxi"), selectedImage: #imageLiteral(resourceName: "ICON-xiaoxi-select"))
         let nav4 = AXDNavigationController(rootViewController: contro4)
         
         let contro5 = MineViewController.loadStoryboard()

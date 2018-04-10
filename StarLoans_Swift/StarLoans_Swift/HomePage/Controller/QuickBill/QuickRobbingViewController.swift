@@ -11,8 +11,17 @@ import UIKit
 private let cellID = "QuickRobbingSegmentCell"
 
 class QuickRobbingViewController: BaseViewController {
-    
+    // MARK: - 外部属性
+    var isHomepage:Bool = false //是否为首页部分
     //MARK: - 懒加载
+    lazy var titleBtn: UIButton = { [unowned self] in
+        let titleBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 65, height: 30))
+        titleBtn.setTitle("抢单", for: .normal)
+        titleBtn.setTitleColor(kTitleColor, for: .normal)
+        titleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        return titleBtn
+        }()
+    
     lazy var settingBtn: UIButton = { [unowned self] in
         let settingBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
         settingBtn.setTitle("推送设置", for: .normal)
@@ -72,8 +81,13 @@ class QuickRobbingViewController: BaseViewController {
     //MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "急速抢单"
+//        title = "急速抢单"
         automaticallyAdjustsScrollViewInsets = false
+        if isHomepage {
+            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
+        }else {
+            title = "急速推单"
+        }
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
     }
     
@@ -82,7 +96,7 @@ class QuickRobbingViewController: BaseViewController {
         
         segmentView.snp.makeConstraints { (make) in
             make.left.top.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 45))
+            make.size.equalTo(CGSize(width: kScreenWidth, height: 40))
         }
         
         collectionView.snp.makeConstraints { (make) in
@@ -91,6 +105,8 @@ class QuickRobbingViewController: BaseViewController {
             make.bottom.equalToSuperview()
         }
         collectionView.layoutIfNeeded()
+        layout.itemSize = CGSize(width: collectionView.width, height: collectionView.height)
+        collectionView.setCollectionViewLayout(layout, animated: false)
     }
 
     override func didReceiveMemoryWarning() {

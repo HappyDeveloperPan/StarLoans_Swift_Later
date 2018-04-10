@@ -71,8 +71,9 @@ class MessageCenterViewController: BaseViewController {
     //MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "消息"
         automaticallyAdjustsScrollViewInsets = false
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleBtn)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: settingBtn)
     }
     

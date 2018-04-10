@@ -97,6 +97,22 @@ class HomePageViewController: UIViewController {
         return searchView
     }()
     
+    lazy var notifBtn: UIButton = {
+        let notifBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+        self.view.addSubview(notifBtn)
+        notifBtn.setImage(#imageLiteral(resourceName: "notifications-1"), for: .normal)
+        notifBtn.addTarget(self, action: #selector(notifBtnClick(_:)), for: .touchUpInside)
+        return notifBtn
+    }()
+    
+    lazy var badgeView: UIView = {
+        let badgeView = UIView(frame: CGRect(x: 12, y: -5, width: 8, height: 8))
+        self.notifBtn.addSubview(badgeView)
+        badgeView.backgroundColor = kMainColor
+        badgeView.layer.cornerRadius = 4
+        return badgeView
+    }()
+    
     ///顶部广告栏
     lazy var topAdBannerView: TopAdverView = { [unowned self] in
         let topAdBannerView = TopAdverView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 235))
@@ -206,7 +222,9 @@ class HomePageViewController: UIViewController {
         super .viewWillAppear(animated)
         topAdBannerView.isAutoScroll = true
 //        UIApplication.shared.statusBarStyle = statusBarColor
-        
+        /***暂时**/
+        badgeView.isHidden = false
+        /*****/
         navigationController?.delegate = self
         navController = navigationController
     }
@@ -223,7 +241,8 @@ class HomePageViewController: UIViewController {
             make.top.left.right.equalToSuperview()
             make.size.equalTo(CGSize(width: kScreenWidth, height: kNavHeight))
         }
-        ///搜索视图
+        
+        ///地址按钮
         addressBtn.snp.makeConstraints { (make) in
             make.left.equalTo(10)
             make.top.equalTo(kStatusHeight + 2)
@@ -231,10 +250,19 @@ class HomePageViewController: UIViewController {
         }
         addressBtn.layoutIfNeeded()
         
+        ///通知按钮
+        notifBtn.snp.makeConstraints { (make) in
+            make.right.equalTo(-10)
+            make.centerY.equalTo(addressBtn)
+        }
+        notifBtn.layoutIfNeeded()
+        
+        ///搜索视图
         searchView.snp.makeConstraints { (make) in
             make.top.equalTo(kStatusHeight + 2)
             make.left.equalTo(addressBtn.snp.right).offset(8)
-            make.right.equalTo(-30)
+            make.right.equalTo(notifBtn.snp.left).offset(-8)
+//            make.right.equalTo(-30)
             make.height.equalTo(34)
         }
         searchView.layoutIfNeeded()
@@ -331,6 +359,9 @@ class HomePageViewController: UIViewController {
     }
     
     //MARK: - 控件点击事件
+    /// 定位
+    ///
+    /// - Parameter sender: 定位按钮
     @objc func locationBtnClick(_ sender: UIButton) {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
@@ -349,6 +380,13 @@ class HomePageViewController: UIViewController {
         }
     }
 
+    /// 通知中心
+    ///
+    /// - Parameter sender: 通知按钮
+    @objc func notifBtnClick(_ sender: UIButton) {
+        let vc = MessageCenterViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 //MARK: - 数据处理
