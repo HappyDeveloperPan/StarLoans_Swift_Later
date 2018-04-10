@@ -33,6 +33,16 @@ class XinyidaiOfficeWorkerTableViewController: UITableViewController {
     // MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpBasic()
+    }
+    
+    func setUpBasic() {
+        socialSecurityView.hSingleSelBtn(titleArray: ["有社保","无社保"], typeE: 1)
+        socialSecurityView.delegate = self
+        providentFundView.hSingleSelBtn(titleArray: ["有公积金","无公积金"], typeE: 1)
+        providentFundView.delegate = self
+        insuranceView.hSingleSelBtn(titleArray: ["有","无"], typeE: 1)
+        insuranceView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,12 +74,19 @@ class XinyidaiOfficeWorkerTableViewController: UITableViewController {
     ///
     /// - Parameter sender: 按钮
     @IBAction func organizationNatureBtnClick(_ sender: UIButton) {
+        CGXPickerView.showStringPicker(withTitle: "", dataSource: comboBoxModel.credit, defaultSelValue: nil, isAutoSelect: false, manager: nil) { [weak self] (selectValue, selectRow) in
+            self?.organizationNatureLB.text = selectValue as? String
+        }
     }
     
     /// 单位地址
     ///
     /// - Parameter sender: 按钮
     @IBAction func organizationAdressBtnClick(_ sender: UIButton) {
+        CGXPickerView.showAddressPicker(withTitle: "", defaultSelected: [0,0,0], isAutoSelect: false, manager: nil) { [weak self] (selectAddressArr, selectAddressRow) in
+            let arr = selectAddressArr as? Array<String>
+            self?.organizationAdressLB.text = arr![0] + arr![1] + arr![2]
+        }
     }
     
     /// 下一步
@@ -78,6 +95,19 @@ class XinyidaiOfficeWorkerTableViewController: UITableViewController {
     @IBAction func nextBtnClick(_ sender: AnimatableButton) {
         let vc = XinyidaiInfoFourViewController.loadStoryboard()
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
+
+//MARK: - 单选框按钮
+extension XinyidaiOfficeWorkerTableViewController: RadioBtnViewDelegate {
+    func selectRadioBtn(_ radioBtnView: RadioBtnView, index: Int) {
+        switch radioBtnView {
+        case socialSecurityView:print("socialSecurityView被点击")
+        case providentFundView:print("providentFundView被点击了")
+        case insuranceView:print("insuranceView被点击了")
+        default:break
+        }
     }
     
 }

@@ -372,6 +372,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="registerAdressBtnClick:" destination="krS-FC-VLv" eventType="touchUpInside" id="PxV-e1-w8L"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PFI-lQ-QrB">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -412,11 +415,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2FQ-VZ-k9w" customClass="RadioBtnView" customModule="StarLoans_Swift" customModuleProvider="target">
-                                                    <rect key="frame" x="259" y="1" width="100" height="40"/>
+                                                    <rect key="frame" x="209" y="1" width="150" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="EQE-st-7qE"/>
-                                                        <constraint firstAttribute="width" constant="100" id="XH8-ub-tcT"/>
+                                                        <constraint firstAttribute="width" constant="150" id="XH8-ub-tcT"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -494,10 +497,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6t-wq-bmg" customClass="RadioBtnView" customModule="StarLoans_Swift" customModuleProvider="target">
-                                                    <rect key="frame" x="259" y="1" width="100" height="40"/>
+                                                    <rect key="frame" x="209" y="1" width="150" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="BT4-cs-NgK"/>
+                                                        <constraint firstAttribute="width" constant="150" id="BT4-cs-NgK"/>
                                                         <constraint firstAttribute="height" constant="40" id="Ie3-rB-Jzx"/>
                                                     </constraints>
                                                 </view>
@@ -620,6 +623,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="unitNatureBtnClick:" destination="krS-FC-VLv" eventType="touchUpInside" id="Jct-Mc-ijc"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJP-LA-zWm">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -668,6 +674,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="unitAddressBtnClick:" destination="krS-FC-VLv" eventType="touchUpInside" id="pBU-ub-VyV"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5W0-0v-gMt">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -771,6 +780,21 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="addressDetailTF" destination="Myq-fF-TVb" id="1sX-wQ-Dm4"/>
+                        <outlet property="providentFundTF" destination="i77-7h-R1a" id="MMF-4t-SR9"/>
+                        <outlet property="providentFundView" destination="v6t-wq-bmg" id="FrX-ez-SQp"/>
+                        <outlet property="registerAdressLB" destination="PFI-lQ-QrB" id="n1d-8T-cmc"/>
+                        <outlet property="runAgeLimitTF" destination="NyM-BJ-i8z" id="Ula-Rl-kZx"/>
+                        <outlet property="runSerialMonthTF" destination="dal-lA-gb3" id="m1u-ri-lo1"/>
+                        <outlet property="runSerialTF" destination="vab-ps-fSu" id="hh2-FL-0hL"/>
+                        <outlet property="socialSecurityTF" destination="3kO-T7-A2Q" id="mZg-6B-4GF"/>
+                        <outlet property="socialSecurityView" destination="2FQ-VZ-k9w" id="3rV-zp-gRc"/>
+                        <outlet property="unitAddressLB" destination="5W0-0v-gMt" id="R6u-kj-CcN"/>
+                        <outlet property="unitNameTF" destination="0Z3-cr-zOZ" id="gtD-qW-CZq"/>
+                        <outlet property="unitNatureLB" destination="EJP-LA-zWm" id="zwS-bH-KJQ"/>
+                        <outlet property="unitPhoneTF" destination="DHz-AQ-bWp" id="EYS-nu-4nO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ys0-ET-TRB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -983,11 +1007,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9is-Od-Yt3" customClass="RadioBtnView" customModule="StarLoans_Swift" customModuleProvider="target">
-                                                    <rect key="frame" x="259" y="1" width="100" height="40"/>
+                                                    <rect key="frame" x="209" y="1" width="150" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="1zh-je-grX"/>
-                                                        <constraint firstAttribute="width" constant="100" id="uR0-ZV-v3W"/>
+                                                        <constraint firstAttribute="width" constant="150" id="uR0-ZV-v3W"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -1065,10 +1089,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W4f-6l-cBv" customClass="RadioBtnView" customModule="StarLoans_Swift" customModuleProvider="target">
-                                                    <rect key="frame" x="259" y="1" width="100" height="40"/>
+                                                    <rect key="frame" x="209" y="1" width="150" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="3DR-a2-wFl"/>
+                                                        <constraint firstAttribute="width" constant="150" id="3DR-a2-wFl"/>
                                                         <constraint firstAttribute="height" constant="40" id="umH-y0-o2l"/>
                                                     </constraints>
                                                 </view>

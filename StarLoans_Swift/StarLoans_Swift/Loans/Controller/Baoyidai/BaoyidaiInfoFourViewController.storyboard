@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="4eK-II-SF6">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="4eK-II-SF6">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -162,6 +162,9 @@
                                     </constraints>
                                     <state key="normal" image="ICON-weixuanzhong"/>
                                     <state key="selected" image="ICON-xuanzhong"/>
+                                    <connections>
+                                        <action selector="authorizationBtnClick:" destination="k63-ip-AuH" eventType="touchUpInside" id="zaT-0g-BDc"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -577,6 +580,17 @@
                             <outlet property="delegate" destination="k63-ip-AuH" id="OD4-gT-VWj"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="carLoanLimitTF" destination="AqG-ju-ilg" id="6At-Rc-N19"/>
+                        <outlet property="carLoanView" destination="jQS-RG-UNZ" id="6wM-VQ-Z9y"/>
+                        <outlet property="creditCardView" destination="fPB-c3-J3q" id="hVe-cZ-FAs"/>
+                        <outlet property="creditLimitTF" destination="dfS-As-ut3" id="LbP-c5-iyJ"/>
+                        <outlet property="creditLimitUseTF" destination="ykl-Y2-idb" id="rM1-W1-79c"/>
+                        <outlet property="creditLoansView" destination="t28-we-g6B" id="d1f-9l-sZu"/>
+                        <outlet property="loansLimitTF" destination="9aM-le-jPG" id="a8G-RL-Ljn"/>
+                        <outlet property="monthRepaymentLimitTF" destination="7dW-RI-ILh" id="XKN-rO-2yF"/>
+                        <outlet property="monthRepaymentTF" destination="WNE-5Q-nc7" id="Y2X-Ze-BgN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iAA-Wn-TEB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

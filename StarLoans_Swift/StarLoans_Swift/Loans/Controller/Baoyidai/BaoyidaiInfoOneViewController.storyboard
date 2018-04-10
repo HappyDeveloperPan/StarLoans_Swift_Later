@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="KSO-h8-dZn">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="KSO-h8-dZn">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -279,6 +279,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="repaymentTypeBtnClick:" destination="eRR-WH-Z6R" eventType="touchUpInside" id="LKt-n1-Yc1"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l0G-YC-2b3">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -437,6 +440,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="marriageBtnClick:" destination="eRR-WH-Z6R" eventType="touchUpInside" id="PDE-PE-O98"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqs-dZ-9Gg">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -467,6 +473,15 @@
                             <outlet property="delegate" destination="eRR-WH-Z6R" id="Rhr-FW-If9"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="ageTF" destination="zor-2a-V31" id="Spa-OV-DV7"/>
+                        <outlet property="loanDeadlineTF" destination="ZyJ-Sb-AUD" id="DJF-sI-2rg"/>
+                        <outlet property="loanMoneyTF" destination="v9m-zs-rYM" id="a8K-Cy-mmE"/>
+                        <outlet property="marriageLB" destination="nqs-dZ-9Gg" id="LC2-pX-hW5"/>
+                        <outlet property="repaymentTypeLB" destination="l0G-YC-2b3" id="KeY-Ln-Feu"/>
+                        <outlet property="sexView" destination="JCI-H8-bBr" id="Agc-Lm-IKl"/>
+                        <outlet property="userNameTF" destination="cYL-2w-0oh" id="twE-AO-oVe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZC-nA-f0U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

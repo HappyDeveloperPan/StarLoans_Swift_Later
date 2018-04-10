@@ -29,11 +29,18 @@ class XinyidaiInfoTwoTableViewController: UITableViewController {
     // MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpBasic()
+    }
+    
+    func setUpBasic() {
+        censusRegisterView.hSingleSelBtn(titleArray: ["农户","非农户"], typeE: 1)
+        censusRegisterView.delegate = self
+        censusRegisterSortView.hSingleSelBtn(titleArray: ["本地","非本地"], typeE: 1)
+        censusRegisterSortView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     // MARK: - 控件点击事件
@@ -97,6 +104,18 @@ class XinyidaiInfoTwoTableViewController: UITableViewController {
         CGXPickerView.showAddressPicker(withTitle: "", defaultSelected: [0,0,0], isAutoSelect: false, manager: nil) { [weak self] (selectAddressArr, selectAddressRow) in
             let arr = selectAddressArr as? Array<String>
             self?.liveAdressLB.text = arr![0] + arr![1] + arr![2]
+        }
+    }
+    
+}
+
+//MARK: - 单选框按钮
+extension XinyidaiInfoTwoTableViewController: RadioBtnViewDelegate {
+    func selectRadioBtn(_ radioBtnView: RadioBtnView, index: Int) {
+        switch radioBtnView {
+        case censusRegisterView:print("censusRegisterView被点击")
+        case censusRegisterSortView:print("censusRegisterSortView被点击了")
+        default:break
         }
     }
     

@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="X0G-yx-9KB">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="X0G-yx-9KB">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -307,11 +307,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6D9-Wg-FEl" customClass="RadioBtnView" customModule="StarLoans_Swift" customModuleProvider="target">
-                                                    <rect key="frame" x="259" y="1" width="100" height="40"/>
+                                                    <rect key="frame" x="179" y="1" width="180" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="7h1-oK-Etj"/>
-                                                        <constraint firstAttribute="width" constant="100" id="Kcf-r8-mu8"/>
+                                                        <constraint firstAttribute="width" constant="180" id="Kcf-r8-mu8"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -389,10 +389,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPq-zh-hnb" customClass="RadioBtnView" customModule="StarLoans_Swift" customModuleProvider="target">
-                                                    <rect key="frame" x="259" y="1" width="100" height="40"/>
+                                                    <rect key="frame" x="159" y="1" width="200" height="40"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="5Wj-ou-pNq"/>
+                                                        <constraint firstAttribute="width" constant="200" id="5Wj-ou-pNq"/>
                                                         <constraint firstAttribute="height" constant="40" id="hYI-If-Ytl"/>
                                                     </constraints>
                                                 </view>
@@ -413,6 +413,14 @@
                             <outlet property="delegate" destination="bci-f0-PQh" id="DlW-HF-jHT"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="amountTF" destination="kbb-ai-SiV" id="B4n-pD-dvg"/>
+                        <outlet property="appraisementTF" destination="Kvp-mG-m3d" id="cNR-la-CL0"/>
+                        <outlet property="areaTF" destination="wim-rL-g1F" id="xtd-mS-alt"/>
+                        <outlet property="communityTF" destination="ZRb-PZ-DYo" id="8Zl-ZH-JGV"/>
+                        <outlet property="houseStateView" destination="6D9-Wg-FEl" id="Qes-4a-sG4"/>
+                        <outlet property="propertyView" destination="UPq-zh-hnb" id="vtG-db-hyh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PEg-FE-ywn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

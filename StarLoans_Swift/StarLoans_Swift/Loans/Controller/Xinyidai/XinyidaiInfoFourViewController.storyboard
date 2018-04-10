@@ -111,6 +111,9 @@
                                                             <constraint firstAttribute="height" constant="100" id="Yag-h9-FWU"/>
                                                         </constraints>
                                                         <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                        <connections>
+                                                            <action selector="picOneBtnClick:" destination="uQs-Fq-58f" eventType="touchUpInside" id="ZaY-ML-8eg"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传身份证正面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdF-va-7Sb">
                                                         <rect key="frame" x="0.0" y="100" width="178" height="20"/>
@@ -140,6 +143,9 @@
                                                             <constraint firstAttribute="height" constant="100" id="Tja-jD-tPY"/>
                                                         </constraints>
                                                         <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                        <connections>
+                                                            <action selector="picTwoBtnClick:" destination="uQs-Fq-58f" eventType="touchUpInside" id="562-YS-7hG"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传身份证反面" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zu-Vw-gfO">
                                                         <rect key="frame" x="0.0" y="100" width="178" height="20"/>
@@ -177,6 +183,9 @@
                                                             <constraint firstAttribute="height" constant="100" id="Bte-z0-wET"/>
                                                         </constraints>
                                                         <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                        <connections>
+                                                            <action selector="picThreeBtnClick:" destination="uQs-Fq-58f" eventType="touchUpInside" id="iaU-n2-cDb"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传房产证明" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xia-OU-0O3">
                                                         <rect key="frame" x="0.0" y="100" width="178" height="20"/>
@@ -206,6 +215,9 @@
                                                             <constraint firstAttribute="height" constant="100" id="5Vw-p7-Gtw"/>
                                                         </constraints>
                                                         <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                        <connections>
+                                                            <action selector="picFourBtnClick:" destination="uQs-Fq-58f" eventType="touchUpInside" id="eRn-Kt-4nz"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传车辆登记" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzy-8a-cwe">
                                                         <rect key="frame" x="0.0" y="100" width="178" height="20"/>
@@ -244,6 +256,9 @@
                                                             <constraint firstAttribute="height" constant="100" id="d92-xw-GbP"/>
                                                         </constraints>
                                                         <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                        <connections>
+                                                            <action selector="picFiveBtnClick:" destination="uQs-Fq-58f" eventType="touchUpInside" id="bae-qK-hyR"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传营业执照" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="co7-TA-VDF">
                                                         <rect key="frame" x="0.0" y="100" width="178" height="20"/>
@@ -273,6 +288,9 @@
                                                             <constraint firstAttribute="height" constant="100" id="rQV-xf-a0x"/>
                                                         </constraints>
                                                         <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                        <connections>
+                                                            <action selector="picSixBtnClick:" destination="uQs-Fq-58f" eventType="touchUpInside" id="SJ2-2r-7y3"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传其他证明" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zX0-ef-Xo0">
                                                         <rect key="frame" x="0.0" y="100" width="178" height="20"/>
@@ -348,6 +366,12 @@
                     </view>
                     <connections>
                         <outlet property="nextBtn" destination="KSM-4z-gzZ" id="9cj-AN-YrE"/>
+                        <outlet property="picFiveBtn" destination="DBU-9x-d7v" id="xkl-jh-021"/>
+                        <outlet property="picFourBtn" destination="oKD-uh-cPs" id="6fa-b6-Csz"/>
+                        <outlet property="picOneBtn" destination="2zU-oZ-I51" id="a3g-k8-u1r"/>
+                        <outlet property="picSixBtn" destination="EU4-tS-Q0I" id="jlf-Fr-sMt"/>
+                        <outlet property="picThreeBtn" destination="kNf-s0-2Ap" id="x2N-it-r2v"/>
+                        <outlet property="picTwoBtn" destination="bDd-Bt-gbu" id="O26-LQ-Unn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gg4-jg-zEQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -88,4 +88,11 @@ extension String {
         
     }
     
+//    func url() -> URL? {
+//        //clang diagnostic push
+//        //clang diagnostic ignored"-Wdeprecated-declarations"
+//        return URL(string: CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, self as? CFString?, "!$&'()*+,-./:;=?@_~%#[]" as CFString?, nil, .UTF8)) as? String ?? "")
+//        //clang diagnostic pop
+//    }
+    
 }

@@ -47,7 +47,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="750"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="MM1-T7-voK">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="MM1-T7-voK">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
@@ -219,6 +219,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="industryBtnClick:" destination="BAG-xV-fav" eventType="touchUpInside" id="SgV-r3-t1I"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Em7-EW-ozO">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -292,6 +295,9 @@
                                                                 <constraint firstAttribute="height" constant="100" id="Rhb-BG-17Y"/>
                                                             </constraints>
                                                             <state key="normal" image="ICON-tianjiazhaopian-"/>
+                                                            <connections>
+                                                                <action selector="lawsuitMaterialBtnClick:" destination="BAG-xV-fav" eventType="touchUpInside" id="8g5-I8-kt3"/>
+                                                            </connections>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上传诉讼材料" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atf-yW-XHh">
                                                             <rect key="frame" x="0.0" y="100" width="140" height="20"/>
@@ -346,6 +352,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="companyAddressBtnClick:" destination="BAG-xV-fav" eventType="touchUpInside" id="fQZ-xi-0Rx"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QSO-Eg-bIh">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -430,6 +439,9 @@
                                                     <state key="normal" image="ICON-youjiantou-">
                                                         <color key="titleColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="registerTimeBtnClick:" destination="BAG-xV-fav" eventType="touchUpInside" id="uBC-QD-nGb"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请选择" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3d-QW-3zq">
                                                     <rect key="frame" x="145" y="11.5" width="200" height="18"/>
@@ -641,6 +653,19 @@
                         </connections>
                     </tableView>
                     <size key="freeformSize" width="375" height="750"/>
+                    <connections>
+                        <outlet property="addressDetailTF" destination="m8Q-Ma-cr0" id="Rvf-fj-225"/>
+                        <outlet property="businessTF" destination="M6a-gB-Ka3" id="sb9-2L-pPV"/>
+                        <outlet property="companyAddressLB" destination="QSO-Eg-bIh" id="Snk-pG-CCA"/>
+                        <outlet property="companyNameTF" destination="2YG-LB-4CO" id="hs4-cN-eQr"/>
+                        <outlet property="flowTF" destination="YnC-cW-YfA" id="3eS-RT-pgR"/>
+                        <outlet property="industryLB" destination="Em7-EW-ozO" id="63k-RJ-FOk"/>
+                        <outlet property="lawsuitMaterialBtn" destination="cXq-rd-9Ig" id="wFK-4H-VtC"/>
+                        <outlet property="lawsuitView" destination="L1U-Tx-B5q" id="2b6-lA-8wA"/>
+                        <outlet property="profitYearTF" destination="3h6-1n-Yob" id="sM1-sV-b9c"/>
+                        <outlet property="registerTimeLB" destination="j3d-QW-3zq" id="5dC-Ee-jZn"/>
+                        <outlet property="turnoverTF" destination="J4z-Rr-96L" id="Lk9-EX-bab"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L97-5K-4bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
