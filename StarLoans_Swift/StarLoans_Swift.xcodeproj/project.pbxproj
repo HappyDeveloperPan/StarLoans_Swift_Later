@@ -58,6 +58,12 @@
 		1C10F6A51FED04B700C3A62A /* MessageReadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C10F6A41FED04B700C3A62A /* MessageReadModel.swift */; };
 		1C10F6A71FED0CA800C3A62A /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C10F6A61FED0CA800C3A62A /* MessageDetailViewController.swift */; };
 		1C10F6A91FED0CBA00C3A62A /* MessageDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C10F6A81FED0CBA00C3A62A /* MessageDetailViewController.storyboard */; };
+		1C1349C3207F04B0003CF1C8 /* weixin_allshare_night_60x60_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1349C1207F04AF003CF1C8 /* weixin_allshare_night_60x60_@2x.png */; };
+		1C1349C4207F04B0003CF1C8 /* weixin_allshare_night_60x60_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1349C2207F04B0003CF1C8 /* weixin_allshare_night_60x60_@3x.png */; };
+		1C1349C7207F04C3003CF1C8 /* pyq_allshare_60x60_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1349C5207F04C3003CF1C8 /* pyq_allshare_60x60_@3x.png */; };
+		1C1349C8207F04C3003CF1C8 /* pyq_allshare_60x60_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1349C6207F04C3003CF1C8 /* pyq_allshare_60x60_@2x.png */; };
+		1C1349CB207F04D8003CF1C8 /* pyq_allshare_night_60x60_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1349C9207F04D8003CF1C8 /* pyq_allshare_night_60x60_@2x.png */; };
+		1C1349CC207F04D8003CF1C8 /* pyq_allshare_night_60x60_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C1349CA207F04D8003CF1C8 /* pyq_allshare_night_60x60_@3x.png */; };
 		1C1376061FF1E7B4003EC987 /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1376051FF1E7B4003EC987 /* VideoModel.swift */; };
 		1C1376081FF22025003EC987 /* SignInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C1376071FF22025003EC987 /* SignInModel.swift */; };
 		1C13760D1FF23013003EC987 /* LoansSegmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C13760C1FF23013003EC987 /* LoansSegmentCell.swift */; };
@@ -258,6 +264,12 @@
 		1CC2F5712006111A00801181 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC2F5702006111A00801181 /* PayViewController.swift */; };
 		1CC2F5732006112A00801181 /* PayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CC2F5722006112A00801181 /* PayViewController.storyboard */; };
 		1CC2F5752006165800801181 /* PayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC2F5742006165800801181 /* PayTableViewController.swift */; };
+		1CC89B1B207E02B100EF37B5 /* QSShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89B1A207E02B100EF37B5 /* QSShareButton.swift */; };
+		1CC89B1D207E03F000EF37B5 /* QSShareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89B1C207E03F000EF37B5 /* QSShareModel.swift */; };
+		1CC89B1F207E052C00EF37B5 /* QSSharePlatform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89B1E207E052C00EF37B5 /* QSSharePlatform.swift */; };
+		1CC89B23207E05F400EF37B5 /* weixin_allshare_60x60_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89B21207E05F400EF37B5 /* weixin_allshare_60x60_@3x.png */; };
+		1CC89B24207E05F400EF37B5 /* weixin_allshare_60x60_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CC89B22207E05F400EF37B5 /* weixin_allshare_60x60_@2x.png */; };
+		1CC89B26207E077F00EF37B5 /* QSShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC89B25207E077F00EF37B5 /* QSShareView.swift */; };
 		1CC9C0E61FCC23CD00750C5E /* JSProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9C0E51FCC23CD00750C5E /* JSProgress.swift */; };
 		1CC9C0E81FCC3B2D00750C5E /* NetWorksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9C0E71FCC3B2D00750C5E /* NetWorksManager.swift */; };
 		1CCE1B421FC2C27F002EE6D9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE1B411FC2C27F002EE6D9 /* UserManager.swift */; };
@@ -418,6 +430,12 @@
 		1C10F6A41FED04B700C3A62A /* MessageReadModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReadModel.swift; sourceTree = "<group>"; };
 		1C10F6A61FED0CA800C3A62A /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		1C10F6A81FED0CBA00C3A62A /* MessageDetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageDetailViewController.storyboard; sourceTree = "<group>"; };
+		1C1349C1207F04AF003CF1C8 /* weixin_allshare_night_60x60_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin_allshare_night_60x60_@2x.png"; sourceTree = "<group>"; };
+		1C1349C2207F04B0003CF1C8 /* weixin_allshare_night_60x60_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin_allshare_night_60x60_@3x.png"; sourceTree = "<group>"; };
+		1C1349C5207F04C3003CF1C8 /* pyq_allshare_60x60_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pyq_allshare_60x60_@3x.png"; sourceTree = "<group>"; };
+		1C1349C6207F04C3003CF1C8 /* pyq_allshare_60x60_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pyq_allshare_60x60_@2x.png"; sourceTree = "<group>"; };
+		1C1349C9207F04D8003CF1C8 /* pyq_allshare_night_60x60_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pyq_allshare_night_60x60_@2x.png"; sourceTree = "<group>"; };
+		1C1349CA207F04D8003CF1C8 /* pyq_allshare_night_60x60_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pyq_allshare_night_60x60_@3x.png"; sourceTree = "<group>"; };
 		1C1376051FF1E7B4003EC987 /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		1C1376071FF22025003EC987 /* SignInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInModel.swift; sourceTree = "<group>"; };
 		1C13760C1FF23013003EC987 /* LoansSegmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoansSegmentCell.swift; sourceTree = "<group>"; };
@@ -626,6 +644,12 @@
 		1CC2F5702006111A00801181 /* PayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
 		1CC2F5722006112A00801181 /* PayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PayViewController.storyboard; sourceTree = "<group>"; };
 		1CC2F5742006165800801181 /* PayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayTableViewController.swift; sourceTree = "<group>"; };
+		1CC89B1A207E02B100EF37B5 /* QSShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSShareButton.swift; sourceTree = "<group>"; };
+		1CC89B1C207E03F000EF37B5 /* QSShareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSShareModel.swift; sourceTree = "<group>"; };
+		1CC89B1E207E052C00EF37B5 /* QSSharePlatform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSSharePlatform.swift; sourceTree = "<group>"; };
+		1CC89B21207E05F400EF37B5 /* weixin_allshare_60x60_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin_allshare_60x60_@3x.png"; sourceTree = "<group>"; };
+		1CC89B22207E05F400EF37B5 /* weixin_allshare_60x60_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weixin_allshare_60x60_@2x.png"; sourceTree = "<group>"; };
+		1CC89B25207E077F00EF37B5 /* QSShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QSShareView.swift; sourceTree = "<group>"; };
 		1CC9C0E51FCC23CD00750C5E /* JSProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSProgress.swift; sourceTree = "<group>"; };
 		1CC9C0E71FCC3B2D00750C5E /* NetWorksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorksManager.swift; sourceTree = "<group>"; };
 		1CCE1B411FC2C27F002EE6D9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
@@ -1064,6 +1088,7 @@
 				1C1D94611FE277D700F65049 /* VideoCenterView */,
 				1C10F6A11FECF4A800C3A62A /* MessageReadView */,
 				1CE3BEF51FFC7716003D6629 /* QuickRobbingView */,
+				1CC89B19207E024400EF37B5 /* QSShareView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1492,6 +1517,33 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		1CC89B19207E024400EF37B5 /* QSShareView */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89B20207E05C600EF37B5 /* Icon */,
+				1CC89B1A207E02B100EF37B5 /* QSShareButton.swift */,
+				1CC89B1C207E03F000EF37B5 /* QSShareModel.swift */,
+				1CC89B1E207E052C00EF37B5 /* QSSharePlatform.swift */,
+				1CC89B25207E077F00EF37B5 /* QSShareView.swift */,
+			);
+			path = QSShareView;
+			sourceTree = "<group>";
+		};
+		1CC89B20207E05C600EF37B5 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				1CC89B22207E05F400EF37B5 /* weixin_allshare_60x60_@2x.png */,
+				1CC89B21207E05F400EF37B5 /* weixin_allshare_60x60_@3x.png */,
+				1C1349C1207F04AF003CF1C8 /* weixin_allshare_night_60x60_@2x.png */,
+				1C1349C2207F04B0003CF1C8 /* weixin_allshare_night_60x60_@3x.png */,
+				1C1349C6207F04C3003CF1C8 /* pyq_allshare_60x60_@2x.png */,
+				1C1349C5207F04C3003CF1C8 /* pyq_allshare_60x60_@3x.png */,
+				1C1349C9207F04D8003CF1C8 /* pyq_allshare_night_60x60_@2x.png */,
+				1C1349CA207F04D8003CF1C8 /* pyq_allshare_night_60x60_@3x.png */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
 		1CDE80DA1FC7BFD1005A69DB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1820,6 +1872,7 @@
 				1C041413201ABE7000C8C217 /* BrokerClientCell.xib in Resources */,
 				1CE3BF291FFD02FD003D6629 /* ResetViewController.storyboard in Resources */,
 				1CF4B6AF20737EB7000336D9 /* BaoyidaiInfoTwoViewController.storyboard in Resources */,
+				1C1349C8207F04C3003CF1C8 /* pyq_allshare_60x60_@2x.png in Resources */,
 				1C06E4281FFB83C500B46A10 /* PushProductResourceViewController.storyboard in Resources */,
 				1CA1D8522005A6A600F51337 /* PushResourceView.xib in Resources */,
 				1CF4B6A220732CC2000336D9 /* XinyidaiFinishViewController.storyboard in Resources */,
@@ -1830,10 +1883,13 @@
 				1CD0B4211FE8B8AD00A4A796 /* BindingCardNextViewController.storyboard in Resources */,
 				1CED7B5C1FDEA73100AABDDE /* TeachDetailCollectionViewCell.xib in Resources */,
 				1C6D2BEA200C90E2003E4501 /* LoanManagerApproveViewController.storyboard in Resources */,
+				1C1349C3207F04B0003CF1C8 /* weixin_allshare_night_60x60_@2x.png in Resources */,
 				1C9EBBBD200E04F60022259A /* SystemMessageCell.xib in Resources */,
 				1C609DAC1FE7BE38004D4E54 /* BankCardCollectionViewCell.xib in Resources */,
 				1C36D7902019A985002FC688 /* ManagerBillApprovalThreeViewController.storyboard in Resources */,
+				1CC89B24207E05F400EF37B5 /* weixin_allshare_60x60_@2x.png in Resources */,
 				1C857C901FFE0835009F45EE /* VStoreViewController.storyboard in Resources */,
+				1C1349C7207F04C3003CF1C8 /* pyq_allshare_60x60_@3x.png in Resources */,
 				1C9EBBB7200DFB890022259A /* MessageCenterCell.xib in Resources */,
 				1CE3BF231FFCFBE9003D6629 /* SettingViewController.storyboard in Resources */,
 				1CF4B6B3207385B7000336D9 /* BaoyidaiInfoThreeViewController.storyboard in Resources */,
@@ -1851,6 +1907,8 @@
 				1C4066041FB190C8009A59FD /* Main.storyboard in Resources */,
 				1CA4FCF01FD7DE5A009ECD30 /* RobbingTableViewCell.xib in Resources */,
 				1C363A3E1FE0D53C00D87014 /* PayCompleteViewController.storyboard in Resources */,
+				1C1349C4207F04B0003CF1C8 /* weixin_allshare_night_60x60_@3x.png in Resources */,
+				1C1349CB207F04D8003CF1C8 /* pyq_allshare_night_60x60_@2x.png in Resources */,
 				1C23934E20020C8F006F58A6 /* ManagerBillDetailViewController.storyboard in Resources */,
 				1CE3BF1A1FFCF660003D6629 /* AboutViewController.storyboard in Resources */,
 				1C06E4221FFB6BC500B46A10 /* PushClientResourceViewController.storyboard in Resources */,
@@ -1860,6 +1918,7 @@
 				1C7C4F322071D31700D5A021 /* XinyidaiInfoOneViewController.storyboard in Resources */,
 				1C9961A51FF4EDE700E4990C /* AuthorizationViewController.storyboard in Resources */,
 				1CE8940E2074DB60002242A0 /* CGXPickerView.bundle in Resources */,
+				1CC89B23207E05F400EF37B5 /* weixin_allshare_60x60_@3x.png in Resources */,
 				1C7C4F4C20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard in Resources */,
 				1C363A421FE0FA4A00D87014 /* SignInViewController.storyboard in Resources */,
 				1C23934A2001FFE8006F58A6 /* ManagerBillCell.xib in Resources */,
@@ -1873,6 +1932,7 @@
 				1C9EBBB1200DD7320022259A /* PushCompleteViewController.storyboard in Resources */,
 				1C857C961FFE1421009F45EE /* VStoreFuncCollectionViewCell.xib in Resources */,
 				1CA5D10B201880AE009218C9 /* WithdrawCompleteViewController.storyboard in Resources */,
+				1C1349CC207F04D8003CF1C8 /* pyq_allshare_night_60x60_@3x.png in Resources */,
 				1C36D78C20198024002FC688 /* ManagerBillApprovalTwoViewController.storyboard in Resources */,
 				1CBAC4172000851E002FB1C9 /* PurchasedCourseDetailViewController.storyboard in Resources */,
 				1C9961A71FF51BC000E4990C /* InputUserInfoViewController.storyboard in Resources */,
@@ -2095,6 +2155,7 @@
 				1CDC91611FF0E9F90040434B /* VideoDetailViewController.swift in Sources */,
 				1CD0B41F1FE8B89C00A4A796 /* BindingCardNextViewController.swift in Sources */,
 				1C40662F1FB1A965009A59FD /* HomePageViewController.swift in Sources */,
+				1CC89B1D207E03F000EF37B5 /* QSShareModel.swift in Sources */,
 				1C041416201AC60800C8C217 /* BrokerProductCell.swift in Sources */,
 				1C4B28761FF39C4A00FC32CA /* GridView.swift in Sources */,
 				1C23934C20020C7F006F58A6 /* ManagerBillDetailViewController.swift in Sources */,
@@ -2116,12 +2177,14 @@
 				1CECDD46202AB18A000247B6 /* InformationShowViewController.swift in Sources */,
 				1CE894102074DB60002242A0 /* CGXPickerUIBaseView.m in Sources */,
 				1CE3BF181FFCF637003D6629 /* AboutViewController.swift in Sources */,
+				1CC89B1B207E02B100EF37B5 /* QSShareButton.swift in Sources */,
 				1C9961A31FF4EB4600E4990C /* AuthorizationViewController.swift in Sources */,
 				1C7C4F442072300A00D5A021 /* XinyidaiOfficeWorkerTableViewController.swift in Sources */,
 				1C06E4141FFB359C00B46A10 /* InfoDetailViewController.swift in Sources */,
 				1CF4B6B720738A65000336D9 /* BaoyidaiInfoFourTableViewController.swift in Sources */,
 				1C468B8C1FFA4387004DD9DA /* InfoModel.swift in Sources */,
 				1C5AFD421FF79F70009E65FC /* InfoSegmentCell.swift in Sources */,
+				1CC89B26207E077F00EF37B5 /* QSShareView.swift in Sources */,
 				1C1D946A1FE2798C00F65049 /* VideoCenterDetailCollectionViewCell.swift in Sources */,
 				1C4065FF1FB190C8009A59FD /* AppDelegate.swift in Sources */,
 				1C7C4F462072302700D5A021 /* XinyidaiEntrepreneurTableViewController.swift in Sources */,
@@ -2146,6 +2209,7 @@
 				1CDE80DC1FC7C021005A69DB /* LoginViewModel.swift in Sources */,
 				1C4388542014688000E73C85 /* ActivityCenterViewController.swift in Sources */,
 				1C0665F91FFF18EA002FA501 /* SelectScrollview.swift in Sources */,
+				1CC89B1F207E052C00EF37B5 /* QSSharePlatform.swift in Sources */,
 				1C13760F1FF26443003EC987 /* LoansModel.swift in Sources */,
 				1CC2F5752006165800801181 /* PayTableViewController.swift in Sources */,
 				1CE894122074DB60002242A0 /* CGXStringPickerView.m in Sources */,

@@ -34,7 +34,6 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
         let progressView = UIProgressView()
         progressView.progressTintColor = kMainColor
         progressView.trackTintColor = UIColor.white
-//        self.navigationController?.navigationBar.addSubview(progressView)
         self.view.addSubview(progressView)
         return progressView
     }()
@@ -56,6 +55,7 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
             webView.load(URLRequest(url: URL(string: resourceModel.url)!))
         }
 //        webView.load(URLRequest(url: URL(string: "https://www.baidu.com")!))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(socializeShare))
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "ICON-comback"), style: .plain, target: self, action: #selector(backItemPressed))
     }
     
@@ -105,12 +105,27 @@ class InformationShowViewController: BaseViewController, StoryboardLoadable {
         }
     }
     
+    
+    /// 根据网页的层级进行返回操作
     @objc func backItemPressed() {
         if webView.canGoBack {
             webView.goBack()
         }else {
             navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+// MARK: - 数据处理
+extension InformationShowViewController {
+    @objc func socializeShare() {
+        let shareView = QSShareView()
+        let shareModel = QSShareModel()
+        shareModel.title = resourceModel.title
+        shareModel.descr = resourceModel.title
+        shareModel.image = resourceModel.thumbnail_pic_s
+        shareModel.url = resourceModel.url
+        shareView.showShareView(with: shareModel, shareContentType: .QSShareContentTypeText)
     }
 }
 
