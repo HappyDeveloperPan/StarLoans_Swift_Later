@@ -44,16 +44,16 @@ class HomePageViewController: UIViewController {
             setNeedsStatusBarAppearanceUpdate()
         }
     }
-    lazy var locationManager: CLLocationManager = { [unowned self] in
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-//            locationManager.requestWhenInUseAuthorization()
-//        }
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.distanceFilter = kCLLocationAccuracyKilometer
-        return locationManager
-    }()
+//    lazy var locationManager: CLLocationManager = { [unowned self] in
+//        let locationManager = CLLocationManager()
+////        locationManager.delegate = self
+////        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+////            locationManager.requestWhenInUseAuthorization()
+////        }
+//        locationManager.requestWhenInUseAuthorization()
+//        locationManager.distanceFilter = kCLLocationAccuracyKilometer
+//        return locationManager
+//    }()
     
     //MARK: - 主界面部分
     lazy var mainView: UIScrollView = { [unowned self] in
@@ -70,56 +70,69 @@ class HomePageViewController: UIViewController {
     }()
     
     ///顶部渐变搜索栏
-    lazy var navView: UIView = { [unowned self] in
-        let navView = UIView()
-        self.view.addSubview(navView)
-        navView.backgroundColor = kMainColor
-        navView.alpha = 0
-        return navView
+//    lazy var navView: UIView = { [unowned self] in
+//        let navView = UIView()
+//        self.view.addSubview(navView)
+//        navView.backgroundColor = kMainColor
+//        navView.alpha = 0
+//        return navView
+//    }()
+    
+    lazy var customNavView: CustomNavView = {
+        let customNavView = CustomNavView()
+        self.view.addSubview(customNavView)
+        return customNavView
     }()
     
-    lazy var addressBtn: UIButton = { [unowned self] in
-        let addressBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 45, height: 30))
-        self.view.addSubview(addressBtn)
-        addressBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-        addressBtn.setTitleColor(UIColor.white, for: .normal)
-        addressBtn.set(image: #imageLiteral(resourceName: "ICON-xiala"), title: "定位", titlePosition: .left, additionalSpacing: 2, state: .normal)
-        addressBtn.addTarget(self, action: #selector(locationBtnClick(_:)), for: .touchUpInside)
-        return addressBtn
-    }()
-    
-    lazy var searchView: SearchView = { [unowned self] in
-        let searchView = SearchView()
-        self.view.addSubview(searchView)
-        searchView.layer.cornerRadius = 17
-        searchView.alpha = 0.7
-        searchView.textField.delegate = self
-        return searchView
-    }()
-    
-    lazy var notifBtn: UIButton = {
-        let notifBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-        self.view.addSubview(notifBtn)
-        notifBtn.setImage(#imageLiteral(resourceName: "notifications-1"), for: .normal)
-        notifBtn.addTarget(self, action: #selector(notifBtnClick(_:)), for: .touchUpInside)
-        return notifBtn
-    }()
-    
-    lazy var badgeView: UIView = {
-        let badgeView = UIView(frame: CGRect(x: 12, y: -5, width: 8, height: 8))
-        self.notifBtn.addSubview(badgeView)
-        badgeView.backgroundColor = kMainColor
-        badgeView.layer.cornerRadius = 4
-        return badgeView
-    }()
+//    lazy var addressBtn: UIButton = { [unowned self] in
+//        let addressBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 45, height: 30))
+//        self.view.addSubview(addressBtn)
+//        addressBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+//        addressBtn.setTitleColor(UIColor.white, for: .normal)
+//        addressBtn.set(image: #imageLiteral(resourceName: "ICON-xiala"), title: "定位", titlePosition: .left, additionalSpacing: 2, state: .normal)
+//        addressBtn.addTarget(self, action: #selector(locationBtnClick(_:)), for: .touchUpInside)
+//        return addressBtn
+//    }()
+//
+//    lazy var searchView: SearchView = { [unowned self] in
+//        let searchView = SearchView()
+//        self.view.addSubview(searchView)
+//        searchView.layer.cornerRadius = 17
+//        searchView.alpha = 0.7
+//        searchView.textField.delegate = self
+//        return searchView
+//    }()
+//
+//    lazy var notifBtn: UIButton = {
+//        let notifBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
+//        self.view.addSubview(notifBtn)
+//        notifBtn.setImage(#imageLiteral(resourceName: "ICON-message"), for: .normal)
+//        notifBtn.addTarget(self, action: #selector(notifBtnClick(_:)), for: .touchUpInside)
+//        return notifBtn
+//    }()
+//
+//    lazy var badgeView: UIView = {
+//        let badgeView = UIView(frame: CGRect(x: 12, y: -5, width: 8, height: 8))
+//        self.notifBtn.addSubview(badgeView)
+//        badgeView.backgroundColor = kMainColor
+//        badgeView.layer.cornerRadius = 4
+//        return badgeView
+//    }()
     
     ///顶部广告栏
     lazy var topAdBannerView: TopAdverView = { [unowned self] in
-        let topAdBannerView = TopAdverView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 235))
+        let topAdBannerView = TopAdverView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 170))
         self.mainView.addSubview(topAdBannerView)
         topAdBannerView.adverDelegate = self
         return topAdBannerView
     }()
+    
+    ///消息栏
+    lazy var infoView: InformationView = { [unowned self] in
+        let infoView = InformationView()
+        self.mainView.addSubview(infoView)
+        return infoView
+        }()
     
     ///功能栏
     lazy var functionView: FunctionView = { [unowned self] in
@@ -130,11 +143,11 @@ class HomePageViewController: UIViewController {
     }()
     
     ///视频栏
-    lazy var videoView: VideoView = { [unowned self] in
-        let videoView = VideoView()
-        self.mainView.addSubview(videoView)
-        return videoView
-    }()
+//    lazy var videoView: VideoView = { [unowned self] in
+//        let videoView = VideoView()
+//        self.mainView.addSubview(videoView)
+//        return videoView
+//    }()
     
     ///产品代理
     lazy var hotAgencyView: HotAgencyView = { [unowned self] in
@@ -144,12 +157,12 @@ class HomePageViewController: UIViewController {
     }()
     
     ///中部广告栏
-    lazy var centerAdverView: UIImageView = { [unowned self] in
-        let centerAdverView = UIImageView()
-        self.mainView.addSubview(centerAdverView)
-        centerAdverView.backgroundColor = kLineColor
-        return centerAdverView
-    }()
+//    lazy var centerAdverView: UIImageView = { [unowned self] in
+//        let centerAdverView = UIImageView()
+//        self.mainView.addSubview(centerAdverView)
+//        centerAdverView.backgroundColor = kLineColor
+//        return centerAdverView
+//    }()
     
     ///急速抢单
     lazy var quickRobView: QuickRobView = { [unowned self] in
@@ -166,32 +179,28 @@ class HomePageViewController: UIViewController {
         return partnerPlanView
     }()
     
-    ///消息栏
-    lazy var infoView: InformationView = { [unowned self] in
-        let infoView = InformationView()
-        self.mainView.addSubview(infoView)
-        return infoView
-    }()
-    
     ///资讯研读
-    lazy var messageReadView: MessageReadView = { [unowned self] in
-        let messageReadView = MessageReadView()
-        self.mainView.addSubview(messageReadView)
-        return messageReadView
-    }()
+//    lazy var messageReadView: MessageReadView = { [unowned self] in
+//        let messageReadView = MessageReadView()
+//        self.mainView.addSubview(messageReadView)
+//        return messageReadView
+//    }()
     
     //MARK: - 生命周期
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBasic()
-        locationManager.startUpdatingLocation()
+        customNavView.locationManager.startUpdatingLocation()
         getHomePageData()
+        /*********测试数据**********/
+        infoView.textArr = ["这是跑马灯,这是跑马灯, 这是跑马灯, 这是跑马灯,这是跑马灯, 这是跑马灯,.......", "不要搞我啊", "你到底是干什么啊"]
+        /*************************/
     }
     
     func setupBasic() {
         view.backgroundColor = UIColor.white
         automaticallyAdjustsScrollViewInsets = false
-        topAdBannerView.localImgArray = topBannerLocalArr
+//        topAdBannerView.localImgArray = topBannerLocalArr
         //  给界面添加下拉刷新
         mainView.addHeaderRefresh { [weak self] in
             self?.getHomePageData()
@@ -223,7 +232,7 @@ class HomePageViewController: UIViewController {
         topAdBannerView.isAutoScroll = true
 //        UIApplication.shared.statusBarStyle = statusBarColor
         /***暂时**/
-        badgeView.isHidden = false
+        customNavView.badgeView.isHidden = false
         /*****/
         navigationController?.delegate = self
         navController = navigationController
@@ -231,53 +240,74 @@ class HomePageViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        ///全局滚动视图
-        mainView.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview()
-        }
+//        ///全局滚动视图
+//        mainView.snp.makeConstraints { (make) in
+//            make.edges.equalToSuperview()
+//        }
         
         ///渐变假nav栏
-        navView.snp.makeConstraints { (make) in
+//        navView.snp.makeConstraints { (make) in
+//            make.top.left.right.equalToSuperview()
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: kNavHeight))
+//        }
+        
+        //自定义nav栏
+        customNavView.snp.makeConstraints { (make) in
             make.top.left.right.equalToSuperview()
             make.size.equalTo(CGSize(width: kScreenWidth, height: kNavHeight))
         }
+        customNavView.layoutIfNeeded()
+        
+        ///滚动视图
+        mainView.snp.makeConstraints { (make) in
+            make.top.equalTo(customNavView.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+//            make.edges.equalToSuperview()
+        }
         
         ///地址按钮
-        addressBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(10)
-            make.top.equalTo(kStatusHeight + 2)
-            make.height.equalTo(34)
-        }
-        addressBtn.layoutIfNeeded()
+//        addressBtn.snp.makeConstraints { (make) in
+//            make.left.equalTo(10)
+//            make.top.equalTo(kStatusHeight + 2)
+//            make.height.equalTo(34)
+//        }
+//        addressBtn.layoutIfNeeded()
         
         ///通知按钮
-        notifBtn.snp.makeConstraints { (make) in
-            make.right.equalTo(-10)
-            make.centerY.equalTo(addressBtn)
-        }
-        notifBtn.layoutIfNeeded()
+//        notifBtn.snp.makeConstraints { (make) in
+//            make.right.equalTo(-10)
+//            make.centerY.equalTo(addressBtn)
+//        }
+//        notifBtn.layoutIfNeeded()
         
         ///搜索视图
-        searchView.snp.makeConstraints { (make) in
-            make.top.equalTo(kStatusHeight + 2)
-            make.left.equalTo(addressBtn.snp.right).offset(8)
-            make.right.equalTo(notifBtn.snp.left).offset(-8)
-//            make.right.equalTo(-30)
-            make.height.equalTo(34)
-        }
-        searchView.layoutIfNeeded()
+//        searchView.snp.makeConstraints { (make) in
+//            make.top.equalTo(kStatusHeight + 2)
+//            make.left.equalTo(addressBtn.snp.right).offset(8)
+//            make.right.equalTo(notifBtn.snp.left).offset(-8)
+//            make.height.equalTo(34)
+//        }
+//        searchView.layoutIfNeeded()
     
         ///广告栏
         topAdBannerView.snp.makeConstraints { (make) in
             make.top.left.equalToSuperview()
             make.width.equalTo(kScreenWidth)
-            make.height.equalTo(235)
+            make.height.equalTo(170)
         }
         topAdBannerView.layoutIfNeeded()
         
+        ///消息栏
+        infoView.snp.makeConstraints { (make) in
+            make.top.equalTo(topAdBannerView.snp.bottom)
+            make.left.right.equalToSuperview()
+            make.size.equalTo(CGSize(width: kScreenWidth, height: 40))
+        }
+        infoView.layoutIfNeeded()
+        
         ///功能栏
         functionView.snp.makeConstraints { (make) in
-            make.top.equalTo(topAdBannerView.snp.bottom)
+            make.top.equalTo(infoView.snp.bottom)
             make.left.equalToSuperview()
             make.width.equalTo(kScreenWidth)
             make.height.equalTo(200)
@@ -285,63 +315,60 @@ class HomePageViewController: UIViewController {
         functionView.layoutIfNeeded()
         
         ///视频栏
-        videoView.snp.makeConstraints { (make) in
-            make.top.equalTo(functionView.snp.bottom)
-            make.left.right.equalToSuperview()
-            make.width.equalTo(kScreenWidth)
-            make.height.equalTo(175 + 12 + 12)
-        }
-        videoView.layoutIfNeeded()
+//        videoView.snp.makeConstraints { (make) in
+//            make.top.equalTo(functionView.snp.bottom)
+//            make.left.right.equalToSuperview()
+//            make.width.equalTo(kScreenWidth)
+//            make.height.equalTo(175 + 12 + 12)
+//        }
+//        videoView.layoutIfNeeded()
         
         ///热门栏
         hotAgencyView.snp.makeConstraints { (make) in
-            make.top.equalTo(videoView.snp.bottom)
+            make.top.equalTo(functionView.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
             make.size.equalTo(CGSize(width: kScreenWidth, height: 375))
         }
         hotAgencyView.layoutIfNeeded()
         
-        ///急速抢单
-        quickRobView.snp.makeConstraints { (make) in
-            make.top.equalTo(hotAgencyView.snp.bottom).offset(8.5)
-            make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 376))
-        }
-        quickRobView.layoutIfNeeded()
-        
         ///信用卡专区
         partnerPlanView.snp.makeConstraints { (make) in
-            make.top.equalTo(quickRobView.snp.bottom).offset(8)
+            make.top.equalTo(hotAgencyView.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
             make.size.equalTo(CGSize(width: kScreenWidth, height: 206))
-
+            
         }
         partnerPlanView.layoutIfNeeded()
         
-        ///中部广告栏
-        centerAdverView.snp.makeConstraints { (make) in
-            make.top.equalTo(partnerPlanView.snp.bottom).offset(8)
+        ///急速抢单
+        quickRobView.snp.makeConstraints { (make) in
+            make.top.equalTo(partnerPlanView.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 120))
-        }
-        centerAdverView.layoutIfNeeded()
-        
-        ///消息栏
-        infoView.snp.makeConstraints { (make) in
-            make.top.equalTo(centerAdverView.snp.bottom).offset(8)
-            make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 30))
-        }
-        infoView.layoutIfNeeded()
-        
-        ///资讯栏
-        messageReadView.snp.makeConstraints { (make) in
-            make.top.equalTo(infoView.snp.bottom).offset(8)
-            make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 353))
+            make.size.equalTo(CGSize(width: kScreenWidth, height: 376))
             make.bottom.equalToSuperview()
         }
-        messageReadView.layoutIfNeeded()
+        quickRobView.layoutIfNeeded()
+        
+        
+        
+        ///中部广告栏
+//        centerAdverView.snp.makeConstraints { (make) in
+//            make.top.equalTo(partnerPlanView.snp.bottom).offset(8)
+//            make.left.right.equalToSuperview()
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: 120))
+//        }
+//        centerAdverView.layoutIfNeeded()
+        
+        
+        
+        ///资讯栏
+//        messageReadView.snp.makeConstraints { (make) in
+//            make.top.equalTo(infoView.snp.bottom).offset(8)
+//            make.left.right.equalToSuperview()
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: 353))
+//            make.bottom.equalToSuperview()
+//        }
+//        messageReadView.layoutIfNeeded()
         //layoutNeeded可以立即获取到frame
         mainView.layoutIfNeeded()
 //        mainView.contentSize = CGSize(width: kScreenWidth, height: kScreenHeight * 3)
@@ -362,31 +389,31 @@ class HomePageViewController: UIViewController {
     /// 定位
     ///
     /// - Parameter sender: 定位按钮
-    @objc func locationBtnClick(_ sender: UIButton) {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-        }else {
-            let alertController = UIAlertController(title: "温馨提示", message: "请到设置->隐私->定位服务中开启!", preferredStyle: .alert)
-            let selectOne = UIAlertAction(title: "返回", style: .cancel, handler: nil)
-            let selectTwo = UIAlertAction(title: "去设置", style: .destructive) { (action) in
-                let url = URL(string: UIApplicationOpenSettingsURLString)
-                if UIApplication.shared.canOpenURL(url!) {
-                    UIApplication.shared.openURL(url!)
-                }
-            }
-            alertController.addAction(selectOne)
-            alertController.addAction(selectTwo)
-            present(alertController, animated: true, completion: nil)
-        }
-    }
+//    @objc func locationBtnClick(_ sender: UIButton) {
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+//            locationManager.startUpdatingLocation()
+//        }else {
+//            let alertController = UIAlertController(title: "温馨提示", message: "请到设置->隐私->定位服务中开启!", preferredStyle: .alert)
+//            let selectOne = UIAlertAction(title: "返回", style: .cancel, handler: nil)
+//            let selectTwo = UIAlertAction(title: "去设置", style: .destructive) { (action) in
+//                let url = URL(string: UIApplicationOpenSettingsURLString)
+//                if UIApplication.shared.canOpenURL(url!) {
+//                    UIApplication.shared.openURL(url!)
+//                }
+//            }
+//            alertController.addAction(selectOne)
+//            alertController.addAction(selectTwo)
+//            present(alertController, animated: true, completion: nil)
+//        }
+//    }
 
     /// 通知中心
     ///
     /// - Parameter sender: 通知按钮
-    @objc func notifBtnClick(_ sender: UIButton) {
-        let vc = MessageCenterViewController()
-        navigationController?.pushViewController(vc, animated: true)
-    }
+//    @objc func notifBtnClick(_ sender: UIButton) {
+//        let vc = MessageCenterViewController()
+//        navigationController?.pushViewController(vc, animated: true)
+//    }
 }
 
 //MARK: - 数据处理
@@ -428,7 +455,7 @@ extension HomePageViewController {
                     for dict in data {
                         videoArr.append(HomePageModel(with: dict))
                     }
-                    self?.videoView.videoArr = videoArr
+//                    self?.videoView.videoArr = videoArr
                 }
             }else {
                 if error == nil {
@@ -472,7 +499,7 @@ extension HomePageViewController {
             if jsonData?["status"] == 200 {
                 if let data = jsonData?["data"][0] {
                     let bannerModel = BannerModel(with: data)
-                    self?.centerAdverView.setImage(with: bannerModel.image)
+//                    self?.centerAdverView.setImage(with: bannerModel.image)
                 }
             }else {
                 if error == nil {
@@ -547,8 +574,8 @@ extension HomePageViewController {
                             newsArr.append(ResourceModel())
                         }
                     }
-                    self?.messageReadView.messageDataArr = newsArr
-                    self?.messageReadView.tableView.reloadData()
+//                    self?.messageReadView.messageDataArr = newsArr
+//                    self?.messageReadView.tableView.reloadData()
                 }
             }else {
                 if error == nil {
@@ -568,27 +595,27 @@ extension HomePageViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView)
     {
-        let offsetY = scrollView.contentOffset.y
-        if (offsetY > NAVBAR_COLORCHANGE_POINT)
-        {
-            let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(64)
-            navView.alpha = alpha
-            statusBarColor = .lightContent
-            isHiddenStatus = false
-        }else if offsetY < 0 {
-            navView.alpha = 0
-            isHiddenStatus = true
-            searchView.alpha = (offsetY + 32) / 32
-            addressBtn.alpha = (offsetY + 32) / 32
-        }
-        else
-        {
-            addressBtn.alpha = 1
-            searchView.alpha = 1
-            navView.alpha = 0
-            statusBarColor = .default
-            isHiddenStatus = false
-        }
+//        let offsetY = scrollView.contentOffset.y
+//        if (offsetY > NAVBAR_COLORCHANGE_POINT)
+//        {
+//            let alpha = (offsetY - NAVBAR_COLORCHANGE_POINT) / CGFloat(64)
+//            navView.alpha = alpha
+//            statusBarColor = .lightContent
+//            isHiddenStatus = false
+//        }else if offsetY < 0 {
+//            navView.alpha = 0
+//            isHiddenStatus = true
+//            searchView.alpha = (offsetY + 32) / 32
+//            addressBtn.alpha = (offsetY + 32) / 32
+//        }
+//        else
+//        {
+//            addressBtn.alpha = 1
+//            searchView.alpha = 1
+//            navView.alpha = 0
+//            statusBarColor = .default
+//            isHiddenStatus = false
+//        }
     }
 }
 
@@ -615,7 +642,9 @@ extension HomePageViewController: FunctionViewDelegate {
             let vc = LoansCollegeViewController()
             navigationController?.pushViewController(vc, animated: true)
         case 3:
-            JSProgress.showInfoWithStatus(with: "功能暂未开放")
+//            JSProgress.showInfoWithStatus(with: "功能暂未开放")
+            let vc = LunBoViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case 4:
             let vc = SignInViewController.loadStoryboard()
             navigationController?.pushViewController(vc, animated: true)
@@ -673,40 +702,41 @@ extension HomePageViewController: UINavigationControllerDelegate {
 }
 
 //MARK: - CLLocationManager代理
-extension HomePageViewController: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let currLocation = locations.last {
-            print(currLocation.coordinate.longitude)
-            print(currLocation.coordinate.latitude)
-            UserManager.shareManager.userModel.lat = currLocation.coordinate.latitude
-            UserManager.shareManager.userModel.lng = currLocation.coordinate.longitude
-            
-            let geocoder: CLGeocoder = CLGeocoder()
-            geocoder.reverseGeocodeLocation(currLocation, completionHandler: { [weak self] (placemarks, error) in
-                
-                self?.locationManager.stopUpdatingLocation()
-                
-                if (error == nil) {//转换成功，解析获取到的各个信息
-                    guard let placemark = placemarks?.first else{
-                        return
-                    }
-//                    print(placemark.name ?? "")
-//                    print(placemark.locality ?? "")
-                    let address = placemark.locality?.replacingOccurrences(of: "市", with: "") ?? "定位"
-                    self?.addressBtn.set(image: #imageLiteral(resourceName: "ICON-xiala"), title: address, titlePosition: .left, additionalSpacing: 2, state: .normal)
-                    UserManager.shareManager.userModel.location = address
-                }else {
-                    print("转换失败")
-                }
-            })
-        }
-
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-}
+//extension HomePageViewController: CLLocationManagerDelegate {
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//        if let currLocation = locations.last {
+//            print(currLocation.coordinate.longitude)
+//            print(currLocation.coordinate.latitude)
+//            UserManager.shareManager.userModel.lat = currLocation.coordinate.latitude
+//            UserManager.shareManager.userModel.lng = currLocation.coordinate.longitude
+//
+//            let geocoder: CLGeocoder = CLGeocoder()
+//            geocoder.reverseGeocodeLocation(currLocation, completionHandler: { [weak self] (placemarks, error) in
+//
+//                self?.locationManager.stopUpdatingLocation()
+//
+//                if (error == nil) {//转换成功，解析获取到的各个信息
+//                    guard let placemark = placemarks?.first else{
+//                        return
+//                    }
+////                    print(placemark.name ?? "")
+////                    print(placemark.locality ?? "")
+//                    let address = placemark.locality?.replacingOccurrences(of: "市", with: "") ?? "定位"
+////                    self?.addressBtn.set(image: #imageLiteral(resourceName: "ICON-xiala"), title: address, titlePosition: .left, additionalSpacing: 2, state: .normal)
+//                    self?.customNavView.addressBtn.set(image: #imageLiteral(resourceName: "xial"), title: address, titlePosition: .left, additionalSpacing: 2, state: .normal)
+//                    UserManager.shareManager.userModel.location = address
+//                }else {
+//                    print("转换失败")
+//                }
+//            })
+//        }
+//
+//    }
+//
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//        print(error)
+//    }
+//}
 
 //MARK: - TextFiled代理
 extension HomePageViewController: UITextFieldDelegate {

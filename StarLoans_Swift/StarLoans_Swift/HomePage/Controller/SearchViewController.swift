@@ -17,7 +17,7 @@ class SearchViewController: BaseViewController {
     
     lazy var searchBar: UISearchBar = { [unowned self] in
         let searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: kScreenWidth - 32, height: 35))
-        searchBar.placeholder = "经纪人, 视频, 资讯"
+        searchBar.placeholder = "请输入贷款产品/客户姓名"
         searchBar.layer.cornerRadius = 17.5
         searchBar.backgroundColor = kHomeBackColor
         searchBar.delegate = self

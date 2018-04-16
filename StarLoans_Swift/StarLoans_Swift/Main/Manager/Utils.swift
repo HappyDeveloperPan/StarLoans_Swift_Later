@@ -10,7 +10,44 @@ import UIKit
 import Foundation
 import CoreFoundation
 
+public enum ControlJumpType {
+    case ControlJumpTypePush
+    case ControlJumpTypePresent
+}
+
 public class Utils {
+    
+    /// 控制器跳转
+    ///
+    /// - Parameters:
+    ///   - toControl: 需要跳转到的控制器
+    ///   - isNav: 跳转到的控制器是否有nav栏
+    ///   - jumpType: 跳转类型(push或者present)
+    public class func controlJump(_ toControl: UIViewController, isNav: Bool, jumpType: ControlJumpType) {
+        let topViewController = Utils.currentTopViewController()
+        switch jumpType {
+        case .ControlJumpTypePush:
+            //如果当前控制器没有nav栏,需要改为present跳转
+            if topViewController?.navigationController != nil{
+                topViewController?.navigationController?.pushViewController(toControl, animated: true)
+            }else{
+                if isNav {
+                    let navVC = AXDNavigationController(rootViewController: toControl)
+                    topViewController?.present(navVC, animated: true , completion: nil)
+                }else {
+                    topViewController?.present(toControl, animated: true , completion: nil)
+                }
+            }
+        case .ControlJumpTypePresent:
+            if isNav {
+                let navVC = AXDNavigationController(rootViewController: toControl)
+                topViewController?.present(navVC, animated: true , completion: nil)
+            }else {
+                topViewController?.present(toControl, animated: true , completion: nil)
+            }
+        }
+    }
+    
     ///获取当前页面
     public class func currentTopViewController() -> UIViewController? {
         if let rootViewController = UIApplication.shared.keyWindow?.rootViewController{

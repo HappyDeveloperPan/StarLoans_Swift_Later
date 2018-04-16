@@ -55,12 +55,12 @@ class AXDTabBarViewController: ESTabBarController{
         
         let contro1 = HomePageViewController()
         contro1.title = ""
-        contro1.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "首页", image: #imageLiteral(resourceName: "ICON-homepage"), selectedImage: #imageLiteral(resourceName: "ICON-homepage-select"))
+        contro1.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "首页", image: #imageLiteral(resourceName: "ICON-home"), selectedImage: #imageLiteral(resourceName: "ICON-home-selected"))
         let nav1 = AXDNavigationController(rootViewController: contro1)
         
         let contro2 = LoansViewController()
         contro2.title = ""
-        contro2.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "产品", image: #imageLiteral(resourceName: "ICON-loans"), selectedImage: #imageLiteral(resourceName: "ICON-loans-select"))
+        contro2.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "产品", image: #imageLiteral(resourceName: "ICON-loan"), selectedImage: #imageLiteral(resourceName: "ICON-loan-selected"))
         let nav2 = AXDNavigationController(rootViewController: contro2)
         
         let contro3 = PushViewController()
@@ -74,12 +74,12 @@ class AXDTabBarViewController: ESTabBarController{
         let contro4 = QuickRobbingViewController()
         contro4.title = ""
         contro4.isHomepage = true
-        contro4.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "抢单", image: #imageLiteral(resourceName: "ICON-xiaoxi"), selectedImage: #imageLiteral(resourceName: "ICON-xiaoxi-select"))
+        contro4.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "抢单", image: #imageLiteral(resourceName: "ICON-qiangd"), selectedImage: #imageLiteral(resourceName: "ICON-qiangd-selected"))
         let nav4 = AXDNavigationController(rootViewController: contro4)
         
         let contro5 = MineViewController.loadStoryboard()
         contro5.title = ""
-        contro5.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "我的", image: #imageLiteral(resourceName: "ICON-mine"), selectedImage: #imageLiteral(resourceName: "ICON-mine-select"))
+        contro5.tabBarItem = ESTabBarItem(AXDTabBarItemContentView(), title: "我的", image: #imageLiteral(resourceName: "ICON-mine"), selectedImage: #imageLiteral(resourceName: "ICON-mine-selected"))
         let nav5 = AXDNavigationController(rootViewController: contro5)
         
         viewControllers = [nav1, nav2, nav3, nav4, nav5]

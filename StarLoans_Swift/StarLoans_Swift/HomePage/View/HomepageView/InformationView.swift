@@ -12,34 +12,30 @@ class InformationView: UIView {
     
     lazy var leftImg: UIImageView = { [unowned self] in
         let leftImg = UIImageView()
-        addSubview(leftImg)
-        leftImg.image = #imageLiteral(resourceName: "ICON-GONGGAO")
+        self.addSubview(leftImg)
+        leftImg.image = #imageLiteral(resourceName: "ICON-news")
         return leftImg
     }()
     
-    lazy var contentLB: UILabel = { [unowned self] in
-        let contentLB = UILabel()
-        addSubview(contentLB)
-        contentLB.text = "新消息显示位置新消息显示位置新消息显示位置"
-        contentLB.textColor = UIColor.RGB(with: 51, green: 51, blue: 51)
-        contentLB.font = UIFont.systemFont(ofSize: 12)
-        return contentLB
+    lazy var marqueeView: QSMarqueeView = {
+        let marqueeView = QSMarqueeView()
+        self.addSubview(marqueeView)
+        marqueeView.bgColor = UIColor.RGB(with: 247, green: 247, blue: 247)
+        marqueeView.font = UIFont.systemFont(ofSize: 12)
+        marqueeView.textColor = UIColor.RGB(with: 153, green: 153, blue: 153)
+        return marqueeView
     }()
     
-    lazy var gotoBtn: UIButton = { [unowned self] in
-        let gotoBtn = UIButton()
-        addSubview(gotoBtn)
-        gotoBtn.setTitle(">", for: .normal)
-        gotoBtn.setTitleColor(kTitleColor, for: .normal)
-        gotoBtn.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        gotoBtn.addTarget(self, action: #selector(gotoBtnClick(_:)), for: .touchUpInside)
-        return gotoBtn
-    }()
+    var textArr = [String]() {
+        didSet {
+            marqueeView.textArr = textArr
+        }
+    }
 
     //MARK: - 生命周期
     override init(frame: CGRect) {
         super .init(frame: frame)
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.RGB(with: 247, green: 247, blue: 247)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -50,24 +46,16 @@ class InformationView: UIView {
         super .layoutSubviews()
         
         leftImg.snp.makeConstraints { (make) in
-            make.left.equalTo(16)
+            make.left.equalTo(10)
             make.centerY.equalToSuperview()
-            make.size.equalTo(CGSize(width: 17.5, height: 16))
+            make.size.equalTo(CGSize(width: 30, height: 15))
         }
+        leftImg.layoutIfNeeded()
         
-        contentLB.snp.makeConstraints { (make) in
-            make.left.equalTo(leftImg.snp.right).offset(8)
-            make.top.bottom.equalToSuperview()
-            make.right.equalTo(gotoBtn.snp.left).offset(-8)
+        marqueeView.snp.makeConstraints { (make) in
+            make.left.equalTo(leftImg.snp.right).offset(10)
+            make.top.bottom.right.equalToSuperview()
         }
-        
-        gotoBtn.snp.makeConstraints { (make) in
-            make.right.top.bottom.equalToSuperview()
-            make.width.equalTo(40)
-        }
-    }
-    
-    @objc func gotoBtnClick(_ sender: UIButton) {
-        print("消息栏被点击了")
+        marqueeView.layoutIfNeeded()
     }
 }
