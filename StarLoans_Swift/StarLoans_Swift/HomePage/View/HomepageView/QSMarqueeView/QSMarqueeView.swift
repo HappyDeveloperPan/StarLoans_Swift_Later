@@ -66,7 +66,7 @@ class QSMarqueeView: UIView {
     
     fileprivate lazy var displayLink: CADisplayLink = {
         let displayLink = CADisplayLink(target: self, selector: #selector(scrollingLabelAction))
-        displayLink.add(to: RunLoop.current, forMode: .defaultRunLoopMode)
+        displayLink.add(to: RunLoop.current, forMode: .commonModes)
         return displayLink
     }()
     
@@ -90,7 +90,7 @@ class QSMarqueeView: UIView {
     
     deinit {
         displayLink.invalidate()
-        displayLink.remove(from: RunLoop.current, forMode: .defaultRunLoopMode)
+        displayLink.remove(from: RunLoop.current, forMode: .commonModes)
     }
     
     // MARK: - 数据处理

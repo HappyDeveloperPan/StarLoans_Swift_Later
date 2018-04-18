@@ -49,6 +49,7 @@ class ClientInfoModel: NSObject {
         static let client_occupation = "client_occupation"                  //职业类型
         static let client_occupation_name = "client_occupation_name"        //职业名称
         static let client_other_assets = "client_other_assets"              //其他资产
+        static let client_sex = "client_sex"
     
     }
     
@@ -69,13 +70,13 @@ class ClientInfoModel: NSObject {
     public var client_loan_period: Int = 0
     public var client_phone: String = ""
     public var client_occupation: String = ""
-    
     public var client_type_name: String = ""
     public var client_house_type_name: String = ""
     public var client_car_type_name: String = ""
     public var client_occupation_name: String = ""
     public var client_income_payment_type_name: String = ""
     public var client_other_assets: String = ""
+    public var client_sex: Int = 0
     
     public init(with json:JSON) {
         let appInfo = json
@@ -102,6 +103,7 @@ class ClientInfoModel: NSObject {
         self.client_occupation_name = appInfo[Keys.client_occupation_name].stringValue
         self.client_income_payment_type_name = appInfo[Keys.client_income_payment_type_name].stringValue
         self.client_other_assets = appInfo[Keys.client_other_assets].stringValue
+        self.client_sex = appInfo[Keys.client_sex].intValue
     }
     
     override init() {
@@ -113,9 +115,20 @@ extension ClientInfoModel {
     func getTypeImage() -> UIImage {
         switch client_type {
         case 1:
-            return #imageLiteral(resourceName: "ICON-jinzhunkehu")
+            return #imageLiteral(resourceName: "ICON-jinz")
         case 2:
-            return #imageLiteral(resourceName: "ICON-youzhikehu")
+            return #imageLiteral(resourceName: "ICON-youx")
+        default:
+            return UIImage()
+        }
+    }
+    
+    func getSexImage() -> UIImage {
+        switch client_sex {
+        case 0:
+            return #imageLiteral(resourceName: "ICON-man")
+        case 1:
+            return #imageLiteral(resourceName: "ICON-woman")
         default:
             return UIImage()
         }

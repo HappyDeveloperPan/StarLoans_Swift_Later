@@ -22,6 +22,7 @@ class HomePageViewController: UIViewController {
     
     var topBannerLocalArr: Array<String> = ["WechatIMG49", "WechatIMG49", "WechatIMG49"]
     //    var topBannerArr: [BannerModel] = [BannerModel]()
+    var activityArr = [HomePageModel]()
     ///视频栏数据
     var hotVideoArr: [HomePageModel]?
     ///nav栏
@@ -56,7 +57,7 @@ class HomePageViewController: UIViewController {
 //    }()
     
     //MARK: - 主界面部分
-    lazy var mainView: UIScrollView = { [unowned self] in
+    lazy var mainView: UIScrollView = {
         let mainView = UIScrollView()
         self.view.addSubview(mainView)
         mainView.backgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
@@ -78,6 +79,7 @@ class HomePageViewController: UIViewController {
 //        return navView
 //    }()
     
+    /// 自定义Nav栏
     lazy var customNavView: CustomNavView = {
         let customNavView = CustomNavView()
         self.view.addSubview(customNavView)
@@ -119,64 +121,78 @@ class HomePageViewController: UIViewController {
 //        return badgeView
 //    }()
     
-    ///顶部广告栏
-    lazy var topAdBannerView: TopAdverView = { [unowned self] in
+    /// 顶部广告栏
+    lazy var topAdBannerView: TopAdverView = {
         let topAdBannerView = TopAdverView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 170))
         self.mainView.addSubview(topAdBannerView)
         topAdBannerView.adverDelegate = self
         return topAdBannerView
     }()
     
-    ///消息栏
-    lazy var infoView: InformationView = { [unowned self] in
+    /// 消息栏
+    lazy var infoView: InformationView = {
         let infoView = InformationView()
         self.mainView.addSubview(infoView)
         return infoView
         }()
     
-    ///功能栏
-    lazy var functionView: FunctionView = { [unowned self] in
+    /// 功能栏
+    lazy var functionView: FunctionView = {
         let functionView = FunctionView()
         self.mainView.addSubview(functionView)
         functionView.delegate = self
         return functionView
     }()
     
-    ///视频栏
+    /// 视频栏
 //    lazy var videoView: VideoView = { [unowned self] in
 //        let videoView = VideoView()
 //        self.mainView.addSubview(videoView)
 //        return videoView
 //    }()
     
-    ///产品代理
-    lazy var hotAgencyView: HotAgencyView = { [unowned self] in
-        let hotAgencyView = HotAgencyView()
-        self.mainView.addSubview(hotAgencyView)
-        return hotAgencyView
+    /// 热门产品
+    lazy var hotProductView: HotProductView = {
+        let hotProductView = HotProductView()
+        self.mainView.addSubview(hotProductView)
+        return hotProductView
     }()
     
-    ///中部广告栏
-//    lazy var centerAdverView: UIImageView = { [unowned self] in
-//        let centerAdverView = UIImageView()
-//        self.mainView.addSubview(centerAdverView)
-//        centerAdverView.backgroundColor = kLineColor
-//        return centerAdverView
+    /// 产品代理
+//    lazy var hotAgencyView: HotAgencyView = {
+//        let hotAgencyView = HotAgencyView()
+//        self.mainView.addSubview(hotAgencyView)
+//        return hotAgencyView
 //    }()
     
-    ///急速抢单
-    lazy var quickRobView: QuickRobView = { [unowned self] in
-        let quickRobView = QuickRobView()
-        self.mainView.addSubview(quickRobView)
-        quickRobView.delegate = self
-        return quickRobView
+    /// 中部广告栏
+    lazy var centerAdverView: TopAdverView = {
+        let centerAdverView = TopAdverView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 120))
+        self.mainView.addSubview(centerAdverView)
+        centerAdverView.adverDelegate = self
+        centerAdverView.isAutoScroll = false
+        return centerAdverView
     }()
     
+    ///急速抢单
+//    lazy var quickRobView: QuickRobView = { [unowned self] in
+//        let quickRobView = QuickRobView()
+//        self.mainView.addSubview(quickRobView)
+//        quickRobView.delegate = self
+//        return quickRobView
+//    }()
+    
     ///信用卡专区
-    lazy var partnerPlanView: PlanView = { [unowned self] in
-        let partnerPlanView = PlanView()
-        self.mainView.addSubview(partnerPlanView)
-        return partnerPlanView
+//    lazy var partnerPlanView: PlanView = { [unowned self] in
+//        let partnerPlanView = PlanView()
+//        self.mainView.addSubview(partnerPlanView)
+//        return partnerPlanView
+//    }()
+    
+    lazy var robMonadView: RobMonadView = {
+        let robMonadView = RobMonadView()
+        self.mainView.addSubview(robMonadView)
+        return robMonadView
     }()
     
     ///资讯研读
@@ -185,6 +201,12 @@ class HomePageViewController: UIViewController {
 //        self.mainView.addSubview(messageReadView)
 //        return messageReadView
 //    }()
+    
+    lazy var bottomView: HomeBottomView = {
+        let bottomView = HomeBottomView()
+        self.mainView.addSubview(bottomView)
+        return bottomView
+    }()
     
     //MARK: - 生命周期
     override func viewDidLoad() {
@@ -206,6 +228,9 @@ class HomePageViewController: UIViewController {
             self?.getHomePageData()
         }
         //  setNeedsStatusBarAppearanceUpdate()
+        let imagesArr: [UIImage] = [#imageLiteral(resourceName: "ICON-products"), #imageLiteral(resourceName: "ICON-college"), #imageLiteral(resourceName: "ICON-video-1"), #imageLiteral(resourceName: "ICON-information")]
+        let titleArr: [String] = ["热门产品", "贷款学院", "视频中心", "资讯研读"]
+        functionView.setFuncBtn(imagesArr, selectImgArr: nil, titleArr: titleArr, norColor: kTitleColor, selectColor: nil)
     }
     
     override var prefersStatusBarHidden: Bool {
@@ -224,12 +249,12 @@ class HomePageViewController: UIViewController {
         getBottomBannerData()
         getHotQuickRobData()
         getActivityCenterData()
-        getHotNewsData()
+//        getHotNewsData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(animated)
-        topAdBannerView.isAutoScroll = true
+//        topAdBannerView.isAutoScroll = true
 //        UIApplication.shared.statusBarStyle = statusBarColor
         /***暂时**/
         customNavView.badgeView.isHidden = false
@@ -305,16 +330,32 @@ class HomePageViewController: UIViewController {
         }
         infoView.layoutIfNeeded()
         
-        ///功能栏
+        /// 功能栏
         functionView.snp.makeConstraints { (make) in
             make.top.equalTo(infoView.snp.bottom)
             make.left.equalToSuperview()
             make.width.equalTo(kScreenWidth)
-            make.height.equalTo(200)
+            make.height.equalTo(80)
         }
         functionView.layoutIfNeeded()
         
-        ///视频栏
+        /// 热门产品
+        hotProductView.snp.makeConstraints { (make) in
+            make.top.equalTo(functionView.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
+            make.size.equalTo(CGSize(width: kScreenWidth, height: 210))
+        }
+        hotProductView.layoutIfNeeded()
+        
+        /// 中部广告栏
+        centerAdverView.snp.makeConstraints { (make) in
+            make.top.equalTo(hotProductView.snp.bottom).offset(10)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(120)
+        }
+        centerAdverView.layoutIfNeeded()
+        
+        /// 视频栏
 //        videoView.snp.makeConstraints { (make) in
 //            make.top.equalTo(functionView.snp.bottom)
 //            make.left.right.equalToSuperview()
@@ -323,35 +364,41 @@ class HomePageViewController: UIViewController {
 //        }
 //        videoView.layoutIfNeeded()
         
-        ///热门栏
-        hotAgencyView.snp.makeConstraints { (make) in
-            make.top.equalTo(functionView.snp.bottom).offset(10)
+        /// 热门栏
+//        hotAgencyView.snp.makeConstraints { (make) in
+//            make.top.equalTo(centerAdverView.snp.bottom).offset(10)
+//            make.left.right.equalToSuperview()
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: 375))
+//        }
+//        hotAgencyView.layoutIfNeeded()
+        
+        /// 信用卡专区
+//        partnerPlanView.snp.makeConstraints { (make) in
+//            make.top.equalTo(centerAdverView.snp.bottom).offset(10)
+//            make.left.right.equalToSuperview()
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: 206))
+//
+//        }
+//        partnerPlanView.layoutIfNeeded()
+        
+        /// 急速抢单
+        robMonadView.snp.makeConstraints { (make) in
+            make.top.equalTo(centerAdverView.snp.bottom).offset(10)
             make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 375))
+            make.size.equalTo(CGSize(width: kScreenWidth, height: 210))
         }
-        hotAgencyView.layoutIfNeeded()
+        robMonadView.layoutIfNeeded()
         
-        ///信用卡专区
-        partnerPlanView.snp.makeConstraints { (make) in
-            make.top.equalTo(hotAgencyView.snp.bottom).offset(10)
-            make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 206))
-            
-        }
-        partnerPlanView.layoutIfNeeded()
+        /// 急速抢单
+//        quickRobView.snp.makeConstraints { (make) in
+//            make.top.equalTo(robMonadView.snp.bottom).offset(10)
+//            make.left.right.equalToSuperview()
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: 376))
+////            make.bottom.equalToSuperview()
+//        }
+//        quickRobView.layoutIfNeeded()
         
-        ///急速抢单
-        quickRobView.snp.makeConstraints { (make) in
-            make.top.equalTo(partnerPlanView.snp.bottom).offset(10)
-            make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 376))
-            make.bottom.equalToSuperview()
-        }
-        quickRobView.layoutIfNeeded()
-        
-        
-        
-        ///中部广告栏
+        /// 中部广告栏
 //        centerAdverView.snp.makeConstraints { (make) in
 //            make.top.equalTo(partnerPlanView.snp.bottom).offset(8)
 //            make.left.right.equalToSuperview()
@@ -359,9 +406,7 @@ class HomePageViewController: UIViewController {
 //        }
 //        centerAdverView.layoutIfNeeded()
         
-        
-        
-        ///资讯栏
+        /// 资讯栏
 //        messageReadView.snp.makeConstraints { (make) in
 //            make.top.equalTo(infoView.snp.bottom).offset(8)
 //            make.left.right.equalToSuperview()
@@ -369,6 +414,14 @@ class HomePageViewController: UIViewController {
 //            make.bottom.equalToSuperview()
 //        }
 //        messageReadView.layoutIfNeeded()
+        
+        /// 底部视图
+        bottomView.snp.makeConstraints { (make) in
+            make.top.equalTo(robMonadView.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(50)
+        }
+        bottomView.layoutIfNeeded()
         //layoutNeeded可以立即获取到frame
         mainView.layoutIfNeeded()
 //        mainView.contentSize = CGSize(width: kScreenWidth, height: kScreenHeight * 3)
@@ -377,7 +430,7 @@ class HomePageViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super .viewWillDisappear(animated)
-        topAdBannerView.isAutoScroll = false
+//        topAdBannerView.isAutoScroll = false
 //        UIApplication.shared.statusBarStyle = .default
     }
     
@@ -479,7 +532,8 @@ extension HomePageViewController {
                     for dict in data {
                         cellArr.append(ProductModel(with: dict))
                     }
-                    self?.hotAgencyView.cellDataArr = cellArr
+//                    self?.hotAgencyView.cellDataArr = cellArr
+                    self?.hotProductView.cellDataArr = cellArr
                 }
                 
             }else {
@@ -521,7 +575,8 @@ extension HomePageViewController {
                     for dict in data {
                         cellArr.append(ClientInfoModel(with: dict))
                     }
-                    self?.quickRobView.cellArr = cellArr
+//                    self?.quickRobView.cellArr = cellArr
+                    self?.robMonadView.cellDataArr = cellArr
                 }
             }else {
                 if error == nil {
@@ -540,11 +595,15 @@ extension HomePageViewController {
         NetWorksManager.requst(with: kUrl_ActivityCenter, type: .post, parameters: nil) { [weak self](jsonData, error) in
             if jsonData?["status"] == 200 {
                 if let activity = jsonData?["data"]["activity"].array {
-                    var dataArr = [HomePageModel]()
+                    self?.activityArr.removeAll()
+                    var imgArr = [String]()
                     for data in activity {
-                        dataArr.append(HomePageModel(with: data))
+                        let model = HomePageModel(with: data)
+                        imgArr.append(model.img)
+                        self?.activityArr.append(model)
                     }
-                    self?.partnerPlanView.dataArr = dataArr
+//                    self?.partnerPlanView.dataArr = (self?.activityArr)!
+                    self?.centerAdverView.serverImgArray = imgArr
                 }
             }else {
                 if error == nil {
@@ -559,35 +618,35 @@ extension HomePageViewController {
     }
     
     ///获取热点新闻
-    func getHotNewsData() {
-        var parameters = [String: Any]()
-        parameters["key"] = NewsAppKey
-        parameters["type"] = "caijing"
-        NetWorksManager.requst(with: kUrl_HotNews, type: .post, parameters: parameters) { [weak self] (jsonData, error) in
-            if jsonData?["result"]["stat"].intValue == 1 {
-                if let dataArr = jsonData?["result"]["data"].array {
-                    var newsArr = [ResourceModel]()
-                    for index in 0...2 {
-                        if !(dataArr[index].isEmpty) {
-                            newsArr.append(ResourceModel(with: dataArr[index]))
-                        }else {
-                            newsArr.append(ResourceModel())
-                        }
-                    }
+//    func getHotNewsData() {
+//        var parameters = [String: Any]()
+//        parameters["key"] = NewsAppKey
+//        parameters["type"] = "caijing"
+//        NetWorksManager.requst(with: kUrl_HotNews, type: .post, parameters: parameters) { [weak self] (jsonData, error) in
+//            if jsonData?["result"]["stat"].intValue == 1 {
+//                if let dataArr = jsonData?["result"]["data"].array {
+//                    var newsArr = [ResourceModel]()
+//                    for index in 0...2 {
+//                        if !(dataArr[index].isEmpty) {
+//                            newsArr.append(ResourceModel(with: dataArr[index]))
+//                        }else {
+//                            newsArr.append(ResourceModel())
+//                        }
+//                    }
 //                    self?.messageReadView.messageDataArr = newsArr
 //                    self?.messageReadView.tableView.reloadData()
-                }
-            }else {
-                if error == nil {
-                    if let msg = jsonData?["reason"].stringValue {
-                        JSProgress.showFailStatus(with: msg)
-                    }
-                }else {
-                    JSProgress.showFailStatus(with: "请求失败")
-                }
-            }
-        }
-    }
+//                }
+//            }else {
+//                if error == nil {
+//                    if let msg = jsonData?["reason"].stringValue {
+//                        JSProgress.showFailStatus(with: msg)
+//                    }
+//                }else {
+//                    JSProgress.showFailStatus(with: "请求失败")
+//                }
+//            }
+//        }
+//    }
 }
 
 //MARK: - 滚动代理
@@ -624,6 +683,17 @@ extension HomePageViewController: TopAdverViewDelegate {
     /// 点击图片回调
     func topAdverViewDidSelect(at index: Int, cycleScrollView: WRCycleScrollView) {
 //        print("点击了第\(index+1)个图片")
+        switch cycleScrollView {
+        case centerAdverView:
+            guard !activityArr[index].url.isEmpty else {
+                return
+            }
+            let vc = ActivityCenterViewController()
+            vc.url = activityArr[index].url
+            vc.title = activityArr[index].title
+            Utils.controlJump(vc, isNav: true, jumpType: .ControlJumpTypePush)
+        default:break
+        }
     }
     /// 图片滚动回调
     func topAdverViewDidScroll(to index: Int, cycleScrollView: WRCycleScrollView) {
@@ -635,24 +705,20 @@ extension HomePageViewController: TopAdverViewDelegate {
 extension HomePageViewController: FunctionViewDelegate {
     func buttonDidSelect(at index: Int) {
         switch index {
-        case 1:
+        case 0:
             let vc = BusinessResourceViewController()
             navigationController?.pushViewController(vc, animated: true)
-        case 2:
+        case 1:
             let vc = LoansCollegeViewController()
             navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            let vc = VideoCenterViewController()
+            navigationController?.pushViewController(vc, animated: true)
         case 3:
-//            JSProgress.showInfoWithStatus(with: "功能暂未开放")
-            let vc = LunBoViewController()
+            let vc = MessageReadViewController()
             navigationController?.pushViewController(vc, animated: true)
         case 4:
             let vc = SignInViewController.loadStoryboard()
-            navigationController?.pushViewController(vc, animated: true)
-        case 5:
-            let vc = MessageReadViewController()
-            navigationController?.pushViewController(vc, animated: true)
-        case 6:
-            let vc = VideoCenterViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
             break

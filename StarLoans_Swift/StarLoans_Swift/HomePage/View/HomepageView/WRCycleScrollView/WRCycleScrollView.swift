@@ -82,7 +82,7 @@ class WRCycleScrollView: UIView, PageControlAlimentProtocol, EndlessScrollProtoc
             reloadData()
         }
     }
-    var autoScrollInterval: Double = 1.5
+    var autoScrollInterval: Double = 5
     
     /// pageControl相关
     var pageControlAliment: PageControlAliment = .CenterBottom
@@ -370,6 +370,7 @@ extension WRCycleScrollView: UICollectionViewDelegate,UICollectionViewDataSource
         collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.delegate = self
         collectionView?.dataSource = self
+        collectionView?.backgroundColor = UIColor.white
         addSubview(collectionView!)
     }
     

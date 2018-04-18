@@ -121,6 +121,13 @@
 		1C3BD82E1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3BD82C1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.swift */; };
 		1C3BD82F1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3BD82D1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.xib */; };
 		1C3BD8311FDF752100B660C4 /* ClientListFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3BD8301FDF752100B660C4 /* ClientListFooterView.swift */; };
+		1C3C3A092085A7AF0087F353 /* HotProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3C3A082085A7AF0087F353 /* HotProductView.swift */; };
+		1C3C3A0C2085DCD60087F353 /* HotProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3C3A0A2085DCD60087F353 /* HotProductCollectionViewCell.swift */; };
+		1C3C3A0D2085DCD60087F353 /* HotProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3C3A0B2085DCD60087F353 /* HotProductCollectionViewCell.xib */; };
+		1C3C3A102086137B0087F353 /* RobMonadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3C3A0F2086137B0087F353 /* RobMonadView.swift */; };
+		1C3C3A12208615F50087F353 /* HomeBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3C3A11208615F50087F353 /* HomeBottomView.swift */; };
+		1C3C3A15208619010087F353 /* RobMonadViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3C3A13208619010087F353 /* RobMonadViewCollectionViewCell.swift */; };
+		1C3C3A16208619010087F353 /* RobMonadViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C3C3A14208619010087F353 /* RobMonadViewCollectionViewCell.xib */; };
 		1C4065FF1FB190C8009A59FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C4065FE1FB190C8009A59FD /* AppDelegate.swift */; };
 		1C4066041FB190C8009A59FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C4066021FB190C8009A59FD /* Main.storyboard */; };
 		1C4066061FB190C8009A59FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C4066051FB190C8009A59FD /* Assets.xcassets */; };
@@ -497,6 +504,13 @@
 		1C3BD82C1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C3BD82D1FDF6E8800B660C4 /* ClientListDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientListDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		1C3BD8301FDF752100B660C4 /* ClientListFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientListFooterView.swift; sourceTree = "<group>"; };
+		1C3C3A082085A7AF0087F353 /* HotProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProductView.swift; sourceTree = "<group>"; };
+		1C3C3A0A2085DCD60087F353 /* HotProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotProductCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C3C3A0B2085DCD60087F353 /* HotProductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HotProductCollectionViewCell.xib; sourceTree = "<group>"; };
+		1C3C3A0F2086137B0087F353 /* RobMonadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobMonadView.swift; sourceTree = "<group>"; };
+		1C3C3A11208615F50087F353 /* HomeBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomView.swift; sourceTree = "<group>"; };
+		1C3C3A13208619010087F353 /* RobMonadViewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RobMonadViewCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C3C3A14208619010087F353 /* RobMonadViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RobMonadViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		1C4065FB1FB190C8009A59FD /* StarLoans_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarLoans_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C4065FE1FB190C8009A59FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1C4066031FB190C8009A59FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1159,6 +1173,26 @@
 			path = LoansCollegeView;
 			sourceTree = "<group>";
 		};
+		1C3C3A072085A7570087F353 /* HotProduct */ = {
+			isa = PBXGroup;
+			children = (
+				1C3C3A082085A7AF0087F353 /* HotProductView.swift */,
+				1C3C3A0A2085DCD60087F353 /* HotProductCollectionViewCell.swift */,
+				1C3C3A0B2085DCD60087F353 /* HotProductCollectionViewCell.xib */,
+			);
+			path = HotProduct;
+			sourceTree = "<group>";
+		};
+		1C3C3A0E208613400087F353 /* RobMonadView */ = {
+			isa = PBXGroup;
+			children = (
+				1C3C3A0F2086137B0087F353 /* RobMonadView.swift */,
+				1C3C3A13208619010087F353 /* RobMonadViewCollectionViewCell.swift */,
+				1C3C3A14208619010087F353 /* RobMonadViewCollectionViewCell.xib */,
+			);
+			path = RobMonadView;
+			sourceTree = "<group>";
+		};
 		1C4065F21FB190C8009A59FD = {
 			isa = PBXGroup;
 			children = (
@@ -1660,17 +1694,20 @@
 		1CED7B531FDE786500AABDDE /* HomepageView */ = {
 			isa = PBXGroup;
 			children = (
-				1C8AEC1A208448BC0041B1FA /* QSMarqueeView */,
 				1CC8FA9A2080615D00852123 /* CustomNavView */,
 				1C2E2AE01FCEB88C005E48C3 /* WRCycleScrollView */,
 				1C54A82C1FCFAEF000CF4F9B /* TopAdverView.swift */,
+				1C8AEC1A208448BC0041B1FA /* QSMarqueeView */,
+				1CB728DB1FDA7889006C1D2E /* InformationView.swift */,
 				1C54A82E1FD00C2000CF4F9B /* FunctionView.swift */,
+				1C3C3A072085A7570087F353 /* HotProduct */,
 				1C57AAF31FD636C400A7626A /* VideoView */,
 				1C91ED951FD688A600DB3FA4 /* HotAgencyView */,
 				1CA4FCEC1FD7D9B5009ECD30 /* QuickRobView */,
 				1C1050431FD8D8C60050B187 /* PlanView.swift */,
-				1CB728DB1FDA7889006C1D2E /* InformationView.swift */,
+				1C3C3A0E208613400087F353 /* RobMonadView */,
 				1C1050451FD8E0810050B187 /* MessageReadView */,
+				1C3C3A11208615F50087F353 /* HomeBottomView.swift */,
 			);
 			path = HomepageView;
 			sourceTree = "<group>";
@@ -1887,6 +1924,7 @@
 				1C10F6A91FED0CBA00C3A62A /* MessageDetailViewController.storyboard in Resources */,
 				1C609DB01FE7E677004D4E54 /* WithdrawViewController.storyboard in Resources */,
 				1C06660B1FFF78FB002FA501 /* IDApproveViewController.storyboard in Resources */,
+				1C3C3A0D2085DCD60087F353 /* HotProductCollectionViewCell.xib in Resources */,
 				1CE893F62074C3BC002242A0 /* JWAddress.plist in Resources */,
 				1C9EBBC3200E148F0022259A /* CommentMessageCell.xib in Resources */,
 				1CDC915F1FF0DCFC0040434B /* HotResourceCell.xib in Resources */,
@@ -1904,6 +1942,7 @@
 				1C06E4281FFB83C500B46A10 /* PushProductResourceViewController.storyboard in Resources */,
 				1CA1D8522005A6A600F51337 /* PushResourceView.xib in Resources */,
 				1CF4B6A220732CC2000336D9 /* XinyidaiFinishViewController.storyboard in Resources */,
+				1C3C3A16208619010087F353 /* RobMonadViewCollectionViewCell.xib in Resources */,
 				1CF4B6A720736FD4000336D9 /* BaoyidaiInfoOneViewController.storyboard in Resources */,
 				1C0666011FFF4A81002FA501 /* PurchasedCell.xib in Resources */,
 				1CDC91631FF0EA800040434B /* VideoDetailViewController.storyboard in Resources */,
@@ -2188,6 +2227,7 @@
 				1C041416201AC60800C8C217 /* BrokerProductCell.swift in Sources */,
 				1C4B28761FF39C4A00FC32CA /* GridView.swift in Sources */,
 				1C23934C20020C7F006F58A6 /* ManagerBillDetailViewController.swift in Sources */,
+				1C3C3A102086137B0087F353 /* RobMonadView.swift in Sources */,
 				1CBFFBAE1FE4EE4700E89B7E /* MineTableViewController.swift in Sources */,
 				1C4066331FB1A9B9009A59FD /* PushViewController.swift in Sources */,
 				1CE3BEF41FFC74B5003D6629 /* QuickRobbingViewController.swift in Sources */,
@@ -2265,6 +2305,7 @@
 				1C9EBBC2200E148F0022259A /* CommentMessageCell.swift in Sources */,
 				1C0665FB1FFF1C96002FA501 /* PurchasedSelectViewController.swift in Sources */,
 				1C9EBBBC200E04F60022259A /* SystemMessageCell.swift in Sources */,
+				1C3C3A12208615F50087F353 /* HomeBottomView.swift in Sources */,
 				1CE3BF1E1FFCFA38003D6629 /* CommonProblemViewController.swift in Sources */,
 				1C1C1FA51FDFFCB000C71D73 /* Utils.swift in Sources */,
 				1CF4B6B52073876F000336D9 /* BaoyidaiInfoThreeTableViewController.swift in Sources */,
@@ -2331,6 +2372,7 @@
 				1C609DAE1FE7E47F004D4E54 /* WithdrawViewController.swift in Sources */,
 				1C6D2BEC200C9233003E4501 /* LoanManagerApproveTableViewController.swift in Sources */,
 				1C4682921FEBDCAF002DA528 /* LoansCollegeModel.swift in Sources */,
+				1C3C3A0C2085DCD60087F353 /* HotProductCollectionViewCell.swift in Sources */,
 				1CCE1B421FC2C27F002EE6D9 /* UserManager.swift in Sources */,
 				1C2E3799200345950023065B /* ManagerBillApprovalViewController.swift in Sources */,
 				1C857C841FFDC06B009F45EE /* SettingInformAdminTableViewController.swift in Sources */,
@@ -2346,6 +2388,7 @@
 				1C1376111FF27893003EC987 /* LoansDetailViewController.swift in Sources */,
 				1C1050471FD8E0AF0050B187 /* MessageReadView.swift in Sources */,
 				1C99619B1FF4D0D600E4990C /* LoansMoreProblemViewController.swift in Sources */,
+				1C3C3A092085A7AF0087F353 /* HotProductView.swift in Sources */,
 				1C10A9C92004E9390042C0EB /* SwiftPopMenu.swift in Sources */,
 				1CA4FCEB1FD7D9AC009ECD30 /* QuickRobView.swift in Sources */,
 				1C014A0A2019B50200AD3FB6 /* ManagerBillApprovalFourViewController.swift in Sources */,
@@ -2369,6 +2412,7 @@
 				1C33C3ED1FFF0A640081996A /* PurchasedViewController.swift in Sources */,
 				1C041412201ABE7000C8C217 /* BrokerClientCell.swift in Sources */,
 				1C10A9C62004C1DD0042C0EB /* PushBillProductCell.swift in Sources */,
+				1C3C3A15208619010087F353 /* RobMonadViewCollectionViewCell.swift in Sources */,
 				1C99619F1FF4D78100E4990C /* MyTextView.swift in Sources */,
 				1C9EBBB6200DFB890022259A /* MessageCenterCell.swift in Sources */,
 				1CE3BF271FFD02EC003D6629 /* ResetViewController.swift in Sources */,
