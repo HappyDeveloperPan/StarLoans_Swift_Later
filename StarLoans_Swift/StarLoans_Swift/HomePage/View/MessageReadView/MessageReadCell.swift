@@ -30,9 +30,16 @@ class MessageReadCell: UICollectionViewCell{
         tableView.separatorStyle = .none
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 88
+        tableView.showsVerticalScrollIndicator = false
         return tableView
         }()
     //MARK: - 生命周期
+    deinit {
+        tableView.delegate = nil
+        tableView.dataSource = nil
+    }
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         tableView.addHeaderRefresh { [weak self] in
@@ -44,10 +51,9 @@ class MessageReadCell: UICollectionViewCell{
     override func layoutSubviews() {
         super .layoutSubviews()
         tableView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 45))
+            make.edges.equalToSuperview()
         }
+        tableView.layoutIfNeeded()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -59,11 +65,6 @@ extension MessageReadCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellArr.count
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 104
-    }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.pan_dequeueReusableCell(indexPath: indexPath) as MessageTableViewCell

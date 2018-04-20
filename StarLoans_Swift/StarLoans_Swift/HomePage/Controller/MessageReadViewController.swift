@@ -18,34 +18,29 @@ fileprivate let cellID = "MessageReadCell"
 
 class MessageReadViewController: BaseViewController {
     //MARK: - 懒加载
-    ///分段控制器
-    lazy var segmentView: SMSegmentView = { [unowned self] in
-        let appearance = SMSegmentAppearance()
-        appearance.segmentOnSelectionColour = UIColor.white
-        appearance.segmentOffSelectionColour = UIColor.white
-        appearance.titleOnSelectionFont = UIFont.systemFont(ofSize: 15.0)
-        appearance.titleOffSelectionFont = UIFont.systemFont(ofSize: 15.0)
-        appearance.titleOnSelectionColour = kMainColor
-        appearance.titleOffSelectionColour = kTitleColor
-        appearance.contentVerticalMargin = 10.0
-        appearance.titleGravity = .right
-        
-        let segmentView = SMSegmentView(frame: .zero, dividerColour: UIColor.RGB(with: 210, green: 210, blue: 210), dividerWidth: 0, segmentAppearance: appearance)
-        self.view.addSubview(segmentView)
-        segmentView.backgroundColor = UIColor.white
-        segmentView.layer.borderColor = UIColor(white: 0.75, alpha: 1.0).cgColor
-        segmentView.layer.borderWidth = 0.5
-        segmentView.addSegmentWithTitle("行业热门", onSelectionImage: nil, offSelectionImage: nil)
-        segmentView.addSegmentWithTitle("金融法规", onSelectionImage: nil, offSelectionImage: nil)
-        segmentView.addSegmentWithTitle("新玩法", onSelectionImage: nil, offSelectionImage: nil)
-        segmentView.selectedSegmentIndex = 0
-        segmentView.addTarget(self, action: #selector(selectSegmentInSegmentView(segmentView:)), for: .valueChanged)
-        return segmentView
+    ///背景图
+    lazy var bgImg: UIImageView = {
+        let bgImg = UIImageView()
+        self.view.addSubview(bgImg)
+        bgImg.contentMode = .scaleAspectFill
+        return bgImg
+    }()
+    
+    ///功能栏
+    lazy var functionView: FunctionView = { [unowned self] in
+        let functionView = FunctionView()
+        self.view.addSubview(functionView)
+        functionView.delegate = self
+        functionView.layer.shadowColor = UIColor.RGB(with: 200, green: 204, blue: 216).cgColor//shadowColor阴影颜色
+        functionView.layer.shadowOffset = CGSize(width: 2, height: 0)//shadowOffset阴影偏移,x向右偏移4，y向下偏移4，默认(0, -3),这个跟shadowRadius配合使用
+        functionView.layer.shadowOpacity = 0.64//阴影透明度，默认0
+        functionView.layer.shadowRadius = 4//阴影半径，默认3
+        return functionView
         }()
     
     lazy var collectionView: UICollectionView = { [unowned self] in
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 45)
+        layout.itemSize = CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 130 - 40 - 13)
         layout.minimumLineSpacing = 0
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -63,10 +58,24 @@ class MessageReadViewController: BaseViewController {
         }()
     
     //MARK: - 生命周期
+    deinit {
+        collectionView.delegate = nil
+        collectionView.dataSource = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "资讯研读"
-        
+        setBasic()
+    }
+    
+    func setBasic() {
+        bgImg.image = #imageLiteral(resourceName: "zixyd_bg")
+        let imgArr: [UIImage] = [#imageLiteral(resourceName: "xinwzx"), #imageLiteral(resourceName: "fanlcg"), #imageLiteral(resourceName: "xinwf")]
+        let selectImgArr: [UIImage] = [#imageLiteral(resourceName: "xinwzx_selected"), #imageLiteral(resourceName: "fanlcg_selected"), #imageLiteral(resourceName: "xinwf-_selected")]
+        let titleArr: [String] = ["行业热门", "金融法规", "新玩法"]
+        functionView.setFuncBtn(imgArr, selectImgArr: selectImgArr, titleArr: titleArr, norColor: kTitleColor, selectColor: kMainColor)
+        functionView.selectedBtnIndex(0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,29 +84,29 @@ class MessageReadViewController: BaseViewController {
     
     override func viewWillLayoutSubviews() {
         super .viewWillLayoutSubviews()
-        segmentView.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: 45))
+        
+        bgImg.snp.makeConstraints { (make) in
+            make.left.top.right.equalToSuperview()
+            make.height.equalTo(130)
         }
-        segmentView.layoutIfNeeded()
+        bgImg.layoutIfNeeded()
+        
+        functionView.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview().inset(16)
+            make.top.equalTo(bgImg.snp.bottom).offset(-40)
+            make.height.equalTo(80)
+        }
+        functionView.layoutIfNeeded()
         
         collectionView.snp.makeConstraints { (make) in
-            make.top.equalTo(segmentView.snp.bottom)
-            make.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - 45))
+            make.top.equalTo(functionView.snp.bottom).offset(13)
+            make.left.right.bottom.equalToSuperview()
         }
-        collectionView.layoutIfNeeded()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @objc func selectSegmentInSegmentView(segmentView: SMSegmentView) {
-        let index = IndexPath(item: segmentView.selectedSegmentIndex, section: 0)
-        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
     }
 }
 
@@ -108,7 +117,7 @@ extension MessageReadViewController {
         
         let parameters = ["type": type.rawValue + 1] as [String: Any]
         
-        NetWorksManager.requst(with: kUrl_LoanCollege, type: .post, parameters: parameters) { (jsonData, error) in
+        NetWorksManager.requst(with: kUrl_InfoStudying, type: .post, parameters: parameters) { (jsonData, error) in
             if jsonData?["status"] == 200 {
                 if let dataArr = jsonData?["data"].array {
                     var cellDataArr = [ResourceModel]()
@@ -117,11 +126,6 @@ extension MessageReadViewController {
                     }
                     cell.cellArr = cellDataArr
                 }
-//                var cellArr = [MessageReadModel]()
-//                for dict in (jsonData?["data"].array)! {
-//                    cellArr.append(MessageReadModel(with: dict))
-//                }
-//                cell.cellArr = cellArr
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {
@@ -133,6 +137,12 @@ extension MessageReadViewController {
             }
             cell.tableView.endHeaderRefresh()
         }
+    }
+}
+
+extension MessageReadViewController: FunctionViewDelegate {
+    func buttonDidSelect(at index: Int) {
+        collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
     }
 }
 
@@ -154,7 +164,7 @@ extension MessageReadViewController: UICollectionViewDelegate, UICollectionViewD
 extension MessageReadViewController: UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if scrollView == collectionView {
-            segmentView.selectedSegmentIndex = Int(collectionView.contentOffset.x / kScreenWidth)
+            functionView.selectedBtnIndex(Int(collectionView.contentOffset.x / kScreenWidth))
         }
     }
 }

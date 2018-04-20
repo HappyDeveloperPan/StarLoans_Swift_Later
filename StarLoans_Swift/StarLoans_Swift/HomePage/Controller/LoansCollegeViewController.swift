@@ -41,14 +41,6 @@ class LoansCollegeViewController: BaseViewController {
         return functionView
         }()
     
-    ///顶部广告栏
-    lazy var topAdBannerView: TopAdverView = { [unowned self] in
-        let topAdBannerView = TopAdverView(frame: CGRect(x: 0, y: 0, width: kScreenWidth, height: 200))
-        self.view.addSubview(topAdBannerView)
-        topAdBannerView.adverDelegate = self
-        return topAdBannerView
-        }()
-    
     ///分段控制器
 //    lazy var segmentView: SMSegmentView = { [unowned self] in
 //        let appearance = SMSegmentAppearance()
@@ -91,6 +83,11 @@ class LoansCollegeViewController: BaseViewController {
         }()
     
     //MARK: - 生命周期
+    deinit {
+        collectionView.delegate = nil
+        collectionView.dataSource = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "贷款学院"
@@ -109,13 +106,6 @@ class LoansCollegeViewController: BaseViewController {
     
     override func viewWillLayoutSubviews() {
         super .viewWillLayoutSubviews()
-        ///广告栏
-//        topAdBannerView.snp.makeConstraints { (make) in
-//            make.top.left.equalToSuperview()
-//            make.width.equalTo(kScreenWidth)
-//            make.height.equalTo(200)
-//        }
-//        topAdBannerView.layoutIfNeeded()
         bgImg.snp.makeConstraints { (make) in
             make.left.top.right.equalToSuperview()
             make.height.equalTo(130)
@@ -138,7 +128,8 @@ class LoansCollegeViewController: BaseViewController {
         collectionView.snp.makeConstraints { (make) in
             make.top.equalTo(functionView.snp.bottom).offset(13)
             make.left.equalToSuperview()
-            make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - bgImg.height - functionView.height/2 - 13))
+//            make.size.equalTo(CGSize(width: kScreenWidth, height: kScreenHeight - kNavHeight - bgImg.height - functionView.height/2 - 13))
+            make.right.bottom.equalToSuperview()
         }
 //        collectionView.layoutIfNeeded()
     }
@@ -148,10 +139,10 @@ class LoansCollegeViewController: BaseViewController {
     }
     
 
-    @objc func selectSegmentInSegmentView(segmentView: SMSegmentView) {
-        let index = IndexPath(item: segmentView.selectedSegmentIndex, section: 0)
-        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
-    }
+//    @objc func selectSegmentInSegmentView(segmentView: SMSegmentView) {
+//        let index = IndexPath(item: segmentView.selectedSegmentIndex, section: 0)
+//        collectionView.scrollToItem(at: index, at: .centeredHorizontally, animated: true)
+//    }
 }
 
 //MARK: - 数据处理部分
@@ -179,7 +170,7 @@ extension LoansCollegeViewController {
                     JSProgress.showFailStatus(with: "请求失败")
                 }
             }
-            cell.collectionView.endHeaderRefresh()
+            cell.tableView.endHeaderRefresh()
         }
     }
 }
@@ -187,18 +178,6 @@ extension LoansCollegeViewController {
 extension LoansCollegeViewController: FunctionViewDelegate {
     func buttonDidSelect(at index: Int) {
         collectionView.scrollToItem(at: [0, index], at: .centeredHorizontally, animated: true)
-    }
-}
-
-//MARK: - TopAdverView代理
-extension LoansCollegeViewController: TopAdverViewDelegate {
-    /// 点击图片回调
-    func topAdverViewDidSelect(at index: Int, cycleScrollView: WRCycleScrollView) {
-//        print("点击了第\(index+1)个图片")
-    }
-    /// 图片滚动回调
-    func topAdverViewDidScroll(to index: Int, cycleScrollView: WRCycleScrollView) {
-//        print("滚动到了第\(index+1)个图片")
     }
 }
 

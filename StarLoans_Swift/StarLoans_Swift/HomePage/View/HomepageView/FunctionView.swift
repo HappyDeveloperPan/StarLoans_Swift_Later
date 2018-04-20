@@ -41,12 +41,6 @@ class FunctionView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    /// 设置功能按钮
-    ///
-    /// - Parameters:
-    ///   - imagesArr: <#imagesArr description#>
-    ///   - titleArr: <#titleArr description#>
     func setFuncBtn(_ imagesArr: [UIImage], titleArr: [String]) {
         for i in 0..<titleArr.count {
             let button = FuncButton()
@@ -58,6 +52,15 @@ class FunctionView: UIView {
         }
     }
     
+    
+    /// 功能按钮样式
+    ///
+    /// - Parameters:
+    ///   - imgArr: 图片数组
+    ///   - selectImgArr: 选中图片数组
+    ///   - titleArr: 标题数组
+    ///   - norColor: 正常颜色
+    ///   - selectColor: 选中颜色
     func setFuncBtn(_ imgArr: [UIImage], selectImgArr: [UIImage]?, titleArr: [String], norColor: UIColor, selectColor: UIColor?) {
         for i in 0..<titleArr.count {
             let button = FuncButton()
@@ -80,7 +83,6 @@ class FunctionView: UIView {
         }
         stackView.layoutIfNeeded()
     }
-    
     
     /// 按钮点击事件
     ///

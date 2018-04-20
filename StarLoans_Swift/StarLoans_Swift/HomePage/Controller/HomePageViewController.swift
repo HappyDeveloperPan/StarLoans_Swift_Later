@@ -21,10 +21,7 @@ class HomePageViewController: UIViewController {
                                     "http://p.lrlz.com/data/upload/mobile/special/s303/s303_05442007470310935.png"]
     
     var topBannerLocalArr: Array<String> = ["WechatIMG49", "WechatIMG49", "WechatIMG49"]
-    //    var topBannerArr: [BannerModel] = [BannerModel]()
     var activityArr = [HomePageModel]()
-    ///视频栏数据
-    var hotVideoArr: [HomePageModel]?
     ///nav栏
     weak var navController: UINavigationController?
     var popDelegate: UIGestureRecognizerDelegate?
@@ -45,16 +42,6 @@ class HomePageViewController: UIViewController {
             setNeedsStatusBarAppearanceUpdate()
         }
     }
-//    lazy var locationManager: CLLocationManager = { [unowned self] in
-//        let locationManager = CLLocationManager()
-////        locationManager.delegate = self
-////        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-////            locationManager.requestWhenInUseAuthorization()
-////        }
-//        locationManager.requestWhenInUseAuthorization()
-//        locationManager.distanceFilter = kCLLocationAccuracyKilometer
-//        return locationManager
-//    }()
     
     //MARK: - 主界面部分
     lazy var mainView: UIScrollView = {
@@ -70,56 +57,12 @@ class HomePageViewController: UIViewController {
         return mainView
     }()
     
-    ///顶部渐变搜索栏
-//    lazy var navView: UIView = { [unowned self] in
-//        let navView = UIView()
-//        self.view.addSubview(navView)
-//        navView.backgroundColor = kMainColor
-//        navView.alpha = 0
-//        return navView
-//    }()
-    
     /// 自定义Nav栏
     lazy var customNavView: CustomNavView = {
         let customNavView = CustomNavView()
         self.view.addSubview(customNavView)
         return customNavView
     }()
-    
-//    lazy var addressBtn: UIButton = { [unowned self] in
-//        let addressBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 45, height: 30))
-//        self.view.addSubview(addressBtn)
-//        addressBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
-//        addressBtn.setTitleColor(UIColor.white, for: .normal)
-//        addressBtn.set(image: #imageLiteral(resourceName: "ICON-xiala"), title: "定位", titlePosition: .left, additionalSpacing: 2, state: .normal)
-//        addressBtn.addTarget(self, action: #selector(locationBtnClick(_:)), for: .touchUpInside)
-//        return addressBtn
-//    }()
-//
-//    lazy var searchView: SearchView = { [unowned self] in
-//        let searchView = SearchView()
-//        self.view.addSubview(searchView)
-//        searchView.layer.cornerRadius = 17
-//        searchView.alpha = 0.7
-//        searchView.textField.delegate = self
-//        return searchView
-//    }()
-//
-//    lazy var notifBtn: UIButton = {
-//        let notifBtn = UIButton(frame: CGRect(x: 0, y: 0, width: 40, height: 40))
-//        self.view.addSubview(notifBtn)
-//        notifBtn.setImage(#imageLiteral(resourceName: "ICON-message"), for: .normal)
-//        notifBtn.addTarget(self, action: #selector(notifBtnClick(_:)), for: .touchUpInside)
-//        return notifBtn
-//    }()
-//
-//    lazy var badgeView: UIView = {
-//        let badgeView = UIView(frame: CGRect(x: 12, y: -5, width: 8, height: 8))
-//        self.notifBtn.addSubview(badgeView)
-//        badgeView.backgroundColor = kMainColor
-//        badgeView.layer.cornerRadius = 4
-//        return badgeView
-//    }()
     
     /// 顶部广告栏
     lazy var topAdBannerView: TopAdverView = {
@@ -143,13 +86,6 @@ class HomePageViewController: UIViewController {
         functionView.delegate = self
         return functionView
     }()
-    
-    /// 视频栏
-//    lazy var videoView: VideoView = { [unowned self] in
-//        let videoView = VideoView()
-//        self.mainView.addSubview(videoView)
-//        return videoView
-//    }()
     
     /// 热门产品
     lazy var hotProductView: HotProductView = {
@@ -215,7 +151,7 @@ class HomePageViewController: UIViewController {
         customNavView.locationManager.startUpdatingLocation()
         getHomePageData()
         /*********测试数据**********/
-        infoView.textArr = ["这是跑马灯,这是跑马灯, 这是跑马灯, 这是跑马灯,这是跑马灯, 这是跑马灯,.......", "不要搞我啊", "你到底是干什么啊"]
+        infoView.textArr = ["深圳市的周先生刚申请的包易贷，200000元已成功下款", "深圳市的李先生刚申请的新一贷，500000元已成功下款", "深圳市的刘先生刚申请的包易贷，800000元已成功下款"]
         /*************************/
     }
     
@@ -244,9 +180,7 @@ class HomePageViewController: UIViewController {
     ///刷新主界面数据
     func getHomePageData() {
         getTopBannerData()
-        getVideoData()
         getHotProductData()
-        getBottomBannerData()
         getHotQuickRobData()
         getActivityCenterData()
 //        getHotNewsData()
@@ -265,10 +199,6 @@ class HomePageViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-//        ///全局滚动视图
-//        mainView.snp.makeConstraints { (make) in
-//            make.edges.equalToSuperview()
-//        }
         
         ///渐变假nav栏
 //        navView.snp.makeConstraints { (make) in
@@ -283,36 +213,12 @@ class HomePageViewController: UIViewController {
         }
         customNavView.layoutIfNeeded()
         
-        ///滚动视图
+        /// 滚动视图
         mainView.snp.makeConstraints { (make) in
             make.top.equalTo(customNavView.snp.bottom)
             make.left.right.bottom.equalToSuperview()
 //            make.edges.equalToSuperview()
         }
-        
-        ///地址按钮
-//        addressBtn.snp.makeConstraints { (make) in
-//            make.left.equalTo(10)
-//            make.top.equalTo(kStatusHeight + 2)
-//            make.height.equalTo(34)
-//        }
-//        addressBtn.layoutIfNeeded()
-        
-        ///通知按钮
-//        notifBtn.snp.makeConstraints { (make) in
-//            make.right.equalTo(-10)
-//            make.centerY.equalTo(addressBtn)
-//        }
-//        notifBtn.layoutIfNeeded()
-        
-        ///搜索视图
-//        searchView.snp.makeConstraints { (make) in
-//            make.top.equalTo(kStatusHeight + 2)
-//            make.left.equalTo(addressBtn.snp.right).offset(8)
-//            make.right.equalTo(notifBtn.snp.left).offset(-8)
-//            make.height.equalTo(34)
-//        }
-//        searchView.layoutIfNeeded()
     
         ///广告栏
         topAdBannerView.snp.makeConstraints { (make) in
@@ -355,15 +261,6 @@ class HomePageViewController: UIViewController {
         }
         centerAdverView.layoutIfNeeded()
         
-        /// 视频栏
-//        videoView.snp.makeConstraints { (make) in
-//            make.top.equalTo(functionView.snp.bottom)
-//            make.left.right.equalToSuperview()
-//            make.width.equalTo(kScreenWidth)
-//            make.height.equalTo(175 + 12 + 12)
-//        }
-//        videoView.layoutIfNeeded()
-        
         /// 热门栏
 //        hotAgencyView.snp.makeConstraints { (make) in
 //            make.top.equalTo(centerAdverView.snp.bottom).offset(10)
@@ -397,14 +294,6 @@ class HomePageViewController: UIViewController {
 ////            make.bottom.equalToSuperview()
 //        }
 //        quickRobView.layoutIfNeeded()
-        
-        /// 中部广告栏
-//        centerAdverView.snp.makeConstraints { (make) in
-//            make.top.equalTo(partnerPlanView.snp.bottom).offset(8)
-//            make.left.right.equalToSuperview()
-//            make.size.equalTo(CGSize(width: kScreenWidth, height: 120))
-//        }
-//        centerAdverView.layoutIfNeeded()
         
         /// 资讯栏
 //        messageReadView.snp.makeConstraints { (make) in
@@ -499,28 +388,6 @@ extension HomePageViewController {
             self?.mainView.endHeaderRefresh()
         }
     }
-    ///获取热门视频
-    func getVideoData() {
-        NetWorksManager.requst(with: kUrl_HotVideo, type: .post, parameters: nil) { [weak self] (jsonData, error) in
-            if jsonData?["status"] == 200 {
-                if let data = jsonData?["data"].array {
-                    var videoArr = [HomePageModel]()
-                    for dict in data {
-                        videoArr.append(HomePageModel(with: dict))
-                    }
-//                    self?.videoView.videoArr = videoArr
-                }
-            }else {
-                if error == nil {
-                    if let msg = jsonData?["msg_zhcn"].stringValue {
-                        JSProgress.showFailStatus(with: msg)
-                    }
-                }else {
-                    JSProgress.showFailStatus(with: "请求失败")
-                }
-            }
-        }
-    }
     
     ///获取热门产品
     func getHotProductData() {
@@ -536,25 +403,6 @@ extension HomePageViewController {
                     self?.hotProductView.cellDataArr = cellArr
                 }
                 
-            }else {
-                if error == nil {
-                    if let msg = jsonData?["msg_zhcn"].stringValue {
-                        JSProgress.showFailStatus(with: msg)
-                    }
-                }else {
-                    JSProgress.showFailStatus(with: "请求失败")
-                }
-            }
-        }
-    }
-    ///中部广告页
-    func getBottomBannerData() {
-        NetWorksManager.requst(with: kUrl_BottomBanner, type: .post, parameters: nil) { [weak self] (jsonData, error) in
-            if jsonData?["status"] == 200 {
-                if let data = jsonData?["data"][0] {
-                    let bannerModel = BannerModel(with: data)
-//                    self?.centerAdverView.setImage(with: bannerModel.image)
-                }
             }else {
                 if error == nil {
                     if let msg = jsonData?["msg_zhcn"].stringValue {
@@ -682,7 +530,6 @@ extension HomePageViewController: UIScrollViewDelegate {
 extension HomePageViewController: TopAdverViewDelegate {
     /// 点击图片回调
     func topAdverViewDidSelect(at index: Int, cycleScrollView: WRCycleScrollView) {
-//        print("点击了第\(index+1)个图片")
         switch cycleScrollView {
         case centerAdverView:
             guard !activityArr[index].url.isEmpty else {
@@ -697,7 +544,6 @@ extension HomePageViewController: TopAdverViewDelegate {
     }
     /// 图片滚动回调
     func topAdverViewDidScroll(to index: Int, cycleScrollView: WRCycleScrollView) {
-//        print("滚动到了第\(index+1)个图片")
     }
 }
 
@@ -809,7 +655,6 @@ extension HomePageViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         let vc = SearchViewController()
         let navVC = AXDNavigationController(rootViewController: vc)
-//        navigationController?.pushViewController(vc, animated: true)
         navigationController?.present(navVC, animated: true, completion: nil)
         return false
     }

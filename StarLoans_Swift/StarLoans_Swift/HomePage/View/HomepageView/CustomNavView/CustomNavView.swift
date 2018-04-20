@@ -24,6 +24,9 @@ class CustomNavView: UIView {
     lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.delegate = self
+//        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+//            locationManager.requestWhenInUseAuthorization()
+//        }
         locationManager.requestWhenInUseAuthorization()
         locationManager.distanceFilter = kCLLocationAccuracyKilometer
         return locationManager

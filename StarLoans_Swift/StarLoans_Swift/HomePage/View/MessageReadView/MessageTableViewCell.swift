@@ -14,6 +14,7 @@ class MessageTableViewCell: UITableViewCell, RegisterCellOrNib {
     @IBOutlet weak var readNumber: UILabel!
     @IBOutlet weak var contentLB: UILabel!
     @IBOutlet weak var timeLB: UILabel!
+    @IBOutlet weak var likeLB: UILabel!
     
     lazy var bottomLine: UIView = { [unowned self] in
         let bottomLine = UIView()
@@ -35,10 +36,10 @@ class MessageTableViewCell: UITableViewCell, RegisterCellOrNib {
     
     override func layoutSubviews() {
         super .layoutSubviews()
-        bottomLine.snp.makeConstraints { (make) in
-            make.left.right.bottom.equalToSuperview()
-            make.height.equalTo(0.5)
-        }
+//        bottomLine.snp.makeConstraints { (make) in
+//            make.left.right.bottom.equalToSuperview()
+//            make.height.equalTo(0.5)
+//        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,6 +57,14 @@ extension MessageTableViewCell {
         readNumber.text = String(cellData.reading_number)
         timeLB.text = cellData.time
     }
+    
+    func setTeachDetailCellData(with cellData: ResourceModel) {
+        contentLB.text = cellData.title
+        messImageView.setImage(with: picAdress + cellData.image_video)
+        readNumber.text = String(cellData.reading_number)
+        timeLB.text = cellData.time
+    }
+    
     ///设置热点新闻数据
     func setHotNewsData(_ cellData: ResourceModel) {
         messImageView.setImage(with: cellData.thumbnail_pic_s)

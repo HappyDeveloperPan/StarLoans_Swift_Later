@@ -15,7 +15,10 @@ protocol VideoCenterCellDelegate: class {
 }
 
 class VideoCenterCollectionViewCell: UICollectionViewCell {
-    //MARK: - 可操作数据
+    // MARK: - 内部属性
+    fileprivate let cellWidth = 164
+    fileprivate let cellHeight = 150
+    // MARK: - 可操作数据
     weak var delegate: VideoCenterCellDelegate?
     var type: VideoType = .hotVideo
     var cellDataArr: [VideoModel] = [VideoModel]() {
@@ -23,17 +26,17 @@ class VideoCenterCollectionViewCell: UICollectionViewCell {
             collectionView.reloadData()
         }
     }
-    //MARK: - 懒加载
+    // MARK: - 懒加载
     lazy var collectionView: UICollectionView = { [unowned self] in
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: kScreenWidth - 32, height: 250)
+        layout.itemSize = CGSize(width: cellWidth, height: cellHeight)
         layout.minimumInteritemSpacing = 10
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 16, bottom: 10, right: 16)
+        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.scrollDirection = .vertical
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         self.contentView.addSubview(collectionView)
-        collectionView.backgroundColor = kHomeBackColor
-        collectionView.register(UINib(nibName: cellID, bundle: nil), forCellWithReuseIdentifier: cellID)
+        collectionView.backgroundColor = UIColor.white
+        collectionView.pan_registerCell(cell: VideoCollectionViewCell.self)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.delegate = self
@@ -42,6 +45,11 @@ class VideoCenterCollectionViewCell: UICollectionViewCell {
         }()
     
     //MARK: - 生命周期
+    deinit {
+        collectionView.delegate = nil
+        collectionView.dataSource = nil
+    }
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         backgroundColor = kHomeBackColor
@@ -70,13 +78,12 @@ extension VideoCenterCollectionViewCell: UICollectionViewDelegate, UICollectionV
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! VideoCenterDetailCollectionViewCell
-        cell.setVideoData(with: cellDataArr[indexPath.row])
+        let cell = collectionView.pan_dequeueReusableCell(indexPath: indexPath) as VideoCollectionViewCell
+        cell.setVideoCollectionViewCellData(with: cellDataArr[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let vc = VideoPlayViewController()
         let vc = VideoDetailViewController.loadStoryboard()
         vc.videoID = cellDataArr[indexPath.row].video_id
         let topViewController = Utils.currentTopViewController()

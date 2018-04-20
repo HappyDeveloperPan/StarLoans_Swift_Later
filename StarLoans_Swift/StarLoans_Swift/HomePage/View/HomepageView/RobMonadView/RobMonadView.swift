@@ -51,6 +51,11 @@ class RobMonadView: UIView {
     }()
     
     // MARK: - 生命周期
+    deinit {
+        collectionView.delegate = nil
+        collectionView.dataSource = nil
+    }
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         backgroundColor = UIColor.white

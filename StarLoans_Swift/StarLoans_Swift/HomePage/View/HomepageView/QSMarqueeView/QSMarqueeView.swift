@@ -71,6 +71,7 @@ class QSMarqueeView: UIView {
     }()
     
     // MARK: - 生命周期
+    
     override init(frame: CGRect) {
         super .init(frame: frame)
         backgroundColor = UIColor.white
@@ -89,6 +90,8 @@ class QSMarqueeView: UIView {
     }
     
     deinit {
+        moveView.delegate = nil
+        moveView.dataSource = nil
         displayLink.invalidate()
         displayLink.remove(from: RunLoop.current, forMode: .commonModes)
     }
