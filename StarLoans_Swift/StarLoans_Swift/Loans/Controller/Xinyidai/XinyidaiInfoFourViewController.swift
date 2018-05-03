@@ -64,8 +64,20 @@ class XinyidaiInfoFourViewController: BaseViewController, StoryboardLoadable {
     ///
     /// - Parameter sender: 按钮
     @IBAction func picOneBtnClick(_ sender: UIButton) {
-        imageType = ImageType.picOne
-        uploadsPic()
+//        imageType = ImageType.picOne
+//        uploadsPic()
+        
+        let captureVC = CaptureViewController()
+        captureVC.scanType = .BackOfIDCardScan
+        captureVC.idCardInfoBlock = { [weak self] (result, image) in
+            self?.picOneBtn.setImage(image, for: .normal)
+            self?.picTwoBtn.setTitle(result?.idNumber, for: .normal)
+            self?.picThreeBtn.setTitle(result?.name, for: .normal)
+            self?.picFourBtn.setTitle(result?.gender, for: .normal)
+            self?.picFiveBtn.setTitle(result?.address, for: .normal)
+            self?.picSixBtn.setTitle(result?.authority, for: .normal)
+        }
+        navigationController?.pushViewController(captureVC, animated: true)
     }
     
     /// 上传身份证反面

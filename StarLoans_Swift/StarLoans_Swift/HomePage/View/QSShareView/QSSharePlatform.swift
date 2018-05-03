@@ -46,8 +46,10 @@ extension LinkPlatformProtocol where Self: QSShareView {
         switch shareType {
         case .QSShareTypeWechatSession:
             sendMessageToWX(shareModel, bText: false, scene: WXSceneSession)
+            break
         case .QSShareTypeWechatTimeline:
             sendMessageToWX(shareModel, bText: false, scene: WXSceneTimeline)
+            break
         default:break
         }
     }

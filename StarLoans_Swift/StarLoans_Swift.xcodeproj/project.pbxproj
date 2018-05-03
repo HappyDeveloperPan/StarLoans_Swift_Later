@@ -280,6 +280,14 @@
 		1CC8FA9C2080619300852123 /* CustomNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC8FA9B2080619300852123 /* CustomNavView.swift */; };
 		1CC9C0E61FCC23CD00750C5E /* JSProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9C0E51FCC23CD00750C5E /* JSProgress.swift */; };
 		1CC9C0E81FCC3B2D00750C5E /* NetWorksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC9C0E71FCC3B2D00750C5E /* NetWorksManager.swift */; };
+		1CCA1CEE209B08A200B90C2A /* UIAlertController+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA1CD9209B08A200B90C2A /* UIAlertController+Extend.m */; };
+		1CCA1CEF209B08A200B90C2A /* UIImage+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA1CDA209B08A200B90C2A /* UIImage+Extend.m */; };
+		1CCA1CF0209B08A200B90C2A /* CaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA1CDD209B08A200B90C2A /* CaptureViewController.m */; };
+		1CCA1CF1209B08A200B90C2A /* libexidcardios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CCA1CE0209B08A200B90C2A /* libexidcardios.a */; };
+		1CCA1CF2209B08A200B90C2A /* zocr0.lib in Resources */ = {isa = PBXBuildFile; fileRef = 1CCA1CE2209B08A200B90C2A /* zocr0.lib */; };
+		1CCA1CF3209B08A200B90C2A /* IDCardModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA1CE6209B08A200B90C2A /* IDCardModel.m */; };
+		1CCA1CF4209B08A200B90C2A /* IDCardScaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA1CE9209B08A200B90C2A /* IDCardScaningView.m */; };
+		1CCA1CF5209B08A200B90C2A /* RectManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1CCA1CED209B08A200B90C2A /* RectManager.m */; };
 		1CCE1B421FC2C27F002EE6D9 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CCE1B411FC2C27F002EE6D9 /* UserManager.swift */; };
 		1CD0B4151FE8AB1400A4A796 /* UrlPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0B4141FE8AB1400A4A796 /* UrlPath.swift */; };
 		1CD0B4171FE8AF9C00A4A796 /* BindingCardFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CD0B4161FE8AF9C00A4A796 /* BindingCardFirstViewController.swift */; };
@@ -668,6 +676,22 @@
 		1CC8FA9B2080619300852123 /* CustomNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavView.swift; sourceTree = "<group>"; };
 		1CC9C0E51FCC23CD00750C5E /* JSProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSProgress.swift; sourceTree = "<group>"; };
 		1CC9C0E71FCC3B2D00750C5E /* NetWorksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorksManager.swift; sourceTree = "<group>"; };
+		1CCA1CD8209B08A200B90C2A /* UIImage+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extend.h"; sourceTree = "<group>"; };
+		1CCA1CD9209B08A200B90C2A /* UIAlertController+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Extend.m"; sourceTree = "<group>"; };
+		1CCA1CDA209B08A200B90C2A /* UIImage+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extend.m"; sourceTree = "<group>"; };
+		1CCA1CDB209B08A200B90C2A /* UIAlertController+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Extend.h"; sourceTree = "<group>"; };
+		1CCA1CDD209B08A200B90C2A /* CaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureViewController.m; sourceTree = "<group>"; };
+		1CCA1CDE209B08A200B90C2A /* CaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureViewController.h; sourceTree = "<group>"; };
+		1CCA1CE0209B08A200B90C2A /* libexidcardios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libexidcardios.a; sourceTree = "<group>"; };
+		1CCA1CE2209B08A200B90C2A /* zocr0.lib */ = {isa = PBXFileReference; lastKnownFileType = file; path = zocr0.lib; sourceTree = "<group>"; };
+		1CCA1CE3209B08A200B90C2A /* commondef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commondef.h; sourceTree = "<group>"; };
+		1CCA1CE4209B08A200B90C2A /* excards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = excards.h; sourceTree = "<group>"; };
+		1CCA1CE6209B08A200B90C2A /* IDCardModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCardModel.m; sourceTree = "<group>"; };
+		1CCA1CE7209B08A200B90C2A /* IDCardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardModel.h; sourceTree = "<group>"; };
+		1CCA1CE9209B08A200B90C2A /* IDCardScaningView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IDCardScaningView.m; sourceTree = "<group>"; };
+		1CCA1CEA209B08A200B90C2A /* IDCardScaningView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IDCardScaningView.h; sourceTree = "<group>"; };
+		1CCA1CEC209B08A200B90C2A /* RectManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RectManager.h; sourceTree = "<group>"; };
+		1CCA1CED209B08A200B90C2A /* RectManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RectManager.m; sourceTree = "<group>"; };
 		1CCE1B411FC2C27F002EE6D9 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		1CD0B4141FE8AB1400A4A796 /* UrlPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlPath.swift; sourceTree = "<group>"; };
 		1CD0B4161FE8AF9C00A4A796 /* BindingCardFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingCardFirstViewController.swift; sourceTree = "<group>"; };
@@ -774,6 +798,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0300B09417EA96C3BD65219 /* Pods_StarLoans_Swift.framework in Frameworks */,
+				1CCA1CF1209B08A200B90C2A /* libexidcardios.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1002,6 +1027,7 @@
 		1C13760A1FF22FD3003EC987 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1CCA1CD6209B08A200B90C2A /* IDCardRecognition */,
 				1C13760C1FF23013003EC987 /* LoansSegmentCell.swift */,
 				1C1376141FF27C87003EC987 /* LoansProductView.swift */,
 				1C1376161FF27CBB003EC987 /* LoansProductView.xib */,
@@ -1590,6 +1616,85 @@
 			path = CustomNavView;
 			sourceTree = "<group>";
 		};
+		1CCA1CD6209B08A200B90C2A /* IDCardRecognition */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CD7209B08A200B90C2A /* Category */,
+				1CCA1CDC209B08A200B90C2A /* Controller */,
+				1CCA1CDF209B08A200B90C2A /* libexidcard */,
+				1CCA1CE5209B08A200B90C2A /* Model */,
+				1CCA1CE8209B08A200B90C2A /* View */,
+				1CCA1CEB209B08A200B90C2A /* Tool */,
+			);
+			path = IDCardRecognition;
+			sourceTree = "<group>";
+		};
+		1CCA1CD7209B08A200B90C2A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CD8209B08A200B90C2A /* UIImage+Extend.h */,
+				1CCA1CD9209B08A200B90C2A /* UIAlertController+Extend.m */,
+				1CCA1CDA209B08A200B90C2A /* UIImage+Extend.m */,
+				1CCA1CDB209B08A200B90C2A /* UIAlertController+Extend.h */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		1CCA1CDC209B08A200B90C2A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CDD209B08A200B90C2A /* CaptureViewController.m */,
+				1CCA1CDE209B08A200B90C2A /* CaptureViewController.h */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1CCA1CDF209B08A200B90C2A /* libexidcard */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CE0209B08A200B90C2A /* libexidcardios.a */,
+				1CCA1CE1209B08A200B90C2A /* dicts */,
+				1CCA1CE3209B08A200B90C2A /* commondef.h */,
+				1CCA1CE4209B08A200B90C2A /* excards.h */,
+			);
+			path = libexidcard;
+			sourceTree = "<group>";
+		};
+		1CCA1CE1209B08A200B90C2A /* dicts */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CE2209B08A200B90C2A /* zocr0.lib */,
+			);
+			path = dicts;
+			sourceTree = "<group>";
+		};
+		1CCA1CE5209B08A200B90C2A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CE6209B08A200B90C2A /* IDCardModel.m */,
+				1CCA1CE7209B08A200B90C2A /* IDCardModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CCA1CE8209B08A200B90C2A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CE9209B08A200B90C2A /* IDCardScaningView.m */,
+				1CCA1CEA209B08A200B90C2A /* IDCardScaningView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1CCA1CEB209B08A200B90C2A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				1CCA1CEC209B08A200B90C2A /* RectManager.h */,
+				1CCA1CED209B08A200B90C2A /* RectManager.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
 		1CDE80DA1FC7BFD1005A69DB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -1971,6 +2076,7 @@
 				1CE3BF131FFCE104003D6629 /* QBSettingViewController.storyboard in Resources */,
 				1C7C4F322071D31700D5A021 /* XinyidaiInfoOneViewController.storyboard in Resources */,
 				1C9961A51FF4EDE700E4990C /* AuthorizationViewController.storyboard in Resources */,
+				1CCA1CF2209B08A200B90C2A /* zocr0.lib in Resources */,
 				1CE8940E2074DB60002242A0 /* CGXPickerView.bundle in Resources */,
 				1CC89B23207E05F400EF37B5 /* weixin_allshare_60x60_@3x.png in Resources */,
 				1C7C4F4C20725CFA00D5A021 /* XinyidaiInfoFourViewController.storyboard in Resources */,
@@ -2190,6 +2296,7 @@
 			files = (
 				1CC2F5712006111A00801181 /* PayViewController.swift in Sources */,
 				1CF12AA31FCD62B500474AFB /* InformationViewController.swift in Sources */,
+				1CCA1CEE209B08A200B90C2A /* UIAlertController+Extend.m in Sources */,
 				1CE3BF151FFCE142003D6629 /* QBSettingTableViewController.swift in Sources */,
 				1CE8940F2074DB60002242A0 /* CGXDatePickerView.m in Sources */,
 				1C5AFD3B1FF78788009E65FC /* CommitCompleteViewController.swift in Sources */,
@@ -2259,6 +2366,7 @@
 				1CB728D81FDA2C5A006C1D2E /* String+Extension.swift in Sources */,
 				1CF12AAB1FCD7C8F00474AFB /* AXDTabBarViewController.swift in Sources */,
 				1CE3BF251FFCFC09003D6629 /* SettingTableViewController.swift in Sources */,
+				1CCA1CF3209B08A200B90C2A /* IDCardModel.m in Sources */,
 				1CE893F72074C3BC002242A0 /* BasePickerView.m in Sources */,
 				1CDE80DC1FC7C021005A69DB /* LoginViewModel.swift in Sources */,
 				1C4388542014688000E73C85 /* ActivityCenterViewController.swift in Sources */,
@@ -2266,6 +2374,7 @@
 				1CC89B1F207E052C00EF37B5 /* QSSharePlatform.swift in Sources */,
 				1C13760F1FF26443003EC987 /* LoansModel.swift in Sources */,
 				1CC2F5752006165800801181 /* PayTableViewController.swift in Sources */,
+				1CCA1CF5209B08A200B90C2A /* RectManager.m in Sources */,
 				1CE894122074DB60002242A0 /* CGXStringPickerView.m in Sources */,
 				1CF4B6AD20737EA9000336D9 /* BaoyidaiInfoTwoViewController.swift in Sources */,
 				1C10F69E1FECB1A300C3A62A /* UIScrollView+Extension.swift in Sources */,
@@ -2330,6 +2439,7 @@
 				1CF4B6B920738A78000336D9 /* BaoyidaiInfoFourViewController.swift in Sources */,
 				1CB08E0E1FDA9B0B007FCC31 /* SMSegmentViewConstants.swift in Sources */,
 				1C857C801FFDBFAE009F45EE /* SettingInformAdminViewController.swift in Sources */,
+				1CCA1CEF209B08A200B90C2A /* UIImage+Extend.m in Sources */,
 				1CE893F82074C3BC002242A0 /* JWAddressPickerView.m in Sources */,
 				1C06E4261FFB83B500B46A10 /* PushProductResourceViewController.swift in Sources */,
 				1CE3BF111FFCDEEA003D6629 /* QBSettingViewController.swift in Sources */,
@@ -2348,6 +2458,7 @@
 				1C1376081FF22025003EC987 /* SignInModel.swift in Sources */,
 				1C363A381FE0B6F200D87014 /* LoansCollegeCollectionViewCell.swift in Sources */,
 				1C9EBBBF200E14040022259A /* CommentListViewController.swift in Sources */,
+				1CCA1CF4209B08A200B90C2A /* IDCardScaningView.m in Sources */,
 				1C8AEC1C208449E20041B1FA /* QSMarqueeView.swift in Sources */,
 				1C857C9B1FFE6198009F45EE /* ApproveSelectViewController.swift in Sources */,
 				1C1C1F961FDFBD1B00C71D73 /* ProductDetailCollectionViewCell.swift in Sources */,
@@ -2431,6 +2542,7 @@
 				1C609DB61FE7E9A1004D4E54 /* MoneyDetailViewController.swift in Sources */,
 				1CE3BF0D1FFCCF9C003D6629 /* DBPayCompleteViewController.swift in Sources */,
 				1C1376061FF1E7B4003EC987 /* VideoModel.swift in Sources */,
+				1CCA1CF0209B08A200B90C2A /* CaptureViewController.m in Sources */,
 				1CB728D61FDA2C4C006C1D2E /* Date+Extension.swift in Sources */,
 				1C0666001FFF4A81002FA501 /* PurchasedCell.swift in Sources */,
 				1C3111BE200C591000F86400 /* ApproveCommitedViewController.swift in Sources */,
@@ -2616,6 +2728,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBC68XES2L;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
@@ -2635,7 +2748,10 @@
 				INFOPLIST_FILE = "StarLoans_Swift/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StarLoans_Swift/Loans/View/IDCardRecognition/libexidcard",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JSJS.StarLoans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2657,6 +2773,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VBC68XES2L;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Alamofire\"",
@@ -2676,7 +2793,10 @@
 				INFOPLIST_FILE = "StarLoans_Swift/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StarLoans_Swift/Loans/View/IDCardRecognition/libexidcard",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.JSJS.StarLoans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

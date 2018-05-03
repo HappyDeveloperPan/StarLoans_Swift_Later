@@ -14,3 +14,4 @@
 #import "SinglePickerView.h"
 #import "JWAddressPickerView.h"
 #import "CGXPickerView.h"
+#import "CaptureViewController.h"
